@@ -330,6 +330,19 @@
         "cache_read": 177152,
         "cost_cents": 75.7052
       }
+    ],
+    "2026-09-06": [
+      {
+        "date": "2026-09-06",
+        "source": "cursor",
+        "model": "grok-bot-default",
+        "requests": 31,
+        "tokens_in": 301560,
+        "tokens_out": 10664,
+        "cache_write": 0,
+        "cache_read": 3916800,
+        "cost_cents": 531.4992
+      }
     ]
   }
 }
