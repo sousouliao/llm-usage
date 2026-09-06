@@ -1,21 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="440" viewBox="0 0 760 440" role="img" aria-label="This week Aug 31 – Sep 6: 657.7M tokens, model cost $570.79. Updated Sep 5, 19:32">
-<title>This week Aug 31 – Sep 6: 657.7M tokens, model cost $570.79. Updated Sep 5, 19:32</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="440" viewBox="0 0 760 440" role="img" aria-label="This week Aug 31 – Sep 6: 662.5M tokens, model cost $577.11. Updated Sep 6, 15:29">
+<title>This week Aug 31 – Sep 6: 662.5M tokens, model cost $577.11. Updated Sep 6, 15:29</title>
 <defs><clipPath id="nameclip"><rect x="32" y="0" width="236" height="440"/></clipPath></defs>
 <rect x="0.5" y="0.5" width="759" height="439" rx="13" fill="#FFFFFF" stroke="#E6E4DF"/>
 <text x="32" y="44" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" fill="#6C7076"><tspan letter-spacing="0.9">This week</tspan><tspan dx="8">· Aug 31 – Sep 6</tspan></text>
-<text x="728" y="44" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12.5" fill="#6C7076" text-anchor="end">Updated Sep 5, 19:32</text>
-<text x="32" y="104" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="44" fill="#1A7F37" font-weight="600">657.7M<tspan font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#16181C" font-weight="400" dx="9">tokens</tspan></text>
-<text x="32" y="126" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#16181C">2,356 requests</text>
-<text x="728" y="104" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="30" fill="#16181C" font-weight="600" text-anchor="end">$570.79</text>
+<text x="728" y="44" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12.5" fill="#6C7076" text-anchor="end">Updated Sep 6, 15:29</text>
+<text x="32" y="104" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="44" fill="#1A7F37" font-weight="600">662.5M<tspan font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" fill="#16181C" font-weight="400" dx="9">tokens</tspan></text>
+<text x="32" y="126" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#16181C">2,395 requests</text>
+<text x="728" y="104" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="30" fill="#16181C" font-weight="600" text-anchor="end">$577.11</text>
 <text x="728" y="126" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" fill="#6C7076" text-anchor="end">Model cost</text>
 <line x1="32" y1="146" x2="728" y2="146" stroke="#E6E4DF" stroke-width="1"/>
-<rect x="32" y="164" width="30.3273" height="8" fill="#16181C"/>
-<rect x="63.3273" y="164" width="3.07961" height="8" fill="#5A6066"/>
-<rect x="67.4069" y="164" width="9.09999" height="8" fill="#939AA1"/>
-<rect x="77.5069" y="164" width="650.493" height="8" fill="#C6CACE"/>
+<rect x="32" y="164" width="30.6353" height="8" fill="#16181C"/>
+<rect x="63.6353" y="164" width="3.06693" height="8" fill="#5A6066"/>
+<rect x="67.7023" y="164" width="9.02728" height="8" fill="#939AA1"/>
+<rect x="77.7296" y="164" width="650.27" height="8" fill="#C6CACE"/>
 <rect x="32" y="186" width="7" height="7" fill="#16181C"/>
 <text x="45" y="193" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#6C7076">Input</text>
-<text x="85.2" y="193" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#16181C">29.6M</text>
+<text x="85.2" y="193" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#16181C">30.1M</text>
 <rect x="206" y="186" width="7" height="7" fill="#5A6066"/>
 <text x="219" y="193" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#6C7076">Output</text>
 <text x="265.64" y="193" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#16181C">3.9M</text>
@@ -24,39 +24,39 @@
 <text x="471.84" y="193" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#16181C">9.5M</text>
 <rect x="554" y="186" width="7" height="7" fill="#C6CACE"/>
 <text x="567" y="193" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" fill="#6C7076">Cache read</text>
-<text x="639.4" y="193" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#16181C">614.7M</text>
+<text x="639.4" y="193" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11.5" fill="#16181C">618.9M</text>
 <line x1="32" y1="210" x2="728" y2="210" stroke="#E6E4DF" stroke-width="1"/>
 <text x="32" y="238" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#6C7076" letter-spacing="1.2">Model</text>
 <text x="632" y="238" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#6C7076" text-anchor="end" letter-spacing="1.2">Cost</text>
 <text x="728" y="238" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" fill="#6C7076" text-anchor="end" letter-spacing="1.2">Tokens</text>
 <text x="32" y="258" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" fill="#16181C" clip-path="url(#nameclip)">gpt-5.6-sol</text>
 <rect x="288" y="250" width="216" height="6" fill="#EFEDE8"/>
-<rect x="288" y="250" width="68.072" height="6" fill="#16181C" fill-opacity="0.85"/>
+<rect x="288" y="250" width="67.5819" height="6" fill="#16181C" fill-opacity="0.85"/>
 <text x="632" y="258" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12.5" fill="#16181C" text-anchor="end">$147.02</text>
 <text x="728" y="258" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" fill="#6C7076" text-anchor="end">207.3M</text>
 <text x="32" y="285" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" fill="#16181C" clip-path="url(#nameclip)">cursor-grok-4.6-high</text>
 <rect x="288" y="277" width="216" height="6" fill="#EFEDE8"/>
-<rect x="288" y="277" width="60.69" height="6" fill="#16181C" fill-opacity="0.85"/>
+<rect x="288" y="277" width="60.2531" height="6" fill="#16181C" fill-opacity="0.85"/>
 <text x="632" y="285" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12.5" fill="#16181C" text-anchor="end">$119.02</text>
 <text x="728" y="285" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" fill="#6C7076" text-anchor="end">184.8M</text>
 <text x="32" y="312" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" fill="#16181C" clip-path="url(#nameclip)">cursor-grok-4.6-high-fast</text>
 <rect x="288" y="304" width="216" height="6" fill="#EFEDE8"/>
-<rect x="288" y="304" width="36.9444" height="6" fill="#16181C" fill-opacity="0.85"/>
+<rect x="288" y="304" width="36.6784" height="6" fill="#16181C" fill-opacity="0.85"/>
 <text x="632" y="312" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12.5" fill="#16181C" text-anchor="end">$136.23</text>
 <text x="728" y="312" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" fill="#6C7076" text-anchor="end">112.5M</text>
 <text x="32" y="339" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" fill="#16181C" clip-path="url(#nameclip)">claude-opus-5-thinking-medium</text>
 <rect x="288" y="331" width="216" height="6" fill="#EFEDE8"/>
-<rect x="288" y="331" width="20.0014" height="6" fill="#16181C" fill-opacity="0.85"/>
+<rect x="288" y="331" width="19.8575" height="6" fill="#16181C" fill-opacity="0.85"/>
 <text x="632" y="339" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12.5" fill="#16181C" text-anchor="end">$62.31</text>
 <text x="728" y="339" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" fill="#6C7076" text-anchor="end">60.9M</text>
 <text x="32" y="366" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" fill="#16181C" clip-path="url(#nameclip)">claude-opus-5-thinking-high</text>
 <rect x="288" y="358" width="216" height="6" fill="#EFEDE8"/>
-<rect x="288" y="358" width="17.5283" height="6" fill="#16181C" fill-opacity="0.85"/>
+<rect x="288" y="358" width="17.4021" height="6" fill="#16181C" fill-opacity="0.85"/>
 <text x="632" y="366" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12.5" fill="#16181C" text-anchor="end">$55.81</text>
 <text x="728" y="366" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" fill="#6C7076" text-anchor="end">53.4M</text>
 <text x="32" y="393" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" fill="#16181C" clip-path="url(#nameclip)">codex-auto-review</text>
 <rect x="288" y="385" width="216" height="6" fill="#EFEDE8"/>
-<rect x="288" y="385" width="3.12386" height="6" fill="#16181C" fill-opacity="0.85"/>
+<rect x="288" y="385" width="3.10137" height="6" fill="#16181C" fill-opacity="0.85"/>
 <text x="632" y="393" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12.5" fill="#16181C" text-anchor="end">$11.80</text>
 <text x="728" y="393" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="12" fill="#6C7076" text-anchor="end">9.5M</text>
 </svg>
