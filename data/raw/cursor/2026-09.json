@@ -361,11 +361,11 @@
         "source": "cursor",
         "model": "claude-opus-5-thinking-medium",
         "requests": 6,
-        "tokens_in": 262,
-        "tokens_out": 137686,
-        "cache_write": 734373,
-        "cache_read": 18011844,
-        "cost_cents": 1703.9213
+        "tokens_in": 348,
+        "tokens_out": 167806,
+        "cache_write": 790041,
+        "cache_read": 23402578,
+        "cost_cents": 2083.5935
       },
       {
         "date": "2026-09-07",
