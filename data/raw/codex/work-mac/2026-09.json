@@ -97,21 +97,21 @@
         "date": "2026-09-07",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 62,
-        "tokens_in": 363954,
-        "tokens_out": 8101,
+        "requests": 72,
+        "tokens_in": 493782,
+        "tokens_out": 9533,
         "cache_write": 0,
-        "cache_read": 2821632
+        "cache_read": 3153920
       },
       {
         "date": "2026-09-07",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 83,
-        "tokens_in": 2236792,
-        "tokens_out": 38293,
-        "cache_write": 1865664,
-        "cache_read": 9906974
+        "requests": 105,
+        "tokens_in": 3371178,
+        "tokens_out": 45658,
+        "cache_write": 2996838,
+        "cache_read": 11028193
       },
       {
         "date": "2026-09-07",
@@ -133,6 +133,7 @@
         "cache_write": 0,
         "cache_read": 582656
       }
-    ]
+    ],
+    "2026-09-08": []
   }
 }
