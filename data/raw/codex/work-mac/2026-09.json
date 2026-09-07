@@ -97,21 +97,41 @@
         "date": "2026-09-07",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 24,
-        "tokens_in": 221354,
-        "tokens_out": 4302,
+        "requests": 62,
+        "tokens_in": 363954,
+        "tokens_out": 8101,
         "cache_write": 0,
-        "cache_read": 914432
+        "cache_read": 2821632
+      },
+      {
+        "date": "2026-09-07",
+        "source": "codex",
+        "model": "gpt-5.6-sol",
+        "requests": 51,
+        "tokens_in": 228967,
+        "tokens_out": 29283,
+        "cache_write": 0,
+        "cache_read": 9208064
       },
       {
         "date": "2026-09-07",
         "source": "codex",
         "model": "gpt-6-astra",
-        "requests": 147,
-        "tokens_in": 602834,
-        "tokens_out": 61685,
+        "requests": 185,
+        "tokens_in": 761630,
+        "tokens_out": 72967,
         "cache_write": 0,
-        "cache_read": 15445760
+        "cache_read": 18359680
+      },
+      {
+        "date": "2026-09-07",
+        "source": "codex",
+        "model": "gpt-reserve",
+        "requests": 16,
+        "tokens_in": 260601,
+        "tokens_out": 3967,
+        "cache_write": 0,
+        "cache_read": 582656
       }
     ]
   }
