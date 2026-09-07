@@ -92,6 +92,27 @@
     ],
     "2026-09-05": [],
     "2026-09-06": [],
-    "2026-09-07": []
+    "2026-09-07": [
+      {
+        "date": "2026-09-07",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 8,
+        "tokens_in": 42160,
+        "tokens_out": 1158,
+        "cache_write": 0,
+        "cache_read": 205824
+      },
+      {
+        "date": "2026-09-07",
+        "source": "codex",
+        "model": "gpt-6-astra",
+        "requests": 68,
+        "tokens_in": 256631,
+        "tokens_out": 30853,
+        "cache_write": 0,
+        "cache_read": 7037440
+      }
+    ]
   }
 }
