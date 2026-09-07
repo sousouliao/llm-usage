@@ -371,12 +371,12 @@
         "date": "2026-09-07",
         "source": "cursor",
         "model": "claude-opus-5-thinking-medium",
-        "requests": 34,
-        "tokens_in": 436953,
-        "tokens_out": 407210,
-        "cache_write": 3212204,
-        "cache_read": 54400878,
-        "cost_cents": 5713.4563
+        "requests": 37,
+        "tokens_in": 437069,
+        "tokens_out": 428116,
+        "cache_write": 3362660,
+        "cache_read": 61015272,
+        "cost_cents": 6190.534
       },
       {
         "date": "2026-09-07",
@@ -393,12 +393,12 @@
         "date": "2026-09-07",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 13,
-        "tokens_in": 1331048,
-        "tokens_out": 116995,
+        "requests": 17,
+        "tokens_in": 1494507,
+        "tokens_out": 140662,
         "cache_write": 0,
-        "cache_read": 17242368,
-        "cost_cents": 1197.7676
+        "cache_read": 20643712,
+        "cost_cents": 1410.0414
       },
       {
         "date": "2026-09-07",

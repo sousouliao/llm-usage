@@ -107,11 +107,11 @@
         "date": "2026-09-07",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 51,
-        "tokens_in": 228967,
-        "tokens_out": 29283,
-        "cache_write": 0,
-        "cache_read": 9208064
+        "requests": 83,
+        "tokens_in": 2236792,
+        "tokens_out": 38293,
+        "cache_write": 1865664,
+        "cache_read": 9906974
       },
       {
         "date": "2026-09-07",
