@@ -472,12 +472,12 @@
         "date": "2026-09-08",
         "source": "cursor",
         "model": "cursor-grok-4.6-high-fast",
-        "requests": 1,
-        "tokens_in": 210199,
-        "tokens_out": 18116,
+        "requests": 2,
+        "tokens_in": 632114,
+        "tokens_out": 21741,
         "cache_write": 0,
-        "cache_read": 3129792,
-        "cost_cents": 416.3841
+        "cache_read": 3760192,
+        "cost_cents": 652.5401
       },
       {
         "date": "2026-09-08",
