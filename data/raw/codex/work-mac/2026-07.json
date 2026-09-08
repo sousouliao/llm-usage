@@ -19,11 +19,11 @@
         "date": "2026-07-03",
         "source": "codex",
         "model": "gpt-5.5",
-        "requests": 368,
-        "tokens_in": 2653089,
-        "tokens_out": 181081,
+        "requests": 367,
+        "tokens_in": 2652261,
+        "tokens_out": 180588,
         "cache_write": 0,
-        "cache_read": 41588736
+        "cache_read": 41460864
       }
     ],
     "2026-07-04": [],
@@ -134,11 +134,11 @@
         "date": "2026-07-13",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 1051,
-        "tokens_in": 3521154,
-        "tokens_out": 389223,
+        "requests": 1045,
+        "tokens_in": 3513192,
+        "tokens_out": 386487,
         "cache_write": 0,
-        "cache_read": 91599104
+        "cache_read": 91361024
       }
     ],
     "2026-07-14": [
@@ -178,11 +178,11 @@
         "date": "2026-07-15",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 1267,
-        "tokens_in": 5889092,
-        "tokens_out": 537708,
+        "requests": 841,
+        "tokens_in": 3841988,
+        "tokens_out": 320962,
         "cache_write": 0,
-        "cache_read": 154376448
+        "cache_read": 100854528
       },
       {
         "date": "2026-07-15",
@@ -210,11 +210,11 @@
         "date": "2026-07-16",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 1285,
-        "tokens_in": 5198202,
-        "tokens_out": 468456,
+        "requests": 1282,
+        "tokens_in": 5162138,
+        "tokens_out": 467714,
         "cache_write": 0,
-        "cache_read": 155133952
+        "cache_read": 155070208
       }
     ],
     "2026-07-17": [],
@@ -292,11 +292,11 @@
         "date": "2026-07-24",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 471,
-        "tokens_in": 1362336,
-        "tokens_out": 180096,
+        "requests": 267,
+        "tokens_in": 753634,
+        "tokens_out": 101548,
         "cache_write": 0,
-        "cache_read": 61522944
+        "cache_read": 28843520
       }
     ],
     "2026-07-25": [],
@@ -316,11 +316,11 @@
         "date": "2026-07-27",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 773,
-        "tokens_in": 5350509,
-        "tokens_out": 301310,
-        "cache_write": 4351125,
-        "cache_read": 104101046
+        "requests": 441,
+        "tokens_in": 2953519,
+        "tokens_out": 165614,
+        "cache_write": 2527307,
+        "cache_read": 54774726
       }
     ],
     "2026-07-28": [
@@ -338,11 +338,11 @@
         "date": "2026-07-28",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 1042,
-        "tokens_in": 4091501,
-        "tokens_out": 482805,
-        "cache_write": 3908091,
-        "cache_read": 127534503
+        "requests": 812,
+        "tokens_in": 3137015,
+        "tokens_out": 330565,
+        "cache_write": 2954295,
+        "cache_read": 92378497
       },
       {
         "date": "2026-07-28",

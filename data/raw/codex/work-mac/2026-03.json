@@ -122,11 +122,11 @@
         "date": "2026-03-17",
         "source": "codex",
         "model": "gpt-5.4",
-        "requests": 114,
-        "tokens_in": 2963982,
-        "tokens_out": 64841,
+        "requests": 113,
+        "tokens_in": 2963860,
+        "tokens_out": 64430,
         "cache_write": 0,
-        "cache_read": 11518080
+        "cache_read": 11314048
       }
     ],
     "2026-03-18": [
@@ -208,11 +208,11 @@
         "date": "2026-03-26",
         "source": "codex",
         "model": "gpt-5.4",
-        "requests": 658,
-        "tokens_in": 8973148,
-        "tokens_out": 436322,
+        "requests": 656,
+        "tokens_in": 8968448,
+        "tokens_out": 434792,
         "cache_write": 0,
-        "cache_read": 71500160
+        "cache_read": 71086720
       }
     ],
     "2026-03-27": [

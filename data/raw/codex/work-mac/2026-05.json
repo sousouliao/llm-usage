@@ -23,11 +23,11 @@
         "date": "2026-05-07",
         "source": "codex",
         "model": "gpt-5.5",
-        "requests": 295,
-        "tokens_in": 2505568,
-        "tokens_out": 155018,
+        "requests": 293,
+        "tokens_in": 2488564,
+        "tokens_out": 153152,
         "cache_write": 0,
-        "cache_read": 27573376
+        "cache_read": 27416960
       }
     ],
     "2026-05-08": [
@@ -45,11 +45,11 @@
         "date": "2026-05-08",
         "source": "codex",
         "model": "gpt-5.5",
-        "requests": 274,
-        "tokens_in": 1765314,
-        "tokens_out": 116480,
+        "requests": 272,
+        "tokens_in": 1728522,
+        "tokens_out": 115696,
         "cache_write": 0,
-        "cache_read": 25322240
+        "cache_read": 25257984
       }
     ],
     "2026-05-09": [],

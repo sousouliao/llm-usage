@@ -19,11 +19,11 @@
         "date": "2026-04-02",
         "source": "codex",
         "model": "gpt-5.4",
-        "requests": 373,
-        "tokens_in": 9248357,
-        "tokens_out": 188992,
+        "requests": 372,
+        "tokens_in": 9246009,
+        "tokens_out": 188903,
         "cache_write": 0,
-        "cache_read": 52981760
+        "cache_read": 52846848
       }
     ],
     "2026-04-03": [
@@ -31,11 +31,11 @@
         "date": "2026-04-03",
         "source": "codex",
         "model": "gpt-5.4",
-        "requests": 553,
-        "tokens_in": 7682824,
-        "tokens_out": 321398,
+        "requests": 552,
+        "tokens_in": 7681883,
+        "tokens_out": 321089,
         "cache_write": 0,
-        "cache_read": 70547840
+        "cache_read": 70338048
       }
     ],
     "2026-04-04": [],
@@ -69,11 +69,11 @@
         "date": "2026-04-08",
         "source": "codex",
         "model": "gpt-5.4",
-        "requests": 1102,
-        "tokens_in": 17881941,
-        "tokens_out": 702387,
+        "requests": 1095,
+        "tokens_in": 17836758,
+        "tokens_out": 697339,
         "cache_write": 0,
-        "cache_read": 131536384
+        "cache_read": 130433920
       }
     ],
     "2026-04-09": [
@@ -106,11 +106,11 @@
         "date": "2026-04-12",
         "source": "codex",
         "model": "gpt-5.4",
-        "requests": 327,
-        "tokens_in": 1091671,
-        "tokens_out": 147918,
+        "requests": 326,
+        "tokens_in": 1090486,
+        "tokens_out": 147508,
         "cache_write": 0,
-        "cache_read": 43475328
+        "cache_read": 43355648
       }
     ],
     "2026-04-13": [
@@ -242,11 +242,11 @@
         "date": "2026-04-29",
         "source": "codex",
         "model": "gpt-5.5",
-        "requests": 483,
-        "tokens_in": 3103505,
-        "tokens_out": 178452,
+        "requests": 482,
+        "tokens_in": 3101518,
+        "tokens_out": 178169,
         "cache_write": 0,
-        "cache_read": 55224960
+        "cache_read": 55044352
       }
     ],
     "2026-04-30": [
