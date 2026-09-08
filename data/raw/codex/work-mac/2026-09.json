@@ -176,6 +176,27 @@
         "cache_read": 15911936
       }
     ],
-    "2026-09-09": []
+    "2026-09-09": [
+      {
+        "date": "2026-09-09",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 21,
+        "tokens_in": 62848,
+        "tokens_out": 3128,
+        "cache_write": 0,
+        "cache_read": 651008
+      },
+      {
+        "date": "2026-09-09",
+        "source": "codex",
+        "model": "gpt-6-astra",
+        "requests": 53,
+        "tokens_in": 199955,
+        "tokens_out": 8656,
+        "cache_write": 0,
+        "cache_read": 9462144
+      }
+    ]
   }
 }
