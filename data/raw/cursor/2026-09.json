@@ -551,23 +551,23 @@
         "date": "2026-09-09",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 13,
-        "tokens_in": 619782,
-        "tokens_out": 68353,
+        "requests": 14,
+        "tokens_in": 915197,
+        "tokens_out": 80210,
         "cache_write": 0,
-        "cache_read": 5132800,
-        "cost_cents": 416.2454
+        "cache_read": 5912576,
+        "cost_cents": 520.5299
       },
       {
         "date": "2026-09-09",
         "source": "cursor",
         "model": "cursor-grok-4.6-high-fast",
-        "requests": 7,
-        "tokens_in": 147468,
-        "tokens_out": 31967,
+        "requests": 10,
+        "tokens_in": 330296,
+        "tokens_out": 69749,
         "cache_write": 0,
-        "cache_read": 3607872,
-        "cost_cents": 446.5693
+        "cache_read": 8000576,
+        "cost_cents": 998.8275
       },
       {
         "date": "2026-09-09",
