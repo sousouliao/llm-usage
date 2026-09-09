@@ -528,24 +528,46 @@
       {
         "date": "2026-09-09",
         "source": "cursor",
+        "model": "claude-4.6-opus-high-thinking",
+        "requests": 1,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cache_write": 0,
+        "cache_read": 0,
+        "cost_cents": 0.0
+      },
+      {
+        "date": "2026-09-09",
+        "source": "cursor",
+        "model": "claude-4.6-opus-medium-thinking",
+        "requests": 1,
+        "tokens_in": 33,
+        "tokens_out": 8743,
+        "cache_write": 124386,
+        "cache_read": 3570380,
+        "cost_cents": 278.1342
+      },
+      {
+        "date": "2026-09-09",
+        "source": "cursor",
         "model": "claude-opus-5-thinking-medium",
-        "requests": 4,
-        "tokens_in": 153059,
-        "tokens_out": 121082,
-        "cache_write": 1153338,
-        "cache_read": 28252494,
-        "cost_cents": 2418.8643
+        "requests": 7,
+        "tokens_in": 153131,
+        "tokens_out": 145115,
+        "cache_write": 1333732,
+        "cache_read": 31160268,
+        "cost_cents": 2737.1178
       },
       {
         "date": "2026-09-09",
         "source": "cursor",
         "model": "composer-2.5-fast",
-        "requests": 2,
-        "tokens_in": 86201,
-        "tokens_out": 3856,
+        "requests": 3,
+        "tokens_in": 295168,
+        "tokens_out": 21779,
         "cache_write": 0,
-        "cache_read": 512512,
-        "cost_cents": 55.3132
+        "cache_read": 2167456,
+        "cost_cents": 253.4887
       },
       {
         "date": "2026-09-09",
@@ -562,12 +584,12 @@
         "date": "2026-09-09",
         "source": "cursor",
         "model": "cursor-grok-4.6-high-fast",
-        "requests": 21,
-        "tokens_in": 1544962,
-        "tokens_out": 134063,
+        "requests": 43,
+        "tokens_in": 3729056,
+        "tokens_out": 375310,
         "cache_write": 0,
-        "cache_read": 18259968,
-        "cost_cents": 2587.8099
+        "cache_read": 52553664,
+        "cost_cents": 7126.5837
       },
       {
         "date": "2026-09-09",
