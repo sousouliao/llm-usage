@@ -213,21 +213,21 @@
         "date": "2026-09-10",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 52,
-        "tokens_in": 933373,
-        "tokens_out": 7488,
+        "requests": 53,
+        "tokens_in": 940841,
+        "tokens_out": 7650,
         "cache_write": 0,
-        "cache_read": 3298304
+        "cache_read": 3303168
       },
       {
         "date": "2026-09-10",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 322,
-        "tokens_in": 1804387,
-        "tokens_out": 116187,
+        "requests": 338,
+        "tokens_in": 1866628,
+        "tokens_out": 123080,
         "cache_write": 0,
-        "cache_read": 42725376
+        "cache_read": 43461760
       }
     ]
   }
