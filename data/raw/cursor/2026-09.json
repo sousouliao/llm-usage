@@ -630,12 +630,12 @@
         "date": "2026-09-10",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 37,
-        "tokens_in": 2036353,
-        "tokens_out": 193194,
+        "requests": 47,
+        "tokens_in": 2433754,
+        "tokens_out": 244613,
         "cache_write": 0,
-        "cache_read": 38341376,
-        "cost_cents": 2440.2558
+        "cache_read": 48133760,
+        "cost_cents": 3040.2066
       },
       {
         "date": "2026-09-10",
