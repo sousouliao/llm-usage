@@ -53,12 +53,12 @@
         "date": "2026-04-10",
         "source": "cursor",
         "model": "composer-2-fast",
-        "requests": 6,
-        "tokens_in": 231946,
-        "tokens_out": 21411,
+        "requests": 7,
+        "tokens_in": 245465,
+        "tokens_out": 24031,
         "cache_write": 0,
-        "cache_read": 868736,
-        "cost_cents": 53.4774
+        "cache_read": 977728,
+        "cost_cents": 58.6021
       },
       {
         "date": "2026-04-10",
