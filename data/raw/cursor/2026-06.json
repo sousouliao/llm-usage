@@ -587,12 +587,12 @@
         "date": "2026-06-25",
         "source": "cursor",
         "model": "composer-2.5-fast",
-        "requests": 6,
-        "tokens_in": 424872,
-        "tokens_out": 35713,
+        "requests": 5,
+        "tokens_in": 395949,
+        "tokens_out": 31644,
         "cache_write": 0,
-        "cache_read": 2880480,
-        "cost_cents": 325.0551
+        "cache_read": 2617152,
+        "cost_cents": 297.1083
       },
       {
         "date": "2026-06-25",
