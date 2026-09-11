@@ -235,22 +235,23 @@
         "date": "2026-09-11",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 2,
-        "tokens_in": 37495,
-        "tokens_out": 136,
+        "requests": 4,
+        "tokens_in": 47706,
+        "tokens_out": 199,
         "cache_write": 0,
-        "cache_read": 3584
+        "cache_read": 54656
       },
       {
         "date": "2026-09-11",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 78,
-        "tokens_in": 943041,
-        "tokens_out": 95420,
+        "requests": 100,
+        "tokens_in": 1275629,
+        "tokens_out": 109273,
         "cache_write": 0,
-        "cache_read": 14508416
+        "cache_read": 21350784
       }
-    ]
+    ],
+    "2026-09-12": []
   }
 }
