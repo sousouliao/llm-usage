@@ -676,23 +676,34 @@
         "date": "2026-09-11",
         "source": "cursor",
         "model": "claude-opus-5-thinking-medium",
-        "requests": 5,
-        "tokens_in": 58,
-        "tokens_out": 36539,
-        "cache_write": 704044,
-        "cache_read": 3698536,
-        "cost_cents": 716.3308
+        "requests": 7,
+        "tokens_in": 66,
+        "tokens_out": 39016,
+        "cache_write": 829207,
+        "cache_read": 4061528,
+        "cost_cents": 818.9038
       },
       {
         "date": "2026-09-11",
         "source": "cursor",
         "model": "composer-2.5-fast",
-        "requests": 1,
-        "tokens_in": 146146,
-        "tokens_out": 19092,
+        "requests": 2,
+        "tokens_in": 441605,
+        "tokens_out": 101474,
         "cache_write": 0,
-        "cache_read": 2030464,
-        "cost_cents": 178.76
+        "cache_read": 6685600,
+        "cost_cents": 708.1218
+      },
+      {
+        "date": "2026-09-11",
+        "source": "cursor",
+        "model": "cursor-grok-4.6-high",
+        "requests": 14,
+        "tokens_in": 671068,
+        "tokens_out": 53026,
+        "cache_write": 0,
+        "cache_read": 10441216,
+        "cost_cents": 688.09
       },
       {
         "date": "2026-09-11",
