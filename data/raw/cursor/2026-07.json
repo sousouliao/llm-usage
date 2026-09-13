@@ -556,12 +556,12 @@
         "date": "2026-07-20",
         "source": "cursor",
         "model": "cursor-grok-4.5-high",
-        "requests": 92,
-        "tokens_in": 3904970,
-        "tokens_out": 453557,
+        "requests": 91,
+        "tokens_in": 3862784,
+        "tokens_out": 453269,
         "cache_write": 0,
-        "cache_read": 52781440,
-        "cost_cents": 3688.5725
+        "cache_read": 52739200,
+        "cost_cents": 3677.8505
       }
     ],
     "2026-07-21": [
