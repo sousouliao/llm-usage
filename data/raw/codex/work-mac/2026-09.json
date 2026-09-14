@@ -254,6 +254,27 @@
     ],
     "2026-09-12": [],
     "2026-09-13": [],
-    "2026-09-14": []
+    "2026-09-14": [
+      {
+        "date": "2026-09-14",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 9,
+        "tokens_in": 55170,
+        "tokens_out": 1441,
+        "cache_write": 0,
+        "cache_read": 150272
+      },
+      {
+        "date": "2026-09-14",
+        "source": "codex",
+        "model": "gpt-6-astra",
+        "requests": 53,
+        "tokens_in": 214992,
+        "tokens_out": 20210,
+        "cache_write": 0,
+        "cache_read": 4326656
+      }
+    ]
   }
 }
