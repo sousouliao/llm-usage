@@ -881,11 +881,11 @@
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
         "requests": 1,
-        "tokens_in": 90640,
-        "tokens_out": 799,
+        "tokens_in": 107023,
+        "tokens_out": 5947,
         "cache_write": 0,
-        "cache_read": 173696,
-        "cost_cents": 27.2922
+        "cache_read": 1821696,
+        "cost_cents": 116.0576
       },
       {
         "date": "2026-09-14",

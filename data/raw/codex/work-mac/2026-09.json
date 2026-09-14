@@ -269,11 +269,11 @@
         "date": "2026-09-14",
         "source": "codex",
         "model": "gpt-6-astra",
-        "requests": 53,
-        "tokens_in": 214992,
-        "tokens_out": 20210,
+        "requests": 55,
+        "tokens_in": 348175,
+        "tokens_out": 21876,
         "cache_write": 0,
-        "cache_read": 4326656
+        "cache_read": 4458368
       }
     ]
   }
