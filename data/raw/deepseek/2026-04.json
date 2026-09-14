@@ -1,0 +1,30 @@
+{
+  "source": "deepseek",
+  "month": "2026-04",
+  "days": {
+    "2026-04-28": [
+      {
+        "date": "2026-04-28",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 62,
+        "tokens_in": 183304,
+        "tokens_out": 37848,
+        "cache_read": 2383360,
+        "cost_cents": 4.2593
+      },
+      {
+        "date": "2026-04-28",
+        "source": "deepseek",
+        "model": "deepseek-v4-pro",
+        "requests": 65,
+        "tokens_in": 133235,
+        "tokens_out": 22146,
+        "cache_read": 2554240,
+        "cost_cents": 8.2838
+      }
+    ],
+    "2026-04-29": [],
+    "2026-04-30": []
+  }
+}

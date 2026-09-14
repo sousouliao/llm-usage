@@ -1,0 +1,278 @@
+{
+  "source": "deepseek",
+  "month": "2026-08",
+  "days": {
+    "2026-08-01": [
+      {
+        "date": "2026-08-01",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 53,
+        "tokens_in": 89063,
+        "tokens_out": 160248,
+        "cache_read": 168320,
+        "cost_cents": 5.7351
+      }
+    ],
+    "2026-08-02": [
+      {
+        "date": "2026-08-02",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 8,
+        "tokens_in": 48657,
+        "tokens_out": 5089,
+        "cache_read": 273024,
+        "cost_cents": 0.893
+      }
+    ],
+    "2026-08-03": [
+      {
+        "date": "2026-08-03",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 5,
+        "tokens_in": 37841,
+        "tokens_out": 2312,
+        "cache_read": 168192,
+        "cost_cents": 0.6365
+      }
+    ],
+    "2026-08-04": [
+      {
+        "date": "2026-08-04",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 8,
+        "tokens_in": 47311,
+        "tokens_out": 18376,
+        "cache_read": 207616,
+        "cost_cents": 1.2252
+      }
+    ],
+    "2026-08-05": [
+      {
+        "date": "2026-08-05",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 218,
+        "tokens_in": 546825,
+        "tokens_out": 88030,
+        "cache_read": 13582208,
+        "cost_cents": 13.8129
+      }
+    ],
+    "2026-08-06": [
+      {
+        "date": "2026-08-06",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 5,
+        "tokens_in": 45499,
+        "tokens_out": 2330,
+        "cache_read": 177152,
+        "cost_cents": 0.7459
+      }
+    ],
+    "2026-08-07": [
+      {
+        "date": "2026-08-07",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 5,
+        "tokens_in": 43032,
+        "tokens_out": 2160,
+        "cache_read": 178304,
+        "cost_cents": 0.7072
+      }
+    ],
+    "2026-08-08": [
+      {
+        "date": "2026-08-08",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 4,
+        "tokens_in": 41274,
+        "tokens_out": 1871,
+        "cache_read": 136064,
+        "cost_cents": 0.663
+      }
+    ],
+    "2026-08-09": [
+      {
+        "date": "2026-08-09",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 12,
+        "tokens_in": 50131,
+        "tokens_out": 7370,
+        "cache_read": 467968,
+        "cost_cents": 1.031
+      }
+    ],
+    "2026-08-10": [
+      {
+        "date": "2026-08-10",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 4,
+        "tokens_in": 39474,
+        "tokens_out": 1871,
+        "cache_read": 133120,
+        "cost_cents": 0.6372
+      }
+    ],
+    "2026-08-11": [
+      {
+        "date": "2026-08-11",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 63,
+        "tokens_in": 184965,
+        "tokens_out": 41590,
+        "cache_read": 1306240,
+        "cost_cents": 4.0871
+      }
+    ],
+    "2026-08-12": [
+      {
+        "date": "2026-08-12",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 24,
+        "tokens_in": 61086,
+        "tokens_out": 17163,
+        "cache_read": 422272,
+        "cost_cents": 1.4425
+      }
+    ],
+    "2026-08-13": [
+      {
+        "date": "2026-08-13",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 705,
+        "tokens_in": 1125511,
+        "tokens_out": 526422,
+        "cache_read": 22265216,
+        "cost_cents": 36.4397
+      },
+      {
+        "date": "2026-08-13",
+        "source": "deepseek",
+        "model": "deepseek-v4-pro",
+        "requests": 10,
+        "tokens_in": 285105,
+        "tokens_out": 15347,
+        "cache_read": 205952,
+        "cost_cents": 13.2298
+      }
+    ],
+    "2026-08-14": [
+      {
+        "date": "2026-08-14",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 140,
+        "tokens_in": 175737,
+        "tokens_out": 98103,
+        "cache_read": 229760,
+        "cost_cents": 5.2297
+      }
+    ],
+    "2026-08-15": [
+      {
+        "date": "2026-08-15",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 86,
+        "tokens_in": 25615,
+        "tokens_out": 52249,
+        "cache_read": 36736,
+        "cost_cents": 1.8173
+      }
+    ],
+    "2026-08-16": [
+      {
+        "date": "2026-08-16",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 5,
+        "tokens_in": 12755,
+        "tokens_out": 10637,
+        "cache_read": 12032,
+        "cost_cents": 0.476
+      }
+    ],
+    "2026-08-17": [
+      {
+        "date": "2026-08-17",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 82,
+        "tokens_in": 64349,
+        "tokens_out": 67262,
+        "cache_read": 50944,
+        "cost_cents": 5.5799
+      }
+    ],
+    "2026-08-18": [
+      {
+        "date": "2026-08-18",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 9,
+        "tokens_in": 2266,
+        "tokens_out": 4416,
+        "cache_read": 6400,
+        "cost_cents": 0.3277
+      }
+    ],
+    "2026-08-19": [
+      {
+        "date": "2026-08-19",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 3,
+        "tokens_in": 2194,
+        "tokens_out": 1256,
+        "cache_read": 3328,
+        "cost_cents": 0.1265
+      }
+    ],
+    "2026-08-20": [],
+    "2026-08-21": [
+      {
+        "date": "2026-08-21",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 36,
+        "tokens_in": 10939,
+        "tokens_out": 19882,
+        "cache_read": 14336,
+        "cost_cents": 2.961
+      }
+    ],
+    "2026-08-22": [
+      {
+        "date": "2026-08-22",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 34,
+        "tokens_in": 27450,
+        "tokens_out": 24209,
+        "cache_read": 17664,
+        "cost_cents": 2.0972
+      }
+    ],
+    "2026-08-23": [],
+    "2026-08-24": [],
+    "2026-08-25": [],
+    "2026-08-26": [],
+    "2026-08-27": [],
+    "2026-08-28": [],
+    "2026-08-29": [],
+    "2026-08-30": [],
+    "2026-08-31": []
+  }
+}

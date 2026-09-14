@@ -1,0 +1,343 @@
+{
+  "source": "deepseek",
+  "month": "2026-07",
+  "days": {
+    "2026-07-01": [],
+    "2026-07-02": [],
+    "2026-07-03": [],
+    "2026-07-04": [],
+    "2026-07-05": [],
+    "2026-07-06": [
+      {
+        "date": "2026-07-06",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 150,
+        "tokens_in": 712889,
+        "tokens_out": 64205,
+        "cache_read": 9417088,
+        "cost_cents": 14.3006
+      }
+    ],
+    "2026-07-07": [
+      {
+        "date": "2026-07-07",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 5,
+        "tokens_in": 41832,
+        "tokens_out": 1828,
+        "cache_read": 136320,
+        "cost_cents": 0.6696
+      }
+    ],
+    "2026-07-08": [
+      {
+        "date": "2026-07-08",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 5,
+        "tokens_in": 42101,
+        "tokens_out": 1572,
+        "cache_read": 183424,
+        "cost_cents": 0.6794
+      }
+    ],
+    "2026-07-09": [
+      {
+        "date": "2026-07-09",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 14,
+        "tokens_in": 330112,
+        "tokens_out": 5700,
+        "cache_read": 549760,
+        "cost_cents": 4.8959
+      }
+    ],
+    "2026-07-10": [
+      {
+        "date": "2026-07-10",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 4,
+        "tokens_in": 36008,
+        "tokens_out": 1409,
+        "cache_read": 121856,
+        "cost_cents": 0.5731
+      }
+    ],
+    "2026-07-11": [
+      {
+        "date": "2026-07-11",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 4,
+        "tokens_in": 36183,
+        "tokens_out": 1632,
+        "cache_read": 123776,
+        "cost_cents": 0.5823
+      }
+    ],
+    "2026-07-12": [
+      {
+        "date": "2026-07-12",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 12,
+        "tokens_in": 47402,
+        "tokens_out": 3642,
+        "cache_read": 396544,
+        "cost_cents": 0.8697
+      }
+    ],
+    "2026-07-13": [
+      {
+        "date": "2026-07-13",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 13,
+        "tokens_in": 85362,
+        "tokens_out": 5523,
+        "cache_read": 418560,
+        "cost_cents": 1.4553
+      }
+    ],
+    "2026-07-14": [
+      {
+        "date": "2026-07-14",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 3,
+        "tokens_in": 48036,
+        "tokens_out": 1650,
+        "cache_read": 82304,
+        "cost_cents": 0.7359
+      }
+    ],
+    "2026-07-15": [
+      {
+        "date": "2026-07-15",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 5,
+        "tokens_in": 36432,
+        "tokens_out": 1997,
+        "cache_read": 164608,
+        "cost_cents": 0.6072
+      }
+    ],
+    "2026-07-16": [
+      {
+        "date": "2026-07-16",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 3,
+        "tokens_in": 48222,
+        "tokens_out": 1520,
+        "cache_read": 82304,
+        "cost_cents": 0.7348
+      }
+    ],
+    "2026-07-17": [
+      {
+        "date": "2026-07-17",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 3,
+        "tokens_in": 48777,
+        "tokens_out": 1616,
+        "cache_read": 82176,
+        "cost_cents": 0.7452
+      }
+    ],
+    "2026-07-18": [
+      {
+        "date": "2026-07-18",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 5,
+        "tokens_in": 37825,
+        "tokens_out": 1498,
+        "cache_read": 167040,
+        "cost_cents": 0.6134
+      }
+    ],
+    "2026-07-19": [
+      {
+        "date": "2026-07-19",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 7,
+        "tokens_in": 56489,
+        "tokens_out": 3853,
+        "cache_read": 230144,
+        "cost_cents": 0.9555
+      }
+    ],
+    "2026-07-20": [
+      {
+        "date": "2026-07-20",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 7,
+        "tokens_in": 49535,
+        "tokens_out": 2434,
+        "cache_read": 269952,
+        "cost_cents": 0.8306
+      }
+    ],
+    "2026-07-21": [
+      {
+        "date": "2026-07-21",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 3,
+        "tokens_in": 48488,
+        "tokens_out": 1535,
+        "cache_read": 81408,
+        "cost_cents": 0.7387
+      }
+    ],
+    "2026-07-22": [
+      {
+        "date": "2026-07-22",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 4,
+        "tokens_in": 48673,
+        "tokens_out": 2166,
+        "cache_read": 135040,
+        "cost_cents": 0.7737
+      },
+      {
+        "date": "2026-07-22",
+        "source": "deepseek",
+        "model": "deepseek-v4-pro",
+        "requests": 2,
+        "tokens_in": 136,
+        "tokens_out": 149,
+        "cache_read": 0,
+        "cost_cents": 0.0181
+      }
+    ],
+    "2026-07-23": [
+      {
+        "date": "2026-07-23",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 5,
+        "tokens_in": 40005,
+        "tokens_out": 1845,
+        "cache_read": 171648,
+        "cost_cents": 0.6546
+      },
+      {
+        "date": "2026-07-23",
+        "source": "deepseek",
+        "model": "deepseek-v4-pro",
+        "requests": 2,
+        "tokens_in": 1269,
+        "tokens_out": 6122,
+        "cache_read": 0,
+        "cost_cents": 0.563
+      }
+    ],
+    "2026-07-24": [
+      {
+        "date": "2026-07-24",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 4,
+        "tokens_in": 49137,
+        "tokens_out": 1717,
+        "cache_read": 120960,
+        "cost_cents": 0.7638
+      }
+    ],
+    "2026-07-25": [
+      {
+        "date": "2026-07-25",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 4,
+        "tokens_in": 35223,
+        "tokens_out": 1436,
+        "cache_read": 122240,
+        "cost_cents": 0.5631
+      }
+    ],
+    "2026-07-26": [
+      {
+        "date": "2026-07-26",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 55,
+        "tokens_in": 101795,
+        "tokens_out": 21760,
+        "cache_read": 4115456,
+        "cost_cents": 3.1614
+      }
+    ],
+    "2026-07-27": [
+      {
+        "date": "2026-07-27",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 3,
+        "tokens_in": 48138,
+        "tokens_out": 1848,
+        "cache_read": 81792,
+        "cost_cents": 0.7426
+      }
+    ],
+    "2026-07-28": [
+      {
+        "date": "2026-07-28",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 5,
+        "tokens_in": 35411,
+        "tokens_out": 1709,
+        "cache_read": 161792,
+        "cost_cents": 0.5842
+      }
+    ],
+    "2026-07-29": [
+      {
+        "date": "2026-07-29",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 6,
+        "tokens_in": 39067,
+        "tokens_out": 2118,
+        "cache_read": 212480,
+        "cost_cents": 0.6605
+      }
+    ],
+    "2026-07-30": [
+      {
+        "date": "2026-07-30",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 4,
+        "tokens_in": 35910,
+        "tokens_out": 1434,
+        "cache_read": 122240,
+        "cost_cents": 0.5725
+      }
+    ],
+    "2026-07-31": [
+      {
+        "date": "2026-07-31",
+        "source": "deepseek",
+        "model": "deepseek-v4-flash",
+        "requests": 5,
+        "tokens_in": 38098,
+        "tokens_out": 1713,
+        "cache_read": 168576,
+        "cost_cents": 0.6235
+      }
+    ]
+  }
+}
