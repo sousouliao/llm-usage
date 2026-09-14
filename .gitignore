@@ -1,6 +1,9 @@
 # 本机采集配置：含采集起点与各源的 base_url 等本机信息，不提交
 sources.yaml
 
+# 本机密钥。launchd / 定时任务通过 update-local 脚本读入，不提交
+.env
+
 # 任何数据库副本
 *.db
 

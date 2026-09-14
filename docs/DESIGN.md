@@ -616,3 +616,26 @@ WeekView 仍然完全由 raw 决定；同一份 raw 换个时刻重跑，只有�
 同属快照元数据，不另起一节——单独占底下一行会把一句注脚抬成第五块内容。
 博客组件切周时右端不动，因为它属于这份产物，不属于某一周。
 
+---
+
+## 13. DeepSeek：控制台导出，账单折美元
+
+第三个 ADE。官方 `GET /user/balance` 只有余额，没有日期、模型、token；
+`/v1/usage` 一类路径 404。用量页背后的 `platform.deepseek.com/api/v0/usage/*`
+只认控制台 `userToken`：API Key 打是 `40003`，只带 cookie 是 `40002 Missing
+Token`。所以认证和 Cursor 同类——账号会话，不是 `sk-`。
+
+采集走月度导出 ZIP（`/api/v0/usage/export?tz=28800`），一份里同时有 amount
+（日 × 模型的请求与三类 token）和 cost（人民币账单）。`input_cache_miss` /
+`hit` / `output` 分别进 `tokens_in` / `cache_read` / `tokens_out`。DeepSeek
+磁盘 KV 缓存不收写入费，没有 write 口径，字段省略。负号是扣费，取绝对值。
+
+金额用账单，不用 `list_prices`：2026-09 起分峰谷，日合计 token 恢复不出高峰
+占比，CSV 已经含峰谷。人民币按 `config/aggregate.yaml` 的 `usd_cny` 在采集时
+折成美元分，fold / 渲染零改动。改汇率要重采，不能只靠 `--skip-collect`。
+DeepSeek 不进 `subscription_sources`。
+
+账号级，路径 `data/raw/deepseek/<月>.json`，不按机器分片。CSV 里的 `api_key`
+/ `user_id` / `wallet_type` / `api_key_name` 落盘前丢掉。不升 schema，不动
+WeekView。不复活已删的 `openai_compatible`。
+

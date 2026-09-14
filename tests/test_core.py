@@ -2,11 +2,13 @@
 
 运行：python tests/test_core.py   （只需 pyyaml，无其他第三方依赖）
 """
+import io
 import json
 import os
 import sys
 import tempfile
 import unittest
+import zipfile
 from datetime import datetime
 from pathlib import Path
 from unittest import mock
@@ -29,6 +31,7 @@ from llm_usage.collect import (  # noqa: E402
 )
 from llm_usage.collect import chatgpt as chatgpt_collector  # noqa: E402
 from llm_usage.collect import cursor as cursor_collector  # noqa: E402
+from llm_usage.collect import deepseek as deepseek_collector  # noqa: E402
 from llm_usage.contract import TOKEN_KINDS, validate_stats  # noqa: E402
 
 TZ = ZoneInfo("Asia/Shanghai")
@@ -204,29 +207,30 @@ class TestWeekWindow(unittest.TestCase):
 
 # OpenAI 公开 API 牌价（美元 / 百万 token，短上下文）。测试里用字面量当独立预期值，
 # 不从实现倒推。来源：https://developers.openai.com/api/docs/pricing
-SOL = {"input": 5.00, "cache_read": 0.50, "cache_write": 6.25, "output": 30.00}
+# gpt-5.6-sol 为促销价，至少到 2026-11-21。
+SOL = {"input": 4.00, "cache_read": 0.40, "cache_write": 5.00, "output": 20.00}
 
 
 class TestListPrices(unittest.TestCase):
-    def test_one_million_input_tokens_is_five_dollars(self):
+    def test_one_million_input_tokens_is_four_dollars(self):
         cents = pricing.cost_cents_from_tokens(
             tokens_in=1_000_000, tokens_out=0, cache_write=0, cache_read=0,
             rates=SOL)
-        self.assertAlmostEqual(cents, 500.0)
+        self.assertAlmostEqual(cents, 400.0)
 
     def test_cache_write_replaces_overlapping_input_not_adds(self):
         """写入缓存的那部分按 1.25x 计价，不再按 1x 加一遍。"""
         cents = pricing.cost_cents_from_tokens(
             tokens_in=800_000, tokens_out=0, cache_write=800_000, cache_read=0,
             rates=SOL)
-        self.assertAlmostEqual(cents, 500.0)  # 0.8M × $6.25
+        self.assertAlmostEqual(cents, 400.0)  # 0.8M × $5.00
 
     def test_four_kinds_use_their_own_rates(self):
-        # 1M 未写入的输入 $5 + 1M 写入 $6.25 + 10M 缓存读 $5 + 0.1M 输出 $3
+        # 1M 未写入的输入 $4 + 1M 写入 $5 + 10M 缓存读 $4 + 0.1M 输出 $2
         cents = pricing.cost_cents_from_tokens(
             tokens_in=2_000_000, tokens_out=100_000,
             cache_write=1_000_000, cache_read=10_000_000, rates=SOL)
-        self.assertAlmostEqual(cents, 1925.0)
+        self.assertAlmostEqual(cents, 1500.0)
 
     def test_does_not_overwrite_vendor_cost(self):
         daily = [row("2026-08-10", "gpt-5.6-sol", source="cursor",
@@ -240,7 +244,7 @@ class TestListPrices(unittest.TestCase):
                      **tokens(i=1_000_000))]
         filled = pricing.fill_list_prices(
             daily, {"gpt-5.6-sol": SOL}, {})
-        self.assertAlmostEqual(filled[0]["cost_cents"], 500.0)
+        self.assertAlmostEqual(filled[0]["cost_cents"], 400.0)
 
     def test_price_alias_does_not_rename_the_model(self):
         daily = [row("2026-08-10", "codex-auto-review", source="codex",
@@ -249,7 +253,7 @@ class TestListPrices(unittest.TestCase):
             daily, {"gpt-5.6-sol": SOL},
             {"codex-auto-review": "gpt-5.6-sol"})
         self.assertEqual(filled[0]["model"], "codex-auto-review")
-        self.assertAlmostEqual(filled[0]["cost_cents"], 500.0)
+        self.assertAlmostEqual(filled[0]["cost_cents"], 400.0)
 
     def test_unknown_model_stays_unpriced(self):
         daily = [row("2026-08-10", "unknown", source="codex", **tokens(i=10))]
@@ -265,10 +269,10 @@ class TestListPrices(unittest.TestCase):
                 **tokens(i=1_000_000)),
         ], {"gpt-5.6-sol": SOL}, {})
         view = weekview.build_week_view(daily, WEEK, subscription_sources=["codex"])
-        self.assertEqual(view["cost_display"], "$6.00")
+        self.assertEqual(view["cost_display"], "$5.00")
         by_label = {m["label"]: m["cost_display"] for m in view["models"]}
         self.assertEqual(by_label["opus"], "$1.00")
-        self.assertEqual(by_label["gpt-5.6-sol"], "$5.00")
+        self.assertEqual(by_label["gpt-5.6-sol"], "$4.00")
 
     def test_build_stats_uses_committed_sol_list_price(self):
         daily = fold.fold_events([
@@ -276,86 +280,8 @@ class TestListPrices(unittest.TestCase):
                 **tokens(i=1_000_000)),
         ])
         stats = fold.build_stats(daily)
-        self.assertEqual(stats["weeks"][0]["view"]["cost_display"], "$5.00")
-        self.assertAlmostEqual(stats["daily"][0]["cost_cents"], 500.0)
-
-
-# OpenAI 公开 API 牌价（美元 / 百万 token，短上下文）。测试里用字面量当独立预期值，
-# 不从实现倒推。来源：https://developers.openai.com/api/docs/pricing
-SOL = {"input": 5.00, "cache_read": 0.50, "cache_write": 6.25, "output": 30.00}
-
-
-class TestListPrices(unittest.TestCase):
-    def test_one_million_input_tokens_is_five_dollars(self):
-        cents = pricing.cost_cents_from_tokens(
-            tokens_in=1_000_000, tokens_out=0, cache_write=0, cache_read=0,
-            rates=SOL)
-        self.assertAlmostEqual(cents, 500.0)
-
-    def test_cache_write_replaces_overlapping_input_not_adds(self):
-        """写入缓存的那部分按 1.25x 计价，不再按 1x 加一遍。"""
-        cents = pricing.cost_cents_from_tokens(
-            tokens_in=800_000, tokens_out=0, cache_write=800_000, cache_read=0,
-            rates=SOL)
-        self.assertAlmostEqual(cents, 500.0)  # 0.8M × $6.25
-
-    def test_four_kinds_use_their_own_rates(self):
-        # 1M 未写入的输入 $5 + 1M 写入 $6.25 + 10M 缓存读 $5 + 0.1M 输出 $3
-        cents = pricing.cost_cents_from_tokens(
-            tokens_in=2_000_000, tokens_out=100_000,
-            cache_write=1_000_000, cache_read=10_000_000, rates=SOL)
-        self.assertAlmostEqual(cents, 1925.0)
-
-    def test_does_not_overwrite_vendor_cost(self):
-        daily = [row("2026-08-10", "gpt-5.6-sol", source="cursor",
-                     cost_cents=12.0, **tokens(i=1_000_000))]
-        filled = pricing.fill_list_prices(
-            daily, {"gpt-5.6-sol": SOL}, {})
-        self.assertAlmostEqual(filled[0]["cost_cents"], 12.0)
-
-    def test_fills_missing_cost_from_the_price_table(self):
-        daily = [row("2026-08-10", "gpt-5.6-sol", source="codex",
-                     **tokens(i=1_000_000))]
-        filled = pricing.fill_list_prices(
-            daily, {"gpt-5.6-sol": SOL}, {})
-        self.assertAlmostEqual(filled[0]["cost_cents"], 500.0)
-
-    def test_price_alias_does_not_rename_the_model(self):
-        daily = [row("2026-08-10", "codex-auto-review", source="codex",
-                     **tokens(i=1_000_000))]
-        filled = pricing.fill_list_prices(
-            daily, {"gpt-5.6-sol": SOL},
-            {"codex-auto-review": "gpt-5.6-sol"})
-        self.assertEqual(filled[0]["model"], "codex-auto-review")
-        self.assertAlmostEqual(filled[0]["cost_cents"], 500.0)
-
-    def test_unknown_model_stays_unpriced(self):
-        daily = [row("2026-08-10", "unknown", source="codex", **tokens(i=10))]
-        filled = pricing.fill_list_prices(daily, {"gpt-5.6-sol": SOL}, {})
-        self.assertNotIn("cost_cents", filled[0])
-
-    def test_mixed_week_hero_is_a_single_dollar_amount(self):
-        """有官方折算的和按牌价补上的加在同一个数字里，不再拼 Subscription。"""
-        daily = pricing.fill_list_prices([
-            row("2026-08-10", "opus", source="cursor", requests=1,
-                cost_cents=100.0, **tokens(i=10)),
-            row("2026-08-10", "gpt-5.6-sol", source="codex", requests=1,
-                **tokens(i=1_000_000)),
-        ], {"gpt-5.6-sol": SOL}, {})
-        view = weekview.build_week_view(daily, WEEK, subscription_sources=["codex"])
-        self.assertEqual(view["cost_display"], "$6.00")
-        by_label = {m["label"]: m["cost_display"] for m in view["models"]}
-        self.assertEqual(by_label["opus"], "$1.00")
-        self.assertEqual(by_label["gpt-5.6-sol"], "$5.00")
-
-    def test_build_stats_uses_committed_sol_list_price(self):
-        daily = fold.fold_events([
-            row("2026-08-10", "gpt-5.6-sol", source="codex",
-                **tokens(i=1_000_000)),
-        ])
-        stats = fold.build_stats(daily)
-        self.assertEqual(stats["weeks"][0]["view"]["cost_display"], "$5.00")
-        self.assertAlmostEqual(stats["daily"][0]["cost_cents"], 500.0)
+        self.assertEqual(stats["weeks"][0]["view"]["cost_display"], "$4.00")
+        self.assertAlmostEqual(stats["daily"][0]["cost_cents"], 400.0)
 
 
 class TestFormatters(unittest.TestCase):
@@ -698,6 +624,129 @@ class TestChatgptCollector(unittest.TestCase):
             )
 
 
+class TestDeepseekCollector(unittest.TestCase):
+    USD_CNY = 7.2
+
+    def _zip(self, amount: str, cost: str, *,
+             amount_name="amount-2026-9.csv",
+             cost_name="cost-2026-9.csv") -> bytes:
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w") as zf:
+            zf.writestr(f"usage_data_2026_9/{amount_name}", amount)
+            zf.writestr(f"usage_data_2026_9/{cost_name}", cost)
+        return buf.getvalue()
+
+    def _legacy_amount(self) -> str:
+        return (
+            "user_id,utc_date,model,api_key_name,api_key,type,price,amount\n"
+            "uuid-1,2026-09-11,deepseek-flash,work,sk-SECRETKEY,request_count,,100\n"
+            "uuid-1,2026-09-11,deepseek-flash,work,sk-SECRETKEY,output_tokens,4,10\n"
+            "uuid-1,2026-09-11,deepseek-flash,work,sk-SECRETKEY,"
+            "input_cache_miss_tokens,1,20\n"
+            "uuid-1,2026-09-11,deepseek-flash,work,sk-SECRETKEY,"
+            "input_cache_hit_tokens,0.02,400\n"
+            "uuid-1,2026-09-11,deepseek-flash,home,sk-OTHERKEY,request_count,,50\n"
+            "uuid-1,2026-09-11,deepseek-flash,home,sk-OTHERKEY,output_tokens,4,5\n"
+        )
+
+    def _legacy_cost(self) -> str:
+        return (
+            "user_id,utc_date,model,wallet_type,cost,currency\n"
+            "uuid-1,2026-09-11,deepseek-flash,Paid,-1.44,CNY\n"
+            "uuid-1,2026-09-11,deepseek-flash,Paid,-0.72,CNY\n"
+        )
+
+    def test_legacy_headers_map_tokens_and_abs_cost(self):
+        amount = deepseek_collector.parse_csv(self._legacy_amount())
+        cost = deepseek_collector.parse_csv(self._legacy_cost())
+        events = deepseek_collector.to_events(
+            amount, cost, usd_cny=self.USD_CNY)
+        self.assertEqual(len(events), 1)
+        e = events[0]
+        self.assertEqual(e.source, "deepseek")
+        self.assertEqual(e.model, "deepseek-flash")
+        self.assertEqual(e.date, "2026-09-11")
+        self.assertEqual(e.requests, 150)
+        self.assertEqual(e.tokens_in, 20)
+        self.assertEqual(e.tokens_out, 15)
+        self.assertEqual(e.cache_read, 400)
+        self.assertIsNone(e.cache_write)
+        self.assertAlmostEqual(e.cost_cents, 30.0)
+
+    def test_iso_headers_use_beijing_date_part(self):
+        amount = deepseek_collector.parse_csv(
+            "start_time_iso,end_time_iso,model,api_key_name,api_key,type,"
+            "price,amount\n"
+            "2026-09-10T00:00:00+08:00,2026-09-11T00:00:00+08:00,"
+            "deepseek-flash,work,sk-SECRET,request_count,,130\n"
+            "2026-09-10T00:00:00+08:00,2026-09-11T00:00:00+08:00,"
+            "deepseek-flash,work,sk-SECRET,output_tokens,4,8\n"
+            "2026-09-10T00:00:00+08:00,2026-09-11T00:00:00+08:00,"
+            "deepseek-flash,work,sk-SECRET,input_cache_miss_tokens,1,3\n"
+            "2026-09-10T00:00:00+08:00,2026-09-11T00:00:00+08:00,"
+            "deepseek-flash,work,sk-SECRET,input_cache_hit_tokens,0.02,90\n"
+        )
+        cost = deepseek_collector.parse_csv(
+            "start_time_iso,end_time_iso,model,wallet_type,cost,currency\n"
+            "2026-09-10T00:00:00+08:00,2026-09-11T00:00:00+08:00,"
+            "deepseek-flash,Paid,-7.2,CNY\n"
+        )
+        e = deepseek_collector.to_events(amount, cost, usd_cny=self.USD_CNY)[0]
+        self.assertEqual(e.date, "2026-09-10")
+        self.assertEqual(e.requests, 130)
+        self.assertEqual(e.tokens_in, 3)
+        self.assertEqual(e.tokens_out, 8)
+        self.assertEqual(e.cache_read, 90)
+        self.assertAlmostEqual(e.cost_cents, 100.0)
+
+    def test_compact_utc_date(self):
+        amount = deepseek_collector.parse_csv(
+            "utc_date,model,type,amount\n"
+            "20260909,deepseek-v4-flash,request_count,1\n"
+            "20260909,deepseek-v4-flash,output_tokens,970\n"
+            "20260909,deepseek-v4-flash,input_cache_miss_tokens,390\n"
+        )
+        e = deepseek_collector.to_events(amount, [], usd_cny=self.USD_CNY)[0]
+        self.assertEqual(e.date, "2026-09-09")
+        self.assertEqual(e.tokens_out, 970)
+        self.assertEqual(e.tokens_in, 390)
+        self.assertIsNone(e.cost_cents)
+
+    def test_empty_input(self):
+        self.assertEqual(
+            deepseek_collector.to_events([], [], usd_cny=self.USD_CNY), [])
+
+    def test_extract_csvs_and_events_drop_secrets(self):
+        blob = self._zip(self._legacy_amount(), self._legacy_cost())
+        amount, cost = deepseek_collector.extract_csvs(blob)
+        dumped = json.dumps(amount) + json.dumps(cost)
+        self.assertNotIn("sk-", dumped)
+        self.assertNotIn("SECRET", dumped)
+        self.assertNotIn("user_id", dumped)
+        events = deepseek_collector.to_events(
+            amount, cost, usd_cny=self.USD_CNY)
+        self.assertNotIn("sk-", json.dumps(events[0].to_dict()))
+
+    def test_month_windows_cover_partial_months(self):
+        windows = deepseek_collector._month_windows(
+            "2026-08-15", "2026-09-14", TZ)
+        self.assertEqual(len(windows), 2)
+        start0, end0 = windows[0]
+        start1, end1 = windows[1]
+        self.assertEqual(
+            datetime.fromtimestamp(start0, TZ).strftime("%Y-%m-%d"),
+            "2026-08-15")
+        self.assertEqual(
+            datetime.fromtimestamp(end0, TZ).strftime("%Y-%m-%d"),
+            "2026-09-01")
+        self.assertEqual(
+            datetime.fromtimestamp(start1, TZ).strftime("%Y-%m-%d"),
+            "2026-09-01")
+        self.assertEqual(
+            datetime.fromtimestamp(end1, TZ).strftime("%Y-%m-%d"),
+            "2026-09-15")
+
+
 class TestCollectSeam(unittest.TestCase):
     def test_cursor_collect_uses_injected_fetch(self):
         ctx = CollectContext(tz=TZ, root=Path("."), since="2026-08-01")
@@ -708,6 +757,39 @@ class TestCollectSeam(unittest.TestCase):
         self.assertEqual(len(result.events), 1)
         self.assertEqual(result.events[0].requests, 2)
         self.assertIn("2026-08-17", result.days)
+
+    def test_deepseek_collect_uses_injected_fetch(self):
+        ctx = CollectContext(tz=TZ, root=Path("."), since="2026-09-01",
+                             as_of="2026-09-14")
+        ds = TestDeepseekCollector()
+        blob = ds._zip(ds._legacy_amount(), ds._legacy_cost())
+        result = deepseek_collector.collect(
+            ctx, {"name": "deepseek"},
+            fetch=lambda start, end: blob, usd_cny=ds.USD_CNY)
+        self.assertFalse(result.machine_shard)
+        self.assertEqual(result.events[0].source, "deepseek")
+        self.assertEqual(result.events[0].requests, 150)
+        self.assertIn("2026-09-11", result.days)
+
+    def test_persist_deepseek_account_level_writes_under_source(self):
+        ctx = CollectContext(tz=TZ, root=Path("."), since="2026-09-01",
+                             as_of="2026-09-14")
+        ds = TestDeepseekCollector()
+        blob = ds._zip(ds._legacy_amount(), ds._legacy_cost())
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx.root = Path(tmp)
+            result = deepseek_collector.collect(
+                ctx, {"name": "deepseek"},
+                fetch=lambda start, end: blob, usd_cny=ds.USD_CNY)
+            persist(ctx, result)
+            paths = sorted(p.relative_to(ctx.root).as_posix()
+                           for p in ctx.root.rglob("*.json"))
+            self.assertEqual(paths, ["data/raw/deepseek/2026-09.json"])
+            text = (ctx.root / "data" / "raw" / "deepseek" / "2026-09.json"
+                    ).read_text(encoding="utf-8")
+            self.assertNotIn("sk-", text)
+            self.assertNotIn("user_id", text)
+            self.assertNotIn("SECRET", text)
 
     def test_chatgpt_collect_uses_injected_rollouts(self):
         ctx = CollectContext(tz=TZ, root=Path("."), since="2026-08-01")

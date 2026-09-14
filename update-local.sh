@@ -12,6 +12,8 @@
 #   - Python 3.12+，已装依赖（python3 -m venv .venv && .venv/bin/pip install -r requirements.txt）
 #   - 已从 config/sources.example.yaml 复制出 sources.yaml
 #   - 本机登录着 Cursor（或设置了 CURSOR_SESSION_TOKEN）
+#   - DeepSeek：把 DEEPSEEK_PLATFORM_TOKEN 写在仓库根的 .env（已 gitignore）。
+#     launchd 不会带上交互式 shell 的环境变量，所以不能只 export 在 zshrc 里。
 #
 # 每次都重采 [起点, 今天] 全量并覆盖写回，所以采集幂等：漏跑几天补跑一次即可，
 # 不会产生重复记录，也不会因为漏跑而永久丢数据（用量历史在 Cursor 账号侧）。
@@ -23,6 +25,14 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:${PATH:-}"
 export GIT_TERMINAL_PROMPT=0
 export PYTHONIOENCODING=utf-8
 export PYTHONUTF8=1
+
+# 本机密钥（DeepSeek userToken 等）。launchd 跑这个脚本时读这里，不写进 plist。
+if [ -f .env ]; then
+  set -a
+  # shellcheck disable=SC1091
+  . ./.env
+  set +a
+fi
 
 if [ -x .venv/bin/python ]; then
   PY=.venv/bin/python

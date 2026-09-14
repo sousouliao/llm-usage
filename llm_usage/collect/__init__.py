@@ -17,12 +17,12 @@ token」，0 是「报了，但确实是零」。展示层据此决定显示数�
 
 == 为什么 Event 没有 machine 字段 ==
 
-Cursor 的用量来自账号级接口，两台机器采到的是同一份数据，按机器分片会导致重复
-计数。所以账号级源的原始数据只按源和月份分片。
+Cursor 和 DeepSeek 的用量来自账号级接口，两台机器采到的是同一份数据，按机器分片
+会导致重复计数。所以账号级源的原始数据只按源和月份分片。
 
 Codex 这类源相反：会话日志只存在于产生它的那台机器。它们在文件系统上按
 ``data/raw/<source>/<machine>/<月>.json`` 分片，避免两台机器互相覆盖；但
-``Event.source`` 仍然是 ADE 名（``cursor`` / ``codex``），machine 不进公开契约。展示与
+``Event.source`` 仍然是 ADE 名（``cursor`` / ``codex`` / ``deepseek``），machine 不进公开契约。展示与
 聚合都看不见机器。
 """
 from __future__ import annotations
@@ -56,7 +56,7 @@ class Event:
     """
 
     date: str                        # YYYY-MM-DD，按配置时区计算
-    source: str                      # ADE 名，如 cursor / codex
+    source: str                      # ADE 名，如 cursor / codex / deepseek
     model: str
     requests: int = 0
     tokens_in: int | None = None
@@ -234,9 +234,10 @@ def persist(ctx: CollectContext, result: CollectResult) -> int:
     return len(result.events)
 
 
-from . import chatgpt, cursor  # noqa: E402
+from . import chatgpt, cursor, deepseek  # noqa: E402
 
 COLLECTORS = {
     "cursor": cursor,
     "chatgpt": chatgpt,
+    "deepseek": deepseek,
 }

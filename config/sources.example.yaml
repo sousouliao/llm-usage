@@ -29,3 +29,11 @@ sources:
   - name: chatgpt
     type: chatgpt
     # codex_home: ~/.codex
+
+  # DeepSeek：走控制台月度导出，拿日 × 模型的 token 与人民币账单。
+  # 认证是 platform.deepseek.com 的 userToken，不是 sk- API Key。
+  # 登录用量页后，在 Console 执行 JSON.parse(localStorage.getItem('userToken')).value，
+  # 设为环境变量 DEEPSEEK_PLATFORM_TOKEN。
+  - name: deepseek
+    type: deepseek
+    # token_env: DEEPSEEK_PLATFORM_TOKEN

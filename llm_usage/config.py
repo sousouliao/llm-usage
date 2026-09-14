@@ -3,9 +3,10 @@
 ``sources.yaml``（不提交）：本机专属信息——机器名、各源的 base_url 与 key 环境变量名。
 只有采集阶段需要，只在本机存在。
 
-``config/aggregate.yaml``（提交）：时区、模型别名、订阅源与 API 牌价。聚合与渲染
-阶段需要，且不含任何密钥，所以 CI 拿着仓库就能重新生成 stats.json 和 SVG，不必
-配置 secret。
+``config/aggregate.yaml``（提交）：时区、模型别名、订阅源、API 牌价、人民币汇率。
+聚合与渲染阶段需要，且不含任何密钥，所以 CI 拿着仓库就能重新生成 stats.json
+和 SVG，不必配置 secret。DeepSeek 采集也读这里的 ``usd_cny``，把人民币账单折成
+美元分。
 
 把两者混在一份 gitignore 掉的文件里，CI 就永远拿不到别名表；混在提交的文件里，
 base_url 之类的信息又会进公开仓库。
@@ -22,6 +23,7 @@ SOURCES_PATH = REPO_ROOT / "sources.yaml"
 AGGREGATE_PATH = REPO_ROOT / "config" / "aggregate.yaml"
 
 DEFAULT_TZ = "Asia/Shanghai"
+DEFAULT_USD_CNY = 7.2
 
 
 def load_aggregate_config() -> dict:
@@ -29,13 +31,14 @@ def load_aggregate_config() -> dict:
     if not AGGREGATE_PATH.exists():
         return {"timezone": DEFAULT_TZ, "model_aliases": {},
                 "subscription_sources": [], "list_prices": {},
-                "price_aliases": {}}
+                "price_aliases": {}, "usd_cny": DEFAULT_USD_CNY}
     cfg = yaml.safe_load(AGGREGATE_PATH.read_text(encoding="utf-8")) or {}
     cfg.setdefault("timezone", DEFAULT_TZ)
     cfg.setdefault("model_aliases", {})
     cfg.setdefault("subscription_sources", [])
     cfg.setdefault("list_prices", {})
     cfg.setdefault("price_aliases", {})
+    cfg.setdefault("usd_cny", DEFAULT_USD_CNY)
     return cfg
 
 
@@ -79,6 +82,14 @@ def price_aliases() -> dict[str, str]:
     """计价别名。只影响牌价查找，不改展示用的模型名。"""
     raw = load_aggregate_config().get("price_aliases") or {}
     return {str(k): str(v) for k, v in raw.items()}
+
+
+def usd_cny() -> float:
+    """1 美元兑多少人民币。DeepSeek 账单是 CNY，采集时折成 cost_cents。"""
+    value = float(load_aggregate_config().get("usd_cny", DEFAULT_USD_CNY))
+    if value <= 0:
+        raise SystemExit("usd_cny 必须为正数")
+    return value
 
 
 def normalize_model(model: str, aliases: dict[str, str] | None = None) -> str:

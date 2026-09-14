@@ -117,6 +117,7 @@ echo "Installed launch agent '$LABEL' (hourly at minute 0)."
 echo "Logs: $LOG"
 echo "Inspect: launchctl print $TARGET"
 echo "Run now: launchctl kickstart -k $TARGET"
+echo "Secrets (DEEPSEEK_PLATFORM_TOKEN, …) belong in $ROOT/.env, not this plist."
 
 if [ "$RUN_NOW" -eq 1 ]; then
   launchctl kickstart -k "$TARGET"

@@ -18,6 +18,25 @@ Set-Location -LiteralPath $PSScriptRoot
 $env:GIT_TERMINAL_PROMPT = "0"
 $env:PYTHONIOENCODING = "utf-8"
 $env:PYTHONUTF8 = "1"
+
+# Local secrets (DeepSeek userToken, etc.). The scheduled task does not inherit
+# an interactive shell, so they live in .env rather than the user profile.
+$envFile = Join-Path $PSScriptRoot ".env"
+if (Test-Path -LiteralPath $envFile) {
+    Get-Content -LiteralPath $envFile | ForEach-Object {
+        $line = $_.Trim()
+        if (-not $line -or $line.StartsWith("#")) { return }
+        $eq = $line.IndexOf("=")
+        if ($eq -lt 1) { return }
+        $name = $line.Substring(0, $eq).Trim()
+        $value = $line.Substring($eq + 1).Trim()
+        if (($value.StartsWith("'") -and $value.EndsWith("'")) -or
+            ($value.StartsWith('"') -and $value.EndsWith('"'))) {
+            $value = $value.Substring(1, $value.Length - 2)
+        }
+        Set-Item -Path "Env:$name" -Value $value
+    }
+}
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     foreach ($gitDir in @(
         "C:\Program Files\Git\cmd",

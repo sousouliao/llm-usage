@@ -5,6 +5,11 @@
 # 归到不同天。
 timezone: Asia/Shanghai
 
+# DeepSeek 平台账单是人民币。采集时按这个汇率折成美元分写入 cost_cents，
+# 好和 Cursor / Codex 的 $ 加在同一张卡片上。1 USD = 7.2 CNY。
+# 改了这个值需要重采 DeepSeek，不能只靠 --skip-collect。
+usd_cny: 7.2
+
 # 订阅制 ADE：raw 里没有官方 cost_cents。fold 时按下面的 API 牌价补折算成本；
 # 对不上牌价的模型，金额列仍显示 Subscription。
 subscription_sources:
@@ -12,14 +17,20 @@ subscription_sources:
 
 # 公开 API 牌价，美元 / 百万 token，短上下文。用来给没有官方 totalCents 的行
 # 补 model cost。这是 API-equivalent，不是账单，也不是 ChatGPT credits。
-# 来源：https://developers.openai.com/api/docs/pricing （2026-08）
+# 来源：https://developers.openai.com/api/docs/pricing
 # 长上下文（单次输入 >272K）的加价无法从日聚合恢复，所以不用。
 list_prices:
+  gpt-6-astra:
+    input: 10.00
+    cache_read: 1.00
+    cache_write: 12.50
+    output: 50.00
   gpt-5.6-sol:
-    input: 5.00
-    cache_read: 0.50
-    cache_write: 6.25
-    output: 30.00
+    # 促销价，官方写至少到 2026-11-21。过期后核定价页。
+    input: 4.00
+    cache_read: 0.40
+    cache_write: 5.00
+    output: 20.00
   gpt-5.6-terra:
     input: 2.00
     cache_read: 0.20

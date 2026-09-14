@@ -1,8 +1,8 @@
 # LLM usage
 
 > Automatic weekly token usage and model cost from my AI coding tools. Data is
-> collected from Cursor's official API and local Codex session logs, then GitHub
-> Actions rebuilds the card below.
+> collected from Cursor's official API, local Codex session logs, and the
+> DeepSeek platform export, then GitHub Actions rebuilds the card below.
 
 <!-- WIDGET_START -->
 <div>
@@ -16,35 +16,35 @@ This page only shows **this week**. To browse the last few weeks, use the blog
 
 ## About "model cost"
 
-The amount on the card is **token usage priced at each model's unit rate**. It
-shows how much compute I actually used.
+The amount on the card is in **USD**. Cursor supplies a per-request figure
+(`tokenUsage.totalCents`). Codex does not, so those rows are priced at OpenAI's
+published API rates — an API-equivalent figure, not a ChatGPT bill. DeepSeek
+supplies a platform invoice in CNY; that amount is converted to USD cents at
+collect time (`usd_cny` in `config/aggregate.yaml`).
 
-Cursor supplies that number per request (`tokenUsage.totalCents`). Codex does
-not, so those rows are priced at OpenAI's published API rates for the same
-models — an API-equivalent figure, not a ChatGPT bill or credit balance.
-
-It is **not a bill**: it excludes plan fees, discounts, and platform markup, and
-it does not care who pays. Included-in-plan usage still counts, because this
-project measures consumption, not invoices. The billed amount and markup fields
-from the API never enter this repository.
+For Cursor and Codex it is **not a bill**: it excludes plan fees, discounts,
+and platform markup, and it does not care who pays. Included-in-plan usage still
+counts, because this project measures consumption, not invoices. Cursor's billed
+amount and markup fields never enter this repository.
 
 ## How it works
 
 ```
-Cursor official API / Codex local logs → data/raw/<source>/…   (raw events, collected locally)
+Cursor official API / Codex local logs / DeepSeek platform export
+                → data/raw/<source>/…        (raw events, collected locally)
                 → data/stats.json            (CI fold output, with four WeekViews)
                 → assets/*.svg + widget      (both renderers only consume weeks[].view)
 ```
 
-Collection needs a local Cursor login and the local Codex session directory
-(`~/.codex`), so it only runs on the machines that produced the usage. Fold and
-render are pure reductions over files in the repo, so CI can regenerate artifacts
-without either machine touching them.
+Collection needs a local Cursor login, the local Codex session directory
+(`~/.codex`), and a DeepSeek console `userToken`. Fold and render are pure
+reductions over files in the repo, so CI can regenerate artifacts without any of
+those credentials.
 
 **Collection is idempotent**: each run re-fetches `[since, today]` and overwrites.
 Running once or ten times yields the same files. Miss a few days, run again — no
-duplicates. Cursor keeps the usage history on the account, so a missed local run
-does not lose data.
+duplicates. Cursor and DeepSeek keep usage history on the account, so a missed
+local run does not lose data.
 
 **Artifacts are determined by data, not by the clock.** "This week" is the ISO
 week of the most recent day that has usage, not the runtime calendar. The same
@@ -52,9 +52,9 @@ raw files always produce the same artifacts.
 
 ## Two machines
 
-Cursor usage comes from an account-level API, so both machines collect the same
-payload. Codex sessions exist only on the machine that produced them, so both the
-work Mac and the home Windows box need to collect; files are sharded as
+Cursor and DeepSeek usage come from account-level APIs, so both machines collect
+the same payload. Codex sessions exist only on the machine that produced them, so
+both the work Mac and the home Windows box need to collect; files are sharded as
 `data/raw/<source>/<machine>/` and do not overwrite each other.
 
 ## What is collected, and what is not
@@ -63,6 +63,7 @@ work Mac and the home Windows box need to collect; files are sharded as
 | --- | --- | --- | --- |
 | `cursor` | input / output / cache write / cache read | yes | Official dashboard API, back to account creation |
 | `codex` | input / output / cache write / cache read | API list price | Codex local session logs. ChatGPT Plus and relays both belong to this ADE; cost is filled at fold time from published OpenAI rates |
+| `deepseek` | input / output / cache read (no write) | platform billed CNY → USD | Console monthly export. Account-level. Peak/off-peak is already in the invoice; `cache_write` is omitted, not zero |
 
 When a source cannot report a metric, the field is **omitted**, not filled with 0.
 The view then shows a dash. "Does not report tokens" and "reported zero" are
@@ -105,6 +106,11 @@ Collection reads credentials from the local Cursor login by default. If Cursor i
 signed in, nothing else is needed. On a new machine, set
 `CURSOR_SESSION_TOKEN=<sub>::<jwt>` (copy the `WorkosCursorSessionToken` cookie
 from a dashboard request).
+
+DeepSeek needs `DEEPSEEK_PLATFORM_TOKEN`: sign in at `platform.deepseek.com`,
+then copy `userToken` from `localStorage`. This is the console session, not an
+`sk-` API Key. Put it in a repo-root `.env` (gitignored) so the hourly launchd
+job and `update-local.sh` can see it; a `zshrc` export is not inherited.
 
 Common flags:
 
@@ -159,7 +165,7 @@ Logs go to `%LOCALAPPDATA%\llm-usage\update.log`.
 | File | Committed | Contents |
 | --- | --- | --- |
 | `sources.yaml` | no | Collection start, each source's `base_url` and credential env var names |
-| `config/aggregate.yaml` | yes | Timezone and model alias table |
+| `config/aggregate.yaml` | yes | Timezone, model alias table, and `usd_cny` |
 
 They are split because the readers differ: collection runs only locally, while CI
 needs the timezone and aliases to fold, and must not receive any credentials.
