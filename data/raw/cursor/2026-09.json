@@ -879,6 +879,17 @@
       {
         "date": "2026-09-14",
         "source": "cursor",
+        "model": "cursor-grok-4.6-high",
+        "requests": 1,
+        "tokens_in": 90640,
+        "tokens_out": 799,
+        "cache_write": 0,
+        "cache_read": 173696,
+        "cost_cents": 27.2922
+      },
+      {
+        "date": "2026-09-14",
+        "source": "cursor",
         "model": "gemini-3.8-flash-high",
         "requests": 6,
         "tokens_in": 1065519,
