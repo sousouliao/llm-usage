@@ -869,23 +869,23 @@
         "date": "2026-09-14",
         "source": "cursor",
         "model": "claude-opus-5-thinking-medium",
-        "requests": 6,
-        "tokens_in": 168118,
-        "tokens_out": 85862,
-        "cache_write": 735728,
-        "cache_read": 9501857,
-        "cost_cents": 1133.9651
+        "requests": 11,
+        "tokens_in": 168230,
+        "tokens_out": 166232,
+        "cache_write": 875950,
+        "cache_read": 21569703,
+        "cost_cents": 2025.9771
       },
       {
         "date": "2026-09-14",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 5,
-        "tokens_in": 221708,
-        "tokens_out": 16220,
+        "requests": 13,
+        "tokens_in": 1025988,
+        "tokens_out": 54766,
         "cache_write": 0,
-        "cache_read": 2515200,
-        "cost_cents": 179.8336
+        "cache_read": 8942464,
+        "cost_cents": 685.1804
       },
       {
         "date": "2026-09-14",
