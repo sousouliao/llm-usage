@@ -891,12 +891,12 @@
         "date": "2026-09-14",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 48,
-        "tokens_in": 4128040,
-        "tokens_out": 304976,
+        "requests": 57,
+        "tokens_in": 4435610,
+        "tokens_out": 378231,
         "cache_write": 0,
-        "cache_read": 47232768,
-        "cost_cents": 3370.232
+        "cache_read": 60863616,
+        "cost_cents": 4157.2414
       },
       {
         "date": "2026-09-14",
