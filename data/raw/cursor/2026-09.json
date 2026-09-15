@@ -948,12 +948,12 @@
         "date": "2026-09-15",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 26,
-        "tokens_in": 2229106,
-        "tokens_out": 110866,
+        "requests": 32,
+        "tokens_in": 2707195,
+        "tokens_out": 139250,
         "cache_write": 0,
-        "cache_read": 21500709,
-        "cost_cents": 1586.5845
+        "cache_read": 23966673,
+        "cost_cents": 1822.3302
       },
       {
         "date": "2026-09-15",

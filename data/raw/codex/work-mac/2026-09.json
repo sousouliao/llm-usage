@@ -259,11 +259,11 @@
         "date": "2026-09-14",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 55,
-        "tokens_in": 575689,
-        "tokens_out": 7865,
+        "requests": 30,
+        "tokens_in": 317990,
+        "tokens_out": 4454,
         "cache_write": 0,
-        "cache_read": 5440768
+        "cache_read": 2186752
       },
       {
         "date": "2026-09-14",
@@ -286,6 +286,27 @@
         "cache_read": 4458368
       }
     ],
-    "2026-09-15": []
+    "2026-09-15": [
+      {
+        "date": "2026-09-15",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 10,
+        "tokens_in": 186015,
+        "tokens_out": 1988,
+        "cache_write": 0,
+        "cache_read": 480768
+      },
+      {
+        "date": "2026-09-15",
+        "source": "codex",
+        "model": "gpt-5.6-sol",
+        "requests": 28,
+        "tokens_in": 210247,
+        "tokens_out": 11922,
+        "cache_write": 0,
+        "cache_read": 5279104
+      }
+    ]
   }
 }
