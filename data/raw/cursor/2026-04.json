@@ -522,12 +522,12 @@
         "date": "2026-04-27",
         "source": "cursor",
         "model": "claude-opus-4-7-thinking-medium",
-        "requests": 23,
-        "tokens_in": 386,
-        "tokens_out": 200409,
-        "cache_write": 2114133,
-        "cache_read": 49413509,
-        "cost_cents": 4293.224
+        "requests": 24,
+        "tokens_in": 395,
+        "tokens_out": 201291,
+        "cache_write": 2161921,
+        "cache_read": 49549991,
+        "cost_cents": 4332.1251
       },
       {
         "date": "2026-04-27",
