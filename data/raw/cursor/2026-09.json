@@ -1073,12 +1073,23 @@
         "date": "2026-09-17",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 13,
-        "tokens_in": 878096,
-        "tokens_out": 92789,
+        "requests": 17,
+        "tokens_in": 1152164,
+        "tokens_out": 119264,
         "cache_write": 0,
-        "cache_read": 14762496,
-        "cost_cents": 969.4174
+        "cache_read": 19624960,
+        "cost_cents": 1283.2392
+      },
+      {
+        "date": "2026-09-17",
+        "source": "cursor",
+        "model": "gemini-3.8-flash-medium",
+        "requests": 2,
+        "tokens_in": 811758,
+        "tokens_out": 9022,
+        "cache_write": 0,
+        "cache_read": 4210223,
+        "cost_cents": 95.6162
       },
       {
         "date": "2026-09-17",
