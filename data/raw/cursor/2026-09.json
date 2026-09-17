@@ -1073,12 +1073,12 @@
         "date": "2026-09-17",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 11,
-        "tokens_in": 872835,
-        "tokens_out": 91964,
+        "requests": 13,
+        "tokens_in": 878096,
+        "tokens_out": 92789,
         "cache_write": 0,
-        "cache_read": 14278784,
-        "cost_cents": 943.6846
+        "cache_read": 14762496,
+        "cost_cents": 969.4174
       },
       {
         "date": "2026-09-17",
