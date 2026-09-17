@@ -1005,12 +1005,12 @@
         "date": "2026-09-16",
         "source": "cursor",
         "model": "claude-opus-5-thinking-medium",
-        "requests": 7,
-        "tokens_in": 149057,
-        "tokens_out": 124886,
-        "cache_write": 1031684,
-        "cache_read": 19329398,
-        "cost_cents": 1921.254
+        "requests": 10,
+        "tokens_in": 149087,
+        "tokens_out": 135236,
+        "cache_write": 1050609,
+        "cache_read": 22478690,
+        "cost_cents": 2116.4368
       },
       {
         "date": "2026-09-16",
@@ -1067,6 +1067,7 @@
         "cache_read": 5258752,
         "cost_cents": 958.9846
       }
-    ]
+    ],
+    "2026-09-17": []
   }
 }
