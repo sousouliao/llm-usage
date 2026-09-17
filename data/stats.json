@@ -2,8 +2,8 @@
   "schema_version": 4,
   "timezone": "Asia/Shanghai",
   "latest_date": "2026-09-17",
-  "generated_at": "2026-09-17T20:01:20+08:00",
-  "updated_display": "Updated Sep 17, 20:01",
+  "generated_at": "2026-09-17T21:01:17+08:00",
+  "updated_display": "Updated Sep 17, 21:01",
   "weeks": [
     {
       "week": "2026-W38",
@@ -2713,13 +2713,13 @@
     "start": "2026-01-02",
     "end": "2026-09-17",
     "days_active": 209,
-    "requests": 54431,
-    "tokens_in": 776391370,
-    "tokens_out": 71529756,
-    "cache_write": 183916248,
-    "cache_read": 12356753910,
-    "cost_cents": 929267.6941,
-    "tokens_total": 13388591284,
+    "requests": 54432,
+    "tokens_in": 776391379,
+    "tokens_out": 71530638,
+    "cache_write": 183964036,
+    "cache_read": 12356890392,
+    "cost_cents": 929306.5952,
+    "tokens_total": 13388776445,
     "months": [
       {
         "month": "2026-01",
@@ -2753,13 +2753,13 @@
       },
       {
         "month": "2026-04",
-        "requests": 6556,
-        "tokens_in": 151923690,
-        "tokens_out": 9780692,
-        "cache_write": 11955604,
-        "cache_read": 1787530576,
-        "cost_cents": 132379.4542,
-        "tokens_total": 1961190562
+        "requests": 6557,
+        "tokens_in": 151923699,
+        "tokens_out": 9781574,
+        "cache_write": 12003392,
+        "cache_read": 1787667058,
+        "cost_cents": 132418.3553,
+        "tokens_total": 1961375723
       },
       {
         "month": "2026-05",
@@ -2955,13 +2955,13 @@
       },
       {
         "model": "claude-opus-4-7-thinking-medium",
-        "requests": 227,
-        "tokens_in": 2964,
-        "tokens_out": 1562168,
-        "cache_write": 16354418,
-        "cache_read": 313107713,
-        "cost_cents": 29783.7988,
-        "tokens_total": 331027263
+        "requests": 228,
+        "tokens_in": 2973,
+        "tokens_out": 1563050,
+        "cache_write": 16402206,
+        "cache_read": 313244195,
+        "cost_cents": 29822.6999,
+        "tokens_total": 331212424
       },
       {
         "model": "claude-sonnet-5-thinking-high",
