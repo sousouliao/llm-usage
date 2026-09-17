@@ -63,12 +63,22 @@ $generatedPaths = $ciOwnedPaths + @("data/raw")
 $commitMessage = "chore(data): usage raw @ $(Get-Date -Format 'yyyy-MM-dd')"
 $transcriptStarted = $false
 
+# Best-effort git: discard stderr and the exit status. Windows PowerShell 5.1
+# raises a terminating NativeCommandError for any redirected native stderr
+# (2>$null) while $ErrorActionPreference is 'Stop', so "git ... 2>$null" kills
+# the run the moment git writes to stderr. 2>&1 merges stderr into the output
+# stream, which EAP never inspects.
+function Invoke-GitBestEffort {
+    & git @args 2>&1 | Out-Null
+    $global:LASTEXITCODE = 0
+}
+
 function Restore-Generated {
-    git checkout -f HEAD -- @generatedPaths 2>$null | Out-Null
+    Invoke-GitBestEffort checkout -f HEAD -- @generatedPaths
 }
 
 function Restore-CiOwned {
-    git checkout -f HEAD -- @ciOwnedPaths 2>$null | Out-Null
+    Invoke-GitBestEffort checkout -f HEAD -- @ciOwnedPaths
 }
 
 function Get-UnmergedFiles {
@@ -125,7 +135,7 @@ function Invoke-Update {
     }
 
     # Self-heal whatever a previous conflicted run left behind.
-    git rebase --abort 2>$null | Out-Null
+    Invoke-GitBestEffort rebase --abort
     Restore-Generated
     while ($true) {
         $top = git stash list -n 1
