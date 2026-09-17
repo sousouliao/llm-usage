@@ -1117,12 +1117,12 @@
         "date": "2026-09-17",
         "source": "cursor",
         "model": "gemini-3.8-flash-medium",
-        "requests": 21,
-        "tokens_in": 4288500,
-        "tokens_out": 64416,
+        "requests": 23,
+        "tokens_in": 4819865,
+        "tokens_out": 66741,
         "cache_write": 0,
-        "cache_read": 27614648,
-        "cost_cents": 544.1634
+        "cache_read": 30336621,
+        "cost_cents": 605.2444
       },
       {
         "date": "2026-09-17",
