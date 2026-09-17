@@ -1095,12 +1095,12 @@
         "date": "2026-09-17",
         "source": "cursor",
         "model": "cursor-grok-4.6-high-fast",
-        "requests": 6,
-        "tokens_in": 533556,
-        "tokens_out": 47007,
+        "requests": 8,
+        "tokens_in": 737815,
+        "tokens_out": 49563,
         "cache_write": 0,
-        "cache_read": 10168192,
-        "cost_cents": 1286.65
+        "cache_read": 12375424,
+        "cost_cents": 1592.144
       },
       {
         "date": "2026-09-17",
@@ -1157,6 +1157,7 @@
         "cache_read": 22272,
         "cost_cents": 23.1104
       }
-    ]
+    ],
+    "2026-09-18": []
   }
 }
