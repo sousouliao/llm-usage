@@ -1084,12 +1084,12 @@
         "date": "2026-09-17",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 26,
-        "tokens_in": 1546202,
-        "tokens_out": 140847,
+        "requests": 30,
+        "tokens_in": 1866679,
+        "tokens_out": 183678,
         "cache_write": 0,
-        "cache_read": 24359168,
-        "cost_cents": 1611.707
+        "cache_read": 30089472,
+        "cost_cents": 1988.0162
       },
       {
         "date": "2026-09-17",
@@ -1106,23 +1106,23 @@
         "date": "2026-09-17",
         "source": "cursor",
         "model": "gemini-3.8-flash-high",
-        "requests": 1,
-        "tokens_in": 1805635,
-        "tokens_out": 114672,
+        "requests": 3,
+        "tokens_in": 2473123,
+        "tokens_out": 133636,
         "cache_write": 0,
-        "cache_read": 27360555,
-        "cost_cents": 367.0032
+        "cache_read": 34642999,
+        "cost_cents": 478.3206
       },
       {
         "date": "2026-09-17",
         "source": "cursor",
         "model": "gemini-3.8-flash-medium",
-        "requests": 11,
-        "tokens_in": 2112113,
-        "tokens_out": 32327,
+        "requests": 12,
+        "tokens_in": 2543629,
+        "tokens_out": 32821,
         "cache_write": 0,
-        "cache_read": 15691072,
-        "cost_cents": 287.406
+        "cache_read": 15833719,
+        "cost_cents": 321.0124
       },
       {
         "date": "2026-09-17",
