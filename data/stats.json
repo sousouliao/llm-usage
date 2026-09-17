@@ -2,8 +2,8 @@
   "schema_version": 4,
   "timezone": "Asia/Shanghai",
   "latest_date": "2026-09-17",
-  "generated_at": "2026-09-17T21:01:17+08:00",
-  "updated_display": "Updated Sep 17, 21:01",
+  "generated_at": "2026-09-18T02:31:32+08:00",
+  "updated_display": "Updated Sep 18, 02:31",
   "weeks": [
     {
       "week": "2026-W38",
@@ -15,40 +15,40 @@
         "end": "2026-09-20",
         "range_display": "Sep 14 – Sep 20",
         "basis": "tokens",
-        "requests": 1400,
-        "tokens_total": 499191809,
-        "cost_cents": 30779.5791,
-        "tokens_display": "499.2M",
-        "cost_display": "$307.80",
-        "requests_display": "1,400",
+        "requests": 1402,
+        "tokens_total": 501605856,
+        "cost_cents": 31085.0731,
+        "tokens_display": "501.6M",
+        "cost_display": "$310.85",
+        "requests_display": "1,402",
         "breakdown": [
           {
             "kind": "tokens_in",
             "label": "Input",
-            "amount": 35148013,
-            "display": "35.1M",
-            "pct": 7.040983519022445
+            "amount": 35352272,
+            "display": "35.4M",
+            "pct": 7.047818835671647
           },
           {
             "kind": "tokens_out",
             "label": "Output",
-            "amount": 2313143,
+            "amount": 2315699,
             "display": "2.3M",
-            "pct": 0.4633775952040912
+            "pct": 0.46165709038293207
           },
           {
             "kind": "cache_write",
             "label": "Cache write",
             "amount": 2609731,
             "display": "2.6M",
-            "pct": 0.5227912303344705
+            "pct": 0.5202752258139506
           },
           {
             "kind": "cache_read",
             "label": "Cache read",
-            "amount": 459120922,
-            "display": "459.1M",
-            "pct": 91.972847655439
+            "amount": 461328154,
+            "display": "461.3M",
+            "pct": 91.97024884813148
           }
         ],
         "models": [
@@ -60,7 +60,7 @@
             "tokens_display": "216.0M",
             "cost_display": "$143.73",
             "requests_display": "227",
-            "pct": 43.275997142813694
+            "pct": 43.06772546929755
           },
           {
             "label": "gpt-5.6-sol",
@@ -70,7 +70,7 @@
             "tokens_display": "108.9M",
             "cost_display": "$55.38",
             "requests_display": "815",
-            "pct": 21.820315765637893
+            "pct": 21.71530250236951
           },
           {
             "label": "claude-opus-5-thinking-medium",
@@ -80,7 +80,7 @@
             "tokens_display": "51.3M",
             "cost_display": "$48.16",
             "requests_display": "30",
-            "pct": 10.276173822395391
+            "pct": 10.226718326031664
           },
           {
             "label": "gemini-3.8-flash-high",
@@ -90,7 +90,7 @@
             "tokens_display": "47.6M",
             "cost_display": "$7.16",
             "requests_display": "15",
-            "pct": 9.527141099384504
+            "pct": 9.481290425764088
           },
           {
             "label": "gemini-3.8-flash-medium",
@@ -100,17 +100,17 @@
             "tokens_display": "38.7M",
             "cost_display": "$6.49",
             "requests_display": "24",
-            "pct": 7.750341512514682
+            "pct": 7.713041930674749
           },
           {
             "label": "cursor-grok-4.6-high-fast",
-            "requests": 7,
-            "tokens_total": 10955931,
-            "cost_cents": 1318.8324,
-            "tokens_display": "11.0M",
-            "cost_display": "$13.19",
-            "requests_display": "7",
-            "pct": 2.1947337280928823
+            "requests": 9,
+            "tokens_total": 13369978,
+            "cost_cents": 1624.3264,
+            "tokens_display": "13.4M",
+            "cost_display": "$16.24",
+            "requests_display": "9",
+            "pct": 2.6654349904559327
           }
         ],
         "days": [
@@ -141,10 +141,10 @@
           {
             "date": "2026-09-17",
             "weekday": "Thu",
-            "requests": 307,
-            "tokens_total": 157157022,
-            "cost_cents": 6844.8808,
-            "tokens_display": "157.2M"
+            "requests": 309,
+            "tokens_total": 159571069,
+            "cost_cents": 7150.3748,
+            "tokens_display": "159.6M"
           },
           {
             "date": "2026-09-18",
@@ -2645,12 +2645,12 @@
       "date": "2026-09-17",
       "source": "cursor",
       "model": "cursor-grok-4.6-high-fast",
-      "requests": 6,
-      "tokens_in": 533556,
-      "tokens_out": 47007,
+      "requests": 8,
+      "tokens_in": 737815,
+      "tokens_out": 49563,
       "cache_write": 0,
-      "cache_read": 10168192,
-      "cost_cents": 1286.65
+      "cache_read": 12375424,
+      "cost_cents": 1592.144
     },
     {
       "date": "2026-09-17",
@@ -2713,13 +2713,13 @@
     "start": "2026-01-02",
     "end": "2026-09-17",
     "days_active": 209,
-    "requests": 54432,
-    "tokens_in": 776391379,
-    "tokens_out": 71530638,
-    "cache_write": 183964036,
-    "cache_read": 12356890392,
-    "cost_cents": 929306.5952,
-    "tokens_total": 13388776445,
+    "requests": 54433,
+    "tokens_in": 776595629,
+    "tokens_out": 71532312,
+    "cache_write": 183916248,
+    "cache_read": 12358961142,
+    "cost_cents": 929573.1881,
+    "tokens_total": 13391005331,
     "months": [
       {
         "month": "2026-01",
@@ -2753,13 +2753,13 @@
       },
       {
         "month": "2026-04",
-        "requests": 6557,
-        "tokens_in": 151923699,
-        "tokens_out": 9781574,
-        "cache_write": 12003392,
-        "cache_read": 1787667058,
-        "cost_cents": 132418.3553,
-        "tokens_total": 1961375723
+        "requests": 6556,
+        "tokens_in": 151923690,
+        "tokens_out": 9780692,
+        "cache_write": 11955604,
+        "cache_read": 1787530576,
+        "cost_cents": 132379.4542,
+        "tokens_total": 1961190562
       },
       {
         "month": "2026-05",
@@ -2803,13 +2803,13 @@
       },
       {
         "month": "2026-09",
-        "requests": 6599,
-        "tokens_in": 103797333,
-        "tokens_out": 10897325,
+        "requests": 6601,
+        "tokens_in": 104001592,
+        "tokens_out": 10899881,
         "cache_write": 34135422,
-        "cache_read": 1899053609,
-        "cost_cents": 158278.2192,
-        "tokens_total": 2047883689
+        "cache_read": 1901260841,
+        "cost_cents": 158583.7132,
+        "tokens_total": 2050297736
       }
     ],
     "models": [
@@ -2885,13 +2885,13 @@
       },
       {
         "model": "cursor-grok-4.6-high-fast",
-        "requests": 737,
-        "tokens_in": 35897337,
-        "tokens_out": 3179165,
+        "requests": 739,
+        "tokens_in": 36101596,
+        "tokens_out": 3181721,
         "cache_write": 0,
-        "cache_read": 513270144,
-        "cost_cents": 69072.2306,
-        "tokens_total": 552346646
+        "cache_read": 515477376,
+        "cost_cents": 69377.7246,
+        "tokens_total": 554760693
       },
       {
         "model": "claude-opus-5-thinking-medium",
@@ -2955,13 +2955,13 @@
       },
       {
         "model": "claude-opus-4-7-thinking-medium",
-        "requests": 228,
-        "tokens_in": 2973,
-        "tokens_out": 1563050,
-        "cache_write": 16402206,
-        "cache_read": 313244195,
-        "cost_cents": 29822.6999,
-        "tokens_total": 331212424
+        "requests": 227,
+        "tokens_in": 2964,
+        "tokens_out": 1562168,
+        "cache_write": 16354418,
+        "cache_read": 313107713,
+        "cost_cents": 29783.7988,
+        "tokens_total": 331027263
       },
       {
         "model": "claude-sonnet-5-thinking-high",
