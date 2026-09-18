@@ -367,11 +367,11 @@
         "date": "2026-09-18",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 123,
-        "tokens_in": 482240,
-        "tokens_out": 48931,
+        "requests": 158,
+        "tokens_in": 861270,
+        "tokens_out": 74165,
         "cache_write": 0,
-        "cache_read": 15788288
+        "cache_read": 19700736
       }
     ]
   }
