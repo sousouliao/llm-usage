@@ -357,21 +357,21 @@
         "date": "2026-09-18",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 9,
-        "tokens_in": 67834,
-        "tokens_out": 1530,
+        "requests": 13,
+        "tokens_in": 104928,
+        "tokens_out": 2088,
         "cache_write": 0,
-        "cache_read": 238336
+        "cache_read": 425728
       },
       {
         "date": "2026-09-18",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 100,
-        "tokens_in": 337713,
-        "tokens_out": 44239,
+        "requests": 123,
+        "tokens_in": 482240,
+        "tokens_out": 48931,
         "cache_write": 0,
-        "cache_read": 12842112
+        "cache_read": 15788288
       }
     ]
   }
