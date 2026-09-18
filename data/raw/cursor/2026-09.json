@@ -1164,11 +1164,11 @@
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
         "requests": 1,
-        "tokens_in": 143866,
-        "tokens_out": 14075,
+        "tokens_in": 160984,
+        "tokens_out": 22076,
         "cache_write": 0,
-        "cache_read": 429312,
-        "cost_cents": 58.6838
+        "cache_read": 1116800,
+        "cost_cents": 101.2824
       },
       {
         "date": "2026-09-18",
