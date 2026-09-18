@@ -68,11 +68,11 @@
         "date": "2026-09-18",
         "source": "deepseek",
         "model": "deepseek-flash",
-        "requests": 261,
-        "tokens_in": 418873,
-        "tokens_out": 204575,
-        "cache_read": 30435200,
-        "cost_cents": 51.2744
+        "requests": 565,
+        "tokens_in": 803792,
+        "tokens_out": 430220,
+        "cache_read": 91692160,
+        "cost_cents": 121.0699
       }
     ]
   }

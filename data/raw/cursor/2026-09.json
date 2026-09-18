@@ -1162,13 +1162,24 @@
       {
         "date": "2026-09-18",
         "source": "cursor",
+        "model": "claude-opus-5-thinking-medium",
+        "requests": 2,
+        "tokens_in": 34,
+        "tokens_out": 18791,
+        "cache_write": 252148,
+        "cache_read": 3890077,
+        "cost_cents": 399.0909
+      },
+      {
+        "date": "2026-09-18",
+        "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 1,
-        "tokens_in": 160984,
-        "tokens_out": 22076,
+        "requests": 7,
+        "tokens_in": 434324,
+        "tokens_out": 49122,
         "cache_write": 0,
-        "cache_read": 1116800,
-        "cost_cents": 101.2824
+        "cache_read": 5928320,
+        "cost_cents": 412.754
       },
       {
         "date": "2026-09-18",
@@ -1180,6 +1191,17 @@
         "cache_write": 0,
         "cache_read": 144256,
         "cost_cents": 31.5068
+      },
+      {
+        "date": "2026-09-18",
+        "source": "cursor",
+        "model": "gemini-3.8-flash-medium",
+        "requests": 3,
+        "tokens_in": 825771,
+        "tokens_out": 23789,
+        "cache_write": 0,
+        "cache_read": 6309343,
+        "cost_cents": 117.2794
       },
       {
         "date": "2026-09-18",
