@@ -1196,12 +1196,12 @@
         "date": "2026-09-18",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 1,
-        "tokens_in": 51147,
-        "tokens_out": 1000,
+        "requests": 6,
+        "tokens_in": 228545,
+        "tokens_out": 7052,
         "cache_write": 0,
-        "cache_read": 21504,
-        "cost_cents": 24.4092
+        "cache_read": 614400,
+        "cost_cents": 157.8646
       }
     ]
   }
