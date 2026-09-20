@@ -88,6 +88,17 @@
         "cost_cents": 0.0823
       }
     ],
-    "2026-09-21": []
+    "2026-09-21": [
+      {
+        "date": "2026-09-21",
+        "source": "deepseek",
+        "model": "deepseek-flash",
+        "requests": 3,
+        "tokens_in": 2707,
+        "tokens_out": 1024,
+        "cache_read": 128,
+        "cost_cents": 0.0945
+      }
+    ]
   }
 }
