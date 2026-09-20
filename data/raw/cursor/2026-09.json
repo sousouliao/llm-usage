@@ -1277,12 +1277,12 @@
         "date": "2026-09-20",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 57,
-        "tokens_in": 3391102,
-        "tokens_out": 271457,
+        "requests": 62,
+        "tokens_in": 3569714,
+        "tokens_out": 304948,
         "cache_write": 0,
-        "cache_read": 40038016,
-        "cost_cents": 2842.9954
+        "cache_read": 47592832,
+        "cost_cents": 3276.5532
       },
       {
         "date": "2026-09-20",
