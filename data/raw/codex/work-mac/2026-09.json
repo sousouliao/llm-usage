@@ -375,6 +375,27 @@
       }
     ],
     "2026-09-19": [],
-    "2026-09-20": []
+    "2026-09-20": [
+      {
+        "date": "2026-09-20",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 11,
+        "tokens_in": 47717,
+        "tokens_out": 252,
+        "cache_write": 0,
+        "cache_read": 240896
+      },
+      {
+        "date": "2026-09-20",
+        "source": "codex",
+        "model": "gpt-5.6-luna",
+        "requests": 102,
+        "tokens_in": 321542,
+        "tokens_out": 20233,
+        "cache_write": 0,
+        "cache_read": 11125184
+      }
+    ]
   }
 }

@@ -1266,23 +1266,23 @@
         "date": "2026-09-20",
         "source": "cursor",
         "model": "composer-2.5-fast",
-        "requests": 3,
-        "tokens_in": 236114,
-        "tokens_out": 35400,
+        "requests": 4,
+        "tokens_in": 470175,
+        "tokens_out": 57863,
         "cache_write": 0,
-        "cache_read": 3716896,
-        "cost_cents": 309.779
+        "cache_read": 6608800,
+        "cost_cents": 601.5249
       },
       {
         "date": "2026-09-20",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
-        "requests": 42,
-        "tokens_in": 2916800,
-        "tokens_out": 219873,
+        "requests": 57,
+        "tokens_in": 3391102,
+        "tokens_out": 271457,
         "cache_write": 0,
-        "cache_read": 34054912,
-        "cost_cents": 2418.0294
+        "cache_read": 40038016,
+        "cost_cents": 2842.9954
       },
       {
         "date": "2026-09-20",
