@@ -1287,6 +1287,17 @@
       {
         "date": "2026-09-20",
         "source": "cursor",
+        "model": "gemini-3.8-flash-medium",
+        "requests": 2,
+        "tokens_in": 597138,
+        "tokens_out": 38577,
+        "cache_write": 0,
+        "cache_read": 4765823,
+        "cost_cents": 94.031
+      },
+      {
+        "date": "2026-09-20",
+        "source": "cursor",
         "model": "grok-bot-automation",
         "requests": 8,
         "tokens_in": 77003,
@@ -1306,6 +1317,7 @@
         "cache_read": 21376,
         "cost_cents": 26.6036
       }
-    ]
+    ],
+    "2026-09-21": []
   }
 }
