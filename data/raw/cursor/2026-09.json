@@ -1254,13 +1254,35 @@
       {
         "date": "2026-09-20",
         "source": "cursor",
-        "model": "cursor-grok-4.6-high",
-        "requests": 2,
-        "tokens_in": 147292,
-        "tokens_out": 11494,
+        "model": "claude-opus-5-thinking-medium",
+        "requests": 4,
+        "tokens_in": 82,
+        "tokens_out": 36933,
+        "cache_write": 666055,
+        "cache_read": 7428442,
+        "cost_cents": 880.08
+      },
+      {
+        "date": "2026-09-20",
+        "source": "cursor",
+        "model": "composer-2.5-fast",
+        "requests": 3,
+        "tokens_in": 236114,
+        "tokens_out": 35400,
         "cache_write": 0,
-        "cache_read": 743040,
-        "cost_cents": 73.5068
+        "cache_read": 3716896,
+        "cost_cents": 309.779
+      },
+      {
+        "date": "2026-09-20",
+        "source": "cursor",
+        "model": "cursor-grok-4.6-high",
+        "requests": 11,
+        "tokens_in": 896318,
+        "tokens_out": 52657,
+        "cache_write": 0,
+        "cache_read": 5697536,
+        "cost_cents": 495.7346
       },
       {
         "date": "2026-09-20",
