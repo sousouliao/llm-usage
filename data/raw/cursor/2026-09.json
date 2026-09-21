@@ -1378,12 +1378,12 @@
         "date": "2026-09-21",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 14,
-        "tokens_in": 628267,
-        "tokens_out": 5412,
+        "requests": 31,
+        "tokens_in": 1092508,
+        "tokens_out": 12645,
         "cache_write": 0,
-        "cache_read": 1323008,
-        "cost_cents": 393.3492
+        "cache_read": 3241088,
+        "cost_cents": 783.873
       }
     ]
   }
