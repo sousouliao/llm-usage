@@ -397,6 +397,17 @@
         "cache_read": 11125184
       }
     ],
-    "2026-09-21": []
+    "2026-09-21": [
+      {
+        "date": "2026-09-21",
+        "source": "codex",
+        "model": "claude-opus-5",
+        "requests": 120,
+        "tokens_in": 8281300,
+        "tokens_out": 28509,
+        "cache_write": 24628,
+        "cache_read": 3027165
+      }
+    ]
   }
 }
