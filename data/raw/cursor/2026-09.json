@@ -1386,6 +1386,18 @@
         "cost_cents": 783.873
       }
     ],
-    "2026-09-22": []
+    "2026-09-22": [
+      {
+        "date": "2026-09-22",
+        "source": "cursor",
+        "model": "grok-bot-default",
+        "requests": 12,
+        "tokens_in": 84587,
+        "tokens_out": 6683,
+        "cache_write": 0,
+        "cache_read": 366336,
+        "cost_cents": 82.4978
+      }
+    ]
   }
 }
