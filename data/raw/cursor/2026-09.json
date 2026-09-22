@@ -1391,12 +1391,12 @@
         "date": "2026-09-22",
         "source": "cursor",
         "model": "claude-opus-5-thinking-medium",
-        "requests": 4,
-        "tokens_in": 88,
-        "tokens_out": 19441,
-        "cache_write": 378109,
-        "cache_read": 3491300,
-        "cost_cents": 459.5296
+        "requests": 6,
+        "tokens_in": 154,
+        "tokens_out": 58231,
+        "cache_write": 742242,
+        "cache_read": 6998290,
+        "cost_cents": 959.4703
       },
       {
         "date": "2026-09-22",
