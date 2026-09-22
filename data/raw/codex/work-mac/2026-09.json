@@ -414,11 +414,11 @@
         "date": "2026-09-22",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 69,
-        "tokens_in": 193305,
-        "tokens_out": 32146,
+        "requests": 154,
+        "tokens_in": 317246,
+        "tokens_out": 66007,
         "cache_write": 0,
-        "cache_read": 9779584
+        "cache_read": 24178944
       }
     ]
   }
