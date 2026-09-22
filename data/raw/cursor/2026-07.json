@@ -638,17 +638,6 @@
       {
         "date": "2026-07-23",
         "source": "cursor",
-        "model": "Cursor Grok 4.5 (Auto Balanced)",
-        "requests": 4,
-        "tokens_in": 333264,
-        "tokens_out": 26351,
-        "cache_write": 0,
-        "cache_read": 2801408,
-        "cost_cents": 219.5848
-      },
-      {
-        "date": "2026-07-23",
-        "source": "cursor",
         "model": "GPT-5.6 Sol (Auto Balanced)",
         "requests": 4,
         "tokens_in": 4035,
@@ -656,6 +645,17 @@
         "cache_write": 325355,
         "cache_read": 2322891,
         "cost_cents": 335.0839
+      },
+      {
+        "date": "2026-07-23",
+        "source": "cursor",
+        "model": "Grok 4.5 (Auto Balanced)",
+        "requests": 4,
+        "tokens_in": 333264,
+        "tokens_out": 26351,
+        "cache_write": 0,
+        "cache_read": 2801408,
+        "cost_cents": 219.5848
       },
       {
         "date": "2026-07-23",
@@ -938,7 +938,7 @@
       {
         "date": "2026-07-31",
         "source": "cursor",
-        "model": "Cursor Grok 4.5 (Auto Balanced)",
+        "model": "Grok 4.5 (Auto Balanced)",
         "requests": 7,
         "tokens_in": 1034932,
         "tokens_out": 16692,

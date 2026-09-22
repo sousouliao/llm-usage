@@ -409,6 +409,17 @@
         "cache_read": 3027165
       }
     ],
-    "2026-09-22": []
+    "2026-09-22": [
+      {
+        "date": "2026-09-22",
+        "source": "codex",
+        "model": "gpt-5.6-sol",
+        "requests": 69,
+        "tokens_in": 193305,
+        "tokens_out": 32146,
+        "cache_write": 0,
+        "cache_read": 9779584
+      }
+    ]
   }
 }
