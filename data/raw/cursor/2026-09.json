@@ -1391,23 +1391,23 @@
         "date": "2026-09-22",
         "source": "cursor",
         "model": "claude-opus-5-thinking-medium",
-        "requests": 15,
-        "tokens_in": 356,
-        "tokens_out": 188941,
-        "cache_write": 1951324,
-        "cache_read": 20166876,
-        "cost_cents": 2700.4518
+        "requests": 22,
+        "tokens_in": 546,
+        "tokens_out": 270723,
+        "cache_write": 2407314,
+        "cache_read": 42362522,
+        "cost_cents": 4299.7778
       },
       {
         "date": "2026-09-22",
         "source": "cursor",
         "model": "composer-2.5-fast",
-        "requests": 2,
-        "tokens_in": 149835,
-        "tokens_out": 9243,
+        "requests": 3,
+        "tokens_in": 266932,
+        "tokens_out": 16218,
         "cache_write": 0,
-        "cache_read": 1065024,
-        "cost_cents": 112.0662
+        "cache_read": 1811840,
+        "cost_cents": 194.9986
       },
       {
         "date": "2026-09-22",
