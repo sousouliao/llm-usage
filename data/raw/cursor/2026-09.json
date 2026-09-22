@@ -1390,6 +1390,28 @@
       {
         "date": "2026-09-22",
         "source": "cursor",
+        "model": "claude-opus-5-thinking-medium",
+        "requests": 4,
+        "tokens_in": 88,
+        "tokens_out": 19441,
+        "cache_write": 378109,
+        "cache_read": 3491300,
+        "cost_cents": 459.5296
+      },
+      {
+        "date": "2026-09-22",
+        "source": "cursor",
+        "model": "composer-2.5-fast",
+        "requests": 1,
+        "tokens_in": 58970,
+        "tokens_out": 1066,
+        "cache_write": 0,
+        "cache_read": 85792,
+        "cost_cents": 23.5796
+      },
+      {
+        "date": "2026-09-22",
+        "source": "cursor",
         "model": "grok-4.7-high",
         "requests": 12,
         "tokens_in": 2796761,
