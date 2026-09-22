@@ -1390,13 +1390,35 @@
       {
         "date": "2026-09-22",
         "source": "cursor",
-        "model": "grok-bot-default",
-        "requests": 12,
-        "tokens_in": 84587,
-        "tokens_out": 6683,
+        "model": "grok-4.7-high",
+        "requests": 3,
+        "tokens_in": 767114,
+        "tokens_out": 33483,
         "cache_write": 0,
-        "cache_read": 366336,
-        "cost_cents": 82.4978
+        "cache_read": 1695232,
+        "cost_cents": 258.2742
+      },
+      {
+        "date": "2026-09-22",
+        "source": "cursor",
+        "model": "grok-bot-automation",
+        "requests": 6,
+        "tokens_in": 40157,
+        "tokens_out": 4008,
+        "cache_write": 0,
+        "cache_read": 170112,
+        "cost_cents": 18.9418
+      },
+      {
+        "date": "2026-09-22",
+        "source": "cursor",
+        "model": "grok-bot-default",
+        "requests": 13,
+        "tokens_in": 146080,
+        "tokens_out": 7688,
+        "cache_write": 0,
+        "cache_read": 387840,
+        "cost_cents": 111.0544
       }
     ]
   }
