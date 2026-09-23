@@ -436,21 +436,31 @@
         "date": "2026-09-23",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 59,
-        "tokens_in": 183168,
-        "tokens_out": 6535,
+        "requests": 79,
+        "tokens_in": 297863,
+        "tokens_out": 9008,
         "cache_write": 0,
-        "cache_read": 3112192
+        "cache_read": 4073728
+      },
+      {
+        "date": "2026-09-23",
+        "source": "codex",
+        "model": "gpt-6-luna",
+        "requests": 8,
+        "tokens_in": 139936,
+        "tokens_out": 2761,
+        "cache_write": 0,
+        "cache_read": 1056640
       },
       {
         "date": "2026-09-23",
         "source": "codex",
         "model": "gpt-6-sol",
-        "requests": 210,
-        "tokens_in": 625486,
-        "tokens_out": 63459,
+        "requests": 338,
+        "tokens_in": 830725,
+        "tokens_out": 120917,
         "cache_write": 0,
-        "cache_read": 23932544
+        "cache_read": 39377664
       }
     ]
   }
