@@ -1403,11 +1403,22 @@
         "source": "cursor",
         "model": "composer-2.5-fast",
         "requests": 4,
-        "tokens_in": 342044,
-        "tokens_out": 19406,
+        "tokens_in": 347581,
+        "tokens_out": 21635,
         "cache_write": 0,
-        "cache_read": 2252000,
-        "cost_cents": 244.3222
+        "cache_read": 2624960,
+        "cost_cents": 267.9748
+      },
+      {
+        "date": "2026-09-22",
+        "source": "cursor",
+        "model": "gemini-3.8-flash-medium",
+        "requests": 16,
+        "tokens_in": 4188848,
+        "tokens_out": 64212,
+        "cache_write": 0,
+        "cache_read": 40640674,
+        "cost_cents": 641.4429
       },
       {
         "date": "2026-09-22",
@@ -1435,12 +1446,47 @@
         "date": "2026-09-22",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 42,
-        "tokens_in": 296733,
-        "tokens_out": 27486,
+        "requests": 62,
+        "tokens_in": 573377,
+        "tokens_out": 39408,
         "cache_write": 0,
-        "cache_read": 1173632,
-        "cost_cents": 285.5312
+        "cache_read": 2178048,
+        "cost_cents": 518.09
+      }
+    ],
+    "2026-09-23": [
+      {
+        "date": "2026-09-23",
+        "source": "cursor",
+        "model": "grok-4.7-high",
+        "requests": 7,
+        "tokens_in": 712601,
+        "tokens_out": 24100,
+        "cache_write": 0,
+        "cache_read": 17939840,
+        "cost_cents": 2107.9444
+      },
+      {
+        "date": "2026-09-23",
+        "source": "cursor",
+        "model": "grok-bot-automation",
+        "requests": 9,
+        "tokens_in": 49915,
+        "tokens_out": 6447,
+        "cache_write": 0,
+        "cache_read": 315008,
+        "cost_cents": 29.6016
+      },
+      {
+        "date": "2026-09-23",
+        "source": "cursor",
+        "model": "grok-bot-default",
+        "requests": 6,
+        "tokens_in": 307391,
+        "tokens_out": 4721,
+        "cache_write": 0,
+        "cache_read": 232320,
+        "cost_cents": 154.6862
       }
     ]
   }
