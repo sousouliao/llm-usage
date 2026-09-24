@@ -468,21 +468,21 @@
         "date": "2026-09-24",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 7,
-        "tokens_in": 57778,
-        "tokens_out": 952,
+        "requests": 37,
+        "tokens_in": 160624,
+        "tokens_out": 4660,
         "cache_write": 0,
-        "cache_read": 140544
+        "cache_read": 1859328
       },
       {
         "date": "2026-09-24",
         "source": "codex",
         "model": "gpt-6-sol",
-        "requests": 100,
-        "tokens_in": 432687,
-        "tokens_out": 34551,
+        "requests": 226,
+        "tokens_in": 637209,
+        "tokens_out": 93104,
         "cache_write": 0,
-        "cache_read": 8929152
+        "cache_read": 24956032
       }
     ]
   }
