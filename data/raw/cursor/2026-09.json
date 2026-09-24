@@ -1528,22 +1528,22 @@
         "source": "cursor",
         "model": "claude-opus-5-5-medium",
         "requests": 3,
-        "tokens_in": 30,
-        "tokens_out": 13086,
-        "cache_write": 205679,
-        "cache_read": 728831,
-        "cost_cents": 143.6001
+        "tokens_in": 32,
+        "tokens_out": 21251,
+        "cache_write": 216989,
+        "cache_read": 834437,
+        "cost_cents": 167.698
       },
       {
         "date": "2026-09-24",
         "source": "cursor",
         "model": "cursor-grok-4.5-high",
         "requests": 2,
-        "tokens_in": 234768,
-        "tokens_out": 5791,
+        "tokens_in": 297667,
+        "tokens_out": 11341,
         "cache_write": 0,
-        "cache_read": 427136,
-        "cost_cents": 71.785
+        "cache_read": 511744,
+        "cost_cents": 91.9252
       },
       {
         "date": "2026-09-24",
