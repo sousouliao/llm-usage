@@ -467,12 +467,22 @@
       {
         "date": "2026-09-24",
         "source": "codex",
-        "model": "gpt-6-sol",
-        "requests": 35,
-        "tokens_in": 259249,
-        "tokens_out": 20631,
+        "model": "codex-auto-review",
+        "requests": 7,
+        "tokens_in": 57778,
+        "tokens_out": 952,
         "cache_write": 0,
-        "cache_read": 3334528
+        "cache_read": 140544
+      },
+      {
+        "date": "2026-09-24",
+        "source": "codex",
+        "model": "gpt-6-sol",
+        "requests": 93,
+        "tokens_in": 399175,
+        "tokens_out": 32227,
+        "cache_write": 0,
+        "cache_read": 8525440
       }
     ]
   }
