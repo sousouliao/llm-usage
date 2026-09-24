@@ -1527,23 +1527,23 @@
         "date": "2026-09-24",
         "source": "cursor",
         "model": "claude-opus-5-5-medium",
-        "requests": 13,
-        "tokens_in": 384,
-        "tokens_out": 297172,
-        "cache_write": 2239086,
-        "cache_read": 69453428,
-        "cost_cents": 3103.1091
+        "requests": 30,
+        "tokens_in": 736,
+        "tokens_out": 481569,
+        "cache_write": 4862663,
+        "cache_read": 122705464,
+        "cost_cents": 5848.8731
       },
       {
         "date": "2026-09-24",
         "source": "cursor",
         "model": "cursor-grok-4.5-high",
-        "requests": 2,
-        "tokens_in": 297667,
-        "tokens_out": 11341,
+        "requests": 3,
+        "tokens_in": 369380,
+        "tokens_out": 15115,
         "cache_write": 0,
-        "cache_read": 511744,
-        "cost_cents": 91.9252
+        "cache_read": 695680,
+        "cost_cents": 117.729
       },
       {
         "date": "2026-09-24",
