@@ -1527,12 +1527,12 @@
         "date": "2026-09-24",
         "source": "cursor",
         "model": "claude-opus-5-5-medium",
-        "requests": 7,
-        "tokens_in": 222,
-        "tokens_out": 180492,
-        "cache_write": 812106,
-        "cache_read": 28404587,
-        "cost_cents": 1335.2175
+        "requests": 13,
+        "tokens_in": 384,
+        "tokens_out": 297172,
+        "cache_write": 2239086,
+        "cache_read": 69453428,
+        "cost_cents": 3103.1091
       },
       {
         "date": "2026-09-24",
