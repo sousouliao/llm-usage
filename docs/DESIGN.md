@@ -558,7 +558,7 @@ jsonl 里的 `token_count` / `last_token_usage`。
    「文件里的 source 对不上第一段路径」跳过，避免把第一轮残留折进总量。
 2. **排行永远按 token。** 订阅没有逐次成本，再按成本排会把 Codex 吃成 0%。金额列：
    Cursor 仍是美元；`codex` 显示「订阅」；两者同时出现时写成 `$X · 订阅`。
-3. **Source 是 ADE。** 已由 [ADR 0002](adr/0002-source-is-ade.md) 取代：`model_provider=openai` 与中转站都归 `codex`，不再按 provider 分源。
+3. **Source 是 ADE。** 已由 [ADR 0002](adr/0002-source-is-ade.md) 取代：不按 provider 分源。其中「中转站也归 `codex`」又被 [ADR 0003](adr/0003-codex-official-provider-only.md) 取代：只采 `model_provider=openai`，中转站调用不采集。
 
 ---
 
@@ -596,7 +596,7 @@ parity 测试钉住。ChatGPT 接入时改一次订阅文案就要抄三处。�
 `config/aggregate.yaml` 里的 `list_prices` 补上。raw 不改，牌价变了重跑
 `--skip-collect` 即可。
 
-对不上牌价的模型（`unknown`、中转站私有名）仍显示 Subscription。主数字有金额
+对不上牌价的模型（如额度耗尽后顶上的 `gpt-reserve`）仍显示 Subscription。主数字有金额
 时只写美元，不再和 Subscription 拼在同一个格子里。
 
 ---

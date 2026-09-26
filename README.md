@@ -66,7 +66,7 @@ produced them, so both the work Mac and the home Windows box need to collect; fi
 | Source | Token detail | Cost | Notes |
 | --- | --- | --- | --- |
 | `cursor` | input / output / cache write / cache read | yes | Official dashboard API, back to account creation |
-| `codex` | input / output / cache write / cache read | API list price | Codex local session logs. ChatGPT Plus and relays both belong to this ADE; cost is filled at fold time from published OpenAI rates |
+| `codex` | input / output / cache write / cache read | API list price | Codex local session logs. Only the official ChatGPT subscription (`model_provider=openai`) is collected; relay providers are dropped. Cost is filled at fold time from published OpenAI rates |
 | `antigravity` | input / output / cache read (no write) | API list price | Local per-conversation SQLite (protobuf metadata). No official usage-history API exists; quota endpoints only report remaining fractions. Collection refuses to write if the storage format drifts |
 | `deepseek` | input / output / cache read (no write) | platform billed CNY → USD | Console monthly export. Account-level. Peak/off-peak is already in the invoice; `cache_write` is omitted, not zero |
 

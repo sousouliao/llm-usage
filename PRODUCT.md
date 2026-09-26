@@ -28,7 +28,7 @@ web
 
 ## Operating Context
 
-- 用量按 ADE 归集：Cursor 是 `cursor`；Codex 无论走 ChatGPT Plus 还是中转站，都是 `codex`。
+- 用量按 ADE 归集：Cursor 是 `cursor`；Codex 走 ChatGPT 订阅的是 `codex`，走中转站的调用不采集（ADR 0003）。
 - 作者有两台机器：家里 Windows，公司 Mac。两边都在产生用量。
 - Cursor 官方用量接口是**账号级**的，两台机器的用量都在同一份返回里，因此 Cursor 这一路不需要按机器分片采集。代价是丢掉「这次请求发生在哪台机器」这条维度，这是已确认接受的取舍。
 - 采集在本机跑（需要本机 Cursor 登录态），产物由 GitHub Actions 单点生成并提交回 `main`。本机只推原始数据，不推产物。

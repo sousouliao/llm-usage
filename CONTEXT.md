@@ -9,7 +9,7 @@
 _Avoid_: Record, unit/amount
 
 **ADE**:
-产生用量的编码工具。当前是 Cursor、Codex、Antigravity、DeepSeek。接自己的订阅还是接中转站，都不改变它是哪一个 ADE。
+产生用量的编码工具。当前是 Cursor、Codex、Antigravity、DeepSeek。计费后端不决定 ADE；其中 Codex 走中转站的调用不采集（ADR 0003）。
 _Avoid_: provider, 中转站, ChatGPT（那是 Codex 可能使用的订阅，不是 ADE）
 
 **Source**:

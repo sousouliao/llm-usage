@@ -23,7 +23,7 @@ sources:
     # token_env: CURSOR_SESSION_TOKEN
 
   # Codex：读本机 ~/.codex 会话日志里的逐次 token。
-  # 无论走 ChatGPT Plus（model_provider=openai）还是中转站，用量都归 ADE `codex`。
+  # 只采 ChatGPT 订阅（model_provider=openai），中转站的调用直接丢弃（ADR 0003）。
   # 默认跨平台读取当前用户的 ~/.codex；通常无需配置。
   # Windows 也支持环境变量写法：%USERPROFILE%/.codex
   - name: chatgpt

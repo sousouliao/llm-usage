@@ -556,7 +556,7 @@ class TestChatgptCollector(unittest.TestCase):
                                       "output_tokens": 999999}}}},
         ]
 
-    def test_any_provider_belongs_to_codex_ade(self):
+    def test_official_provider_belongs_to_codex_ade(self):
         raw = chatgpt_collector.parse_rollout(self._records())
         events = chatgpt_collector.to_events(raw, self._day_of)
         self.assertEqual(len(events), 1)
@@ -575,12 +575,48 @@ class TestChatgptCollector(unittest.TestCase):
         # reasoning 是 output 的子集，总量不应再加一次
         self.assertEqual(e.tokens_total, (80453 - 79616) + 179 + 0 + 79616)
 
-    def test_relay_provider_still_belongs_to_codex(self):
-        raw = chatgpt_collector.parse_rollout(
-            self._records(provider="krill", model="gpt-5.5"))
-        events = chatgpt_collector.to_events(raw, self._day_of)
-        self.assertEqual(events[0].source, "codex")
-        self.assertEqual(events[0].model, "gpt-5.5")
+    def test_relay_provider_is_dropped(self):
+        """中转站的调用不采集（ADR 0003）。"""
+        for provider in ("krill", "custom", "tencent_codebuddy"):
+            raw = chatgpt_collector.parse_rollout(
+                self._records(provider=provider, model="gpt-5.5"))
+            self.assertEqual(chatgpt_collector.to_events(raw, self._day_of), [])
+
+    def test_thread_settings_switch_provider_mid_session(self):
+        records = self._records()
+        records.append({"type": "event_msg", "payload": {
+            "type": "thread_settings_applied",
+            "thread_settings": {"model": "gpt-5.5", "model_provider_id": "custom"}}})
+        records.append(dict(records[2], timestamp="2026-08-17T09:00:00.000Z"))
+        events = chatgpt_collector.to_events(
+            chatgpt_collector.parse_rollout(records), self._day_of)
+        self.assertEqual([(e.model, e.requests) for e in events], [("gpt-5.6-sol", 1)])
+
+    def test_subagent_model_comes_from_thread_settings(self):
+        """子代理会话先写 token_count，turn_context 到中途才出现。"""
+        token = self._records()[2]
+        records = [
+            {"type": "session_meta", "payload": {"model_provider": "openai"}},
+            {"type": "event_msg", "payload": {
+                "type": "thread_settings_applied",
+                "thread_settings": {"model": "gpt-5.6-luna"}}},
+            token,
+            {"type": "turn_context", "payload": {"model": "gpt-5.6-sol"}},
+            token,
+        ]
+        raw = chatgpt_collector.parse_rollout(records)
+        self.assertEqual([r["model"] for r in raw], ["gpt-5.6-luna", "gpt-5.6-sol"])
+
+    def test_model_before_any_context_backfills_from_session(self):
+        token = self._records()[2]
+        records = [
+            {"type": "session_meta", "payload": {"model_provider": "openai"}},
+            token,
+            {"type": "turn_context", "payload": {"model": "gpt-5.6-sol"}},
+            token,
+        ]
+        raw = chatgpt_collector.parse_rollout(records)
+        self.assertEqual([r["model"] for r in raw], ["gpt-5.6-sol", "gpt-5.6-sol"])
 
     def test_skips_zero_token_counts(self):
         raw = chatgpt_collector.parse_rollout(self._records(usage={
@@ -613,13 +649,6 @@ class TestChatgptCollector(unittest.TestCase):
         self.assertEqual(events[0].tokens_in, 10 + (30 - 20))
         self.assertEqual(events[0].tokens_out, 6)
         self.assertEqual(events[0].cache_read, 20)
-
-    def test_source_is_always_codex_ade(self):
-        self.assertEqual(chatgpt_collector.source_for_provider("openai"),
-                         "codex")
-        self.assertEqual(chatgpt_collector.source_for_provider("xiaomi-mimo"),
-                         "codex")
-        self.assertEqual(chatgpt_collector.source_for_provider(None), "codex")
 
     def test_default_codex_home_is_cross_platform(self):
         self.assertEqual(chatgpt_collector._codex_home({}),
@@ -987,6 +1016,27 @@ class TestCollectSeam(unittest.TestCase):
             self.assertEqual(paths, [
                 "data/raw/codex/work-mac/2026-08.json",
             ])
+
+    def test_relay_only_days_are_overwritten_empty(self):
+        """旧 raw 里残留的中转站数据，重采时要被覆盖掉。"""
+        ctx = CollectContext(tz=TZ, root=Path("."), since="2026-08-01",
+                             machine="work-mac", as_of="2026-08-17")
+        chat = TestChatgptCollector()
+        relay = chat._records(provider="custom")
+        relay[2] = dict(relay[2], timestamp="2026-08-10T08:00:00.000Z")
+        with tempfile.TemporaryDirectory() as tmp:
+            ctx.root = Path(tmp)
+            stale = Event(date="2026-08-10", source="codex", model="mimo-v2.5-pro",
+                          requests=5, tokens_in=1)
+            write_events(ctx.root, "codex", [stale], ["2026-08-10"], shard="work-mac")
+            with mock.patch("sys.stdout", new_callable=io.StringIO):
+                result = chatgpt_collector.collect(
+                    ctx, {}, rollouts=[relay, chat._records()])
+            persist(ctx, result)
+            doc = json.loads((ctx.root / "data" / "raw" / "codex" / "work-mac"
+                              / "2026-08.json").read_text(encoding="utf-8"))
+        self.assertEqual(doc["days"]["2026-08-10"], [])
+        self.assertEqual(doc["days"]["2026-08-17"][0]["model"], "gpt-5.6-sol")
 
     def test_persist_machine_shard_requires_machine(self):
         ctx = CollectContext(tz=TZ, root=Path("."), since="2026-08-01")
