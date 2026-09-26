@@ -9,11 +9,11 @@
 _Avoid_: Record, unit/amount
 
 **ADE**:
-产生用量的编码工具。当前是 Cursor、Codex、DeepSeek。接自己的订阅还是接中转站，都不改变它是哪一个 ADE。
+产生用量的编码工具。当前是 Cursor、Codex、Antigravity、DeepSeek。接自己的订阅还是接中转站，都不改变它是哪一个 ADE。
 _Avoid_: provider, 中转站, ChatGPT（那是 Codex 可能使用的订阅，不是 ADE）
 
 **Source**:
-用量归属的 ADE，落在 `Event.source` 与 raw 路径第一段。当前是 `cursor`、`codex`、`deepseek`。
+用量归属的 ADE，落在 `Event.source` 与 raw 路径第一段。当前是 `cursor`、`codex`、`antigravity`、`deepseek`。
 _Avoid_: provider, chatgpt, krill, custom, headroom（Codex `model_provider` 不是 Source）
 
 **Collector**:
@@ -30,7 +30,7 @@ _Avoid_: provider, chatgpt, krill, custom, headroom（Codex `model_provider` 不
 _Avoid_: 视图函数（渲染器不再计算）
 
 **模型成本**:
-写入 `cost_cents` 的美元分。Cursor 用接口返回的 `totalCents`；Codex 用公开 API 牌价在 fold 时补上（不是账单）。DeepSeek 用平台人民币账单，采集时按 `usd_cny` 折成美元分。
+写入 `cost_cents` 的美元分。Cursor 用接口返回的 `totalCents`；Codex 与 Antigravity 用公开 API 牌价（OpenAI / Gemini）在 fold 时补上（不是账单）。DeepSeek 用平台人民币账单，采集时按 `usd_cny` 折成美元分。
 
 **Subscription source**:
 raw 里没有官方成本的源。fold 时按 API 牌价补金额；对不上牌价的模型，金额列仍显示 Subscription。

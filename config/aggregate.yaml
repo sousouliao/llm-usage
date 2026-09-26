@@ -14,12 +14,21 @@ usd_cny: 7.2
 # 对不上牌价的模型，金额列仍显示 Subscription。
 subscription_sources:
   - codex
+  - antigravity
 
 # 公开 API 牌价，美元 / 百万 token，短上下文。用来给没有官方 totalCents 的行
 # 补 model cost。这是 API-equivalent，不是账单，也不是 ChatGPT credits。
 # 来源：https://developers.openai.com/api/docs/pricing
+#       https://ai.google.dev/gemini-api/docs/pricing（Gemini，Paid Tier 标准档）
 # 长上下文（单次输入 >272K）的加价无法从日聚合恢复，所以不用。
 list_prices:
+  gemini-3.8-flash:
+    # 促销价，官方写到 2026-12-31，2027-01-01 起四项都翻倍。
+    # Gemini 隐式缓存没有写入加价，cache_write 按输入价填；Antigravity 也不报缓存写。
+    input: 0.75
+    cache_read: 0.075
+    cache_write: 0.75
+    output: 3.75
   gpt-6-astra:
     input: 10.00
     cache_read: 1.00

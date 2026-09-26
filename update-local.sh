@@ -2,7 +2,7 @@
 # 本机用量更新脚本：同步 → 采集 → 写原始数据 → 推送。
 #
 # 采集必须在本机跑：Cursor 要用本机登录态，Codex 要读 ~/.codex 会话日志，
-# 云端 runner 都拿不到。本脚本只推送「原始数据」，产物交给 GitHub Actions。
+# Antigravity 要读 ~/.gemini/antigravity/conversations 会话库，云端 runner 都拿不到。本脚本只推送「原始数据」，产物交给 GitHub Actions。
 #
 # 用法（仓库根目录）：
 #   ./update-local.sh

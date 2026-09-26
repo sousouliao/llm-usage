@@ -14,6 +14,8 @@
 - 第 10 节：第三轮（v4）：WeekView 物化、采集 seam、目录收成 `llm_usage/`。
 - 第 11 节：Codex 按公开 API 牌价补 model cost。**金额列的现状以这一节为准。**
 - 第 12 节：页眉刷新时刻。**`generated_at` 是对「产物不读时钟」的定点例外。**
+- 第 13 节：接入 DeepSeek，控制台导出，人民币账单折美元。
+- 第 14 节：接入 Antigravity，本机会话库的 protobuf 元数据，按 Gemini 牌价补成本。
 
 被推翻的部分不删，因为「为什么放弃它」本身是有用的记录。但别照着它们实现：
 
@@ -638,4 +640,48 @@ DeepSeek 不进 `subscription_sources`。
 账号级，路径 `data/raw/deepseek/<月>.json`，不按机器分片。CSV 里的 `api_key`
 / `user_id` / `wallet_type` / `api_key_name` 落盘前丢掉。不升 schema，不动
 WeekView。不复活已删的 `openai_compatible`。
+
+---
+
+## 14. Antigravity：本机会话库
+
+第四个 ADE。没有能按天查 token 的接口：客户端调的 Cloud Code 内部接口
+`v1internal:retrieveUserQuotaSummary` / `fetchAvailableModels` 只给 5 小时 /
+每周窗口的 `remainingFraction`，和 ChatGPT 的 `wham/usage` 同类；本地语言服务的
+`GetUserAnalyticsSummary` 能按区间查，但响应里只有 `ChatStats`
+（`chats_sent`、`chats_accepted`…）与补全接受数，没有 token。二进制里的
+`GetCascadeAnalytics` / `GetTeamCreditEntries` 是 Windsurf 团队后台遗留，个人
+Google 账号没有对应服务端。这些接口还都要伪装客户端 UA，比读本地库更脆。
+
+所以和 Codex 一样读本机：`~/.gemini/antigravity/conversations/<id>.db`，一会话
+一个 SQLite（CLI 在同级 `antigravity-cli`，同名只读一次）。库用 WAL，只读打开也
+要写 `-shm`，采集时连 `-wal` 一起复制到临时目录再读。
+
+用量是没有公开 schema 的 protobuf，字段编号按 2026-09 的 15 个会话、1925 次调用
+实测：
+
+| 位置 | 字段 | 含义 | 依据 |
+| --- | --- | --- | --- |
+| `steps.metadata` | 1.1 / 9 / 12 | 秒级时间戳 / 用量 / 消息 ID | 时间落在会话起止之间 |
+| 用量 | 2 | 未缓存输入，**不含**缓存读 | 恒远小于 5，且随对话变长稳定在数千 |
+| 用量 | 5 | 缓存读 | 随对话推进单调增长，符合前缀缓存 |
+| 用量 | 3 = 9 + 10 | 输出 = 思考 + 正文 | 1925 条无一例外 |
+| 用量 | 11 | 响应 ID | 去重键 |
+| `gen_metadata.data` | 4 / 1.19 | 消息 ID / 模型名 | 与 steps 的 12 一一对应 |
+
+几条约束：
+
+1. **只算一份。** `gen_metadata` 里有同一份用量的副本，只取模型名；同一响应 ID
+   出现多次也只算一次。
+2. **缓存写缺省。** 字段 4 从未出现，`cache_write` 省略而不是写 0。金额按
+   `gemini-3.8-flash` 的公开牌价在 fold 时补，`antigravity` 进
+   `subscription_sources`。牌价是促销价，2027-01-01 起翻倍，届时改表重跑
+   `--skip-collect`。
+3. **格式漂移时拒写。** 编号是反推的，客户端升级可能挪位。`3 = 9 + 10` 当自检；
+   解码失败、自检不过或读库出错时整源放弃，本次不覆盖 raw——少读一个会话会把
+   那几天覆盖成偏小的值，宁可不更新。
+4. **只读元数据。** 只查 `steps.metadata` 与 `gen_metadata.data`，不碰
+   `step_payload` 里的对话正文。
+5. **本机源的老问题。** 按机器分片，两台都要采。会话在客户端里删掉，下次重采时
+   那几天的历史也跟着变少，这一点和 Codex 相同，账号级源没有。
 

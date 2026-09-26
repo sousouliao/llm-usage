@@ -3,8 +3,8 @@
 # 这里只放采集阶段需要的东西。时区与模型别名表在 config/aggregate.yaml 里（随仓库
 # 提交），因为聚合跑在 CI 上，而本文件不应该被提交。
 
-# 本机标识。Cursor 是账号级接口，忽略此项。Codex 会话只存在于产生它的那台机器，
-# 两台机器必须用不同的名字（例如 work-mac / home-win），否则会互相覆盖。
+# 本机标识。Cursor 是账号级接口，忽略此项。Codex 与 Antigravity 的会话只存在于产生
+# 它的那台机器，两台机器必须用不同的名字（例如 work-mac / home-win），否则会互相覆盖。
 machine: work-mac
 
 # 采集起点。接口型源每次重采 [since, 今天] 全量并覆盖写回，所以这个值往前调不会
@@ -29,6 +29,15 @@ sources:
   - name: chatgpt
     type: chatgpt
     # codex_home: ~/.codex
+
+  # Antigravity：读本机会话库（每个会话一个 SQLite）里逐次模型调用的 token。
+  # 默认读 ~/.gemini/antigravity/conversations 与 ~/.gemini/antigravity-cli/conversations；
+  # Windows 上即 %USERPROFILE%/.gemini/antigravity/conversations，通常无需配置。
+  # 存储格式自检不通过时整源跳过、不写 raw。
+  - name: antigravity
+    type: antigravity
+    # antigravity_dirs:
+    #   - ~/.gemini/antigravity/conversations
 
   # DeepSeek：走控制台月度导出，拿日 × 模型的 token 与人民币账单。
   # 认证是 platform.deepseek.com 的 userToken，不是 sk- API Key。

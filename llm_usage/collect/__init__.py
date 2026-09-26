@@ -20,14 +20,15 @@ token」，0 是「报了，但确实是零」。展示层据此决定显示数�
 Cursor 和 DeepSeek 的用量来自账号级接口，两台机器采到的是同一份数据，按机器分片
 会导致重复计数。所以账号级源的原始数据只按源和月份分片。
 
-Codex 这类源相反：会话日志只存在于产生它的那台机器。它们在文件系统上按
+Codex、Antigravity 这类源相反：会话日志只存在于产生它的那台机器。它们在文件系统上按
 ``data/raw/<source>/<machine>/<月>.json`` 分片，避免两台机器互相覆盖；但
-``Event.source`` 仍然是 ADE 名（``cursor`` / ``codex`` / ``deepseek``），machine 不进公开契约。展示与
-聚合都看不见机器。
+``Event.source`` 仍然是 ADE 名（``cursor`` / ``codex`` / ``antigravity`` / ``deepseek``），
+machine 不进公开契约。展示与聚合都看不见机器。
 """
 from __future__ import annotations
 
 import json
+import os
 import re
 from dataclasses import asdict, dataclass
 from datetime import datetime, timedelta, tzinfo
@@ -43,8 +44,19 @@ __all__ = [
     "write_events",
     "read_all_events",
     "persist",
+    "expand_user_path",
     "COLLECTORS",
 ]
+
+_WINDOWS_ENV = re.compile(r"%([^%]+)%")
+
+
+def expand_user_path(value: str) -> Path:
+    """展开配置里的本机路径：``~``、``$HOME`` / ``${HOME}`` 与 Windows 的 ``%USERPROFILE%``。"""
+    expanded = os.path.expandvars(os.path.expanduser(str(value)))
+    expanded = _WINDOWS_ENV.sub(
+        lambda match: os.environ.get(match.group(1), match.group(0)), expanded)
+    return Path(expanded)
 
 
 @dataclass(frozen=True)
@@ -234,10 +246,11 @@ def persist(ctx: CollectContext, result: CollectResult) -> int:
     return len(result.events)
 
 
-from . import chatgpt, cursor, deepseek  # noqa: E402
+from . import antigravity, chatgpt, cursor, deepseek  # noqa: E402
 
 COLLECTORS = {
     "cursor": cursor,
     "chatgpt": chatgpt,
+    "antigravity": antigravity,
     "deepseek": deepseek,
 }

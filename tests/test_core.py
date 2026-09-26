@@ -5,6 +5,7 @@
 import io
 import json
 import os
+import sqlite3
 import sys
 import tempfile
 import unittest
@@ -29,6 +30,7 @@ from llm_usage.collect import (  # noqa: E402
     read_all_events,
     write_events,
 )
+from llm_usage.collect import antigravity as antigravity_collector  # noqa: E402
 from llm_usage.collect import chatgpt as chatgpt_collector  # noqa: E402
 from llm_usage.collect import cursor as cursor_collector  # noqa: E402
 from llm_usage.collect import deepseek as deepseek_collector  # noqa: E402
@@ -282,6 +284,16 @@ class TestListPrices(unittest.TestCase):
         stats = fold.build_stats(daily)
         self.assertEqual(stats["weeks"][0]["view"]["cost_display"], "$4.00")
         self.assertAlmostEqual(stats["daily"][0]["cost_cents"], 400.0)
+
+    def test_build_stats_prices_antigravity_at_gemini_list_price(self):
+        """Antigravity 是订阅源，缓存写缺省；按 0.75 / 0.075 / 3.75 折算。"""
+        daily = fold.fold_events([
+            row("2026-09-21", "gemini-3.8-flash", source="antigravity",
+                tokens_in=1_000_000, tokens_out=1_000_000, cache_read=10_000_000),
+        ])
+        stats = fold.build_stats(daily)
+        self.assertAlmostEqual(stats["daily"][0]["cost_cents"], 75 + 375 + 75)
+        self.assertNotIn("cache_write", stats["daily"][0])
 
 
 class TestFormatters(unittest.TestCase):
@@ -622,6 +634,137 @@ class TestChatgptCollector(unittest.TestCase):
                 }),
                 Path("test-home") / ".codex",
             )
+
+
+def _pb(*fields):
+    """最小 protobuf 编码：``(字段号, int | str | bytes)``，int 走 varint，其余走长度前缀。"""
+    def varint(n):
+        out = bytearray()
+        while True:
+            byte, n = n & 0x7F, n >> 7
+            out.append(byte | (0x80 if n else 0))
+            if not n:
+                return bytes(out)
+
+    buf = bytearray()
+    for field, value in fields:
+        if isinstance(value, int):
+            buf += varint(field << 3) + varint(value)
+        else:
+            data = value.encode() if isinstance(value, str) else value
+            buf += varint(field << 3 | 2) + varint(len(data)) + data
+    return bytes(buf)
+
+
+class TestAntigravityCollector(unittest.TestCase):
+    # 2026-09-21 16:30 UTC = 上海 09-22 00:30
+    TS = int(datetime(2026, 9, 21, 16, 30, tzinfo=ZoneInfo("UTC")).timestamp())
+
+    @staticmethod
+    def _usage(i=100, cr=900, thinking=30, response=20, rid="r1", out=None):
+        return _pb((1, 1318), (2, i), (3, thinking + response if out is None else out),
+                   (5, cr), (9, thinking), (10, response), (11, rid))
+
+    def _step(self, usage, mid="m1", ts=None):
+        return _pb((1, _pb((1, self.TS if ts is None else ts))), (9, usage), (12, mid))
+
+    @staticmethod
+    def _gen(mid="m1", model="gemini-3.8-flash", usage=b""):
+        return _pb((1, _pb((4, usage), (19, model))), (4, mid))
+
+    def _events(self, steps, gens):
+        rows = antigravity_collector.parse_conversation(steps, gens)
+        return antigravity_collector.to_events(
+            rows, lambda s: datetime.fromtimestamp(s, TZ).strftime("%Y-%m-%d"))
+
+    def test_field_mapping_and_missing_cache_write(self):
+        [e] = self._events([self._step(self._usage())], [self._gen()])
+        self.assertEqual((e.source, e.model, e.requests), ("antigravity", "gemini-3.8-flash", 1))
+        self.assertEqual((e.tokens_in, e.cache_read, e.tokens_out), (100, 900, 50))
+        self.assertNotIn("cache_write", e.to_dict())
+        self.assertIsNone(e.cost_cents)
+        # 字段 2 不含缓存读，总量不做减法
+        self.assertEqual(e.tokens_total, 100 + 900 + 50)
+
+    def test_duplicate_response_counts_once_and_gen_copy_is_ignored(self):
+        usage = self._usage()
+        steps = [self._step(usage), self._step(usage),
+                 self._step(self._usage(rid="r2"), mid="m2")]
+        [e] = self._events(steps, [self._gen(usage=usage), self._gen(mid="m2")])
+        self.assertEqual(e.requests, 2)
+        self.assertEqual(e.tokens_in, 200)
+
+    def test_day_uses_configured_timezone(self):
+        [e] = self._events([self._step(self._usage())], [self._gen()])
+        self.assertEqual(e.date, "2026-09-22")
+
+    def test_unknown_model_when_gen_missing(self):
+        [e] = self._events([self._step(self._usage())], [])
+        self.assertEqual(e.model, "unknown")
+
+    def test_steps_without_usage_are_skipped(self):
+        steps = [_pb((1, _pb((1, self.TS))), (12, "m1")), self._step(self._usage())]
+        [e] = self._events(steps, [self._gen()])
+        self.assertEqual(e.requests, 1)
+
+    def test_format_drift_writes_nothing(self):
+        ctx = CollectContext(tz=TZ, root=Path("."), since="2026-09-01")
+        bad = self._step(self._usage(out=999))
+        with mock.patch("sys.stdout", new_callable=io.StringIO):
+            result = antigravity_collector.collect(
+                ctx, {}, conversations=[([bad], [self._gen()])])
+        self.assertEqual((result.events, result.days), ([], []))
+
+    def test_collect_uses_injected_conversations(self):
+        ctx = CollectContext(tz=TZ, root=Path("."), since="2026-09-01",
+                             as_of="2026-09-23")
+        with mock.patch("sys.stdout", new_callable=io.StringIO):
+            result = antigravity_collector.collect(
+                ctx, {}, conversations=[([self._step(self._usage())], [self._gen()])])
+        self.assertTrue(result.machine_shard)
+        self.assertEqual(result.days, ["2026-09-22", "2026-09-23"])
+
+    def test_default_dirs_are_cross_platform(self):
+        home = Path.home() / ".gemini"
+        self.assertEqual(antigravity_collector._conversation_dirs({}), [
+            home / "antigravity" / "conversations",
+            home / "antigravity-cli" / "conversations",
+        ])
+
+    def test_dirs_expand_windows_environment_syntax(self):
+        with mock.patch.dict(os.environ, {"AGY_TEST_HOME": str(Path("test-home"))}):
+            self.assertEqual(
+                antigravity_collector._conversation_dirs({
+                    "antigravity_dirs": ["%AGY_TEST_HOME%/.gemini/antigravity/conversations"],
+                }),
+                [Path("test-home") / ".gemini" / "antigravity" / "conversations"],
+            )
+
+    def test_reads_db_with_uncheckpointed_wal_and_dedupes_by_name(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            first, second = Path(tmp) / "a", Path(tmp) / "b"
+            first.mkdir()
+            second.mkdir()
+            db = first / "conv.db"
+            con = sqlite3.connect(db)
+            con.execute("pragma journal_mode=wal")
+            con.execute("pragma wal_autocheckpoint=0")
+            con.execute("create table steps (idx integer primary key, metadata blob)")
+            con.execute("create table gen_metadata (idx integer primary key, data blob)")
+            con.commit()
+            con.execute("insert into steps (metadata) values (?)",
+                        (self._step(self._usage()),))
+            con.execute("insert into gen_metadata (data) values (?)", (self._gen(),))
+            con.commit()
+            self.assertTrue(db.with_name("conv.db-wal").stat().st_size > 0)
+            (second / "conv.db").write_bytes(b"")
+
+            files = antigravity_collector._conversation_files([first, second])
+            self.assertEqual(files, [db])
+            steps, gens = antigravity_collector._read_db(db)
+            con.close()
+        self.assertEqual(len(steps), 1)
+        self.assertEqual(len(gens), 1)
 
 
 class TestDeepseekCollector(unittest.TestCase):

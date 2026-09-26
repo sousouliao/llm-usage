@@ -1,9 +1,9 @@
 """按公开 API 牌价给没有官方 cost_cents 的日记录补上折算成本。
 
 Cursor 的金额来自接口返回的 ``tokenUsage.totalCents``，采集时已经写入 raw。
-Codex / Plus 的 raw 没有这个字段。展示层要的仍是「token × 模型单价」，所以
-用 OpenAI 公布的短上下文 API 牌价，在 fold 时补上。这是 API-equivalent，
-不是账单，也不是 ChatGPT credits。
+Codex / Plus 与 Antigravity 的 raw 没有这个字段。展示层要的仍是「token × 模型
+单价」，所以用 OpenAI / Gemini 公布的短上下文 API 牌价，在 fold 时补上。这是
+API-equivalent，不是账单，也不是 ChatGPT credits。
 
 raw 不改：牌价变了可以重跑 ``--skip-collect`` 重建产物。
 

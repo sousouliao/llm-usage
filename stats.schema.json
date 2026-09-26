@@ -57,7 +57,7 @@
     "sources": {
       "type": "array",
       "items": { "type": "string" },
-      "description": "数据中出现过的所有源，如 cursor / chatgpt。"
+      "description": "数据中出现过的所有源，如 cursor / codex / antigravity。"
     },
     "subscription_sources": {
       "type": "array",
@@ -78,7 +78,7 @@
           },
           "source": {
             "type": "string",
-            "description": "源名，如 cursor / deepseek。"
+            "description": "源名，如 cursor / antigravity / deepseek。"
           },
           "model": {
             "type": "string",

@@ -29,19 +29,15 @@ Source 是 ADE，不是计费后端。Codex 日志里的 ``model_provider``（``
 from __future__ import annotations
 
 import json
-import os
-import re
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-from . import CollectResult, Event
+from . import CollectResult, Event, expand_user_path
 
 # ChatGPT 订阅走的官方 provider，记在日志里但不决定 Source。
 OPENAI_PROVIDER = "openai"
 ADE_SOURCE = "codex"
-
-_WINDOWS_ENV = re.compile(r"%([^%]+)%")
 
 
 def source_for_provider(provider: str | None) -> str:
@@ -177,10 +173,7 @@ def _codex_home(cfg: dict) -> Path:
     configured = cfg.get("codex_home")
     if not configured:
         return Path.home() / ".codex"
-    value = os.path.expandvars(os.path.expanduser(str(configured)))
-    value = _WINDOWS_ENV.sub(
-        lambda match: os.environ.get(match.group(1), match.group(0)), value)
-    return Path(value)
+    return expand_user_path(configured)
 
 
 def collect(ctx, cfg: dict, *, rollouts=None) -> CollectResult:
