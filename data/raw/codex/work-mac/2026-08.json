@@ -49,28 +49,7 @@
       }
     ],
     "2026-08-05": [],
-    "2026-08-06": [
-      {
-        "date": "2026-08-06",
-        "source": "codex",
-        "model": "codex-auto-review",
-        "requests": 22,
-        "tokens_in": 179976,
-        "tokens_out": 3041,
-        "cache_write": 0,
-        "cache_read": 388608
-      },
-      {
-        "date": "2026-08-06",
-        "source": "codex",
-        "model": "gpt-5.6-sol",
-        "requests": 211,
-        "tokens_in": 2224913,
-        "tokens_out": 100956,
-        "cache_write": 0,
-        "cache_read": 17072010
-      }
-    ],
+    "2026-08-06": [],
     "2026-08-07": [],
     "2026-08-08": [],
     "2026-08-09": [],

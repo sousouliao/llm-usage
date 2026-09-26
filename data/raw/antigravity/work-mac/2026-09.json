@@ -1,0 +1,43 @@
+{
+  "source": "antigravity",
+  "month": "2026-09",
+  "days": {
+    "2026-09-21": [
+      {
+        "date": "2026-09-21",
+        "source": "antigravity",
+        "model": "gemini-3.8-flash",
+        "requests": 418,
+        "tokens_in": 5031373,
+        "tokens_out": 196303,
+        "cache_read": 42067622
+      }
+    ],
+    "2026-09-22": [
+      {
+        "date": "2026-09-22",
+        "source": "antigravity",
+        "model": "gemini-3.8-flash",
+        "requests": 918,
+        "tokens_in": 13572759,
+        "tokens_out": 508393,
+        "cache_read": 84088727
+      }
+    ],
+    "2026-09-23": [
+      {
+        "date": "2026-09-23",
+        "source": "antigravity",
+        "model": "gemini-3.8-flash",
+        "requests": 589,
+        "tokens_in": 9714776,
+        "tokens_out": 297439,
+        "cache_read": 60333126
+      }
+    ],
+    "2026-09-24": [],
+    "2026-09-25": [],
+    "2026-09-26": [],
+    "2026-09-27": []
+  }
+}

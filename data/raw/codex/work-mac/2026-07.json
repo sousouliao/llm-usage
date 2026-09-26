@@ -134,11 +134,21 @@
         "date": "2026-07-13",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 1045,
-        "tokens_in": 3513192,
-        "tokens_out": 386487,
+        "requests": 1015,
+        "tokens_in": 3477453,
+        "tokens_out": 381582,
         "cache_write": 0,
-        "cache_read": 91361024
+        "cache_read": 90382592
+      },
+      {
+        "date": "2026-07-13",
+        "source": "codex",
+        "model": "gpt-5.6-terra",
+        "requests": 30,
+        "tokens_in": 35739,
+        "tokens_out": 4905,
+        "cache_write": 0,
+        "cache_read": 978432
       }
     ],
     "2026-07-14": [
@@ -178,21 +188,11 @@
         "date": "2026-07-15",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 841,
-        "tokens_in": 3841988,
-        "tokens_out": 320962,
+        "requests": 868,
+        "tokens_in": 4074994,
+        "tokens_out": 348172,
         "cache_write": 0,
-        "cache_read": 100854528
-      },
-      {
-        "date": "2026-07-15",
-        "source": "codex",
-        "model": "unknown",
-        "requests": 27,
-        "tokens_in": 233006,
-        "tokens_out": 27210,
-        "cache_write": 0,
-        "cache_read": 1684736
+        "cache_read": 102539264
       }
     ],
     "2026-07-16": [
@@ -338,21 +338,11 @@
         "date": "2026-07-28",
         "source": "codex",
         "model": "gpt-5.6-sol",
-        "requests": 812,
-        "tokens_in": 3137015,
-        "tokens_out": 330565,
-        "cache_write": 2954295,
-        "cache_read": 92378497
-      },
-      {
-        "date": "2026-07-28",
-        "source": "codex",
-        "model": "unknown",
-        "requests": 11,
-        "tokens_in": 113239,
-        "tokens_out": 2508,
-        "cache_write": 112431,
-        "cache_read": 449621
+        "requests": 823,
+        "tokens_in": 3250254,
+        "tokens_out": 333073,
+        "cache_write": 3066726,
+        "cache_read": 92828118
       }
     ],
     "2026-07-29": [

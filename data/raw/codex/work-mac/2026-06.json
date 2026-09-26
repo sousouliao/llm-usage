@@ -26,28 +26,7 @@
         "cache_read": 2236544
       }
     ],
-    "2026-06-04": [
-      {
-        "date": "2026-06-04",
-        "source": "codex",
-        "model": "mimo-v2.5",
-        "requests": 1,
-        "tokens_in": 15018,
-        "tokens_out": 71,
-        "cache_write": 0,
-        "cache_read": 4096
-      },
-      {
-        "date": "2026-06-04",
-        "source": "codex",
-        "model": "mimo-v2.5-pro",
-        "requests": 320,
-        "tokens_in": 2005230,
-        "tokens_out": 322902,
-        "cache_write": 0,
-        "cache_read": 21871232
-      }
-    ],
+    "2026-06-04": [],
     "2026-06-05": [],
     "2026-06-06": [],
     "2026-06-07": [],
@@ -81,16 +60,6 @@
         "tokens_out": 9488,
         "cache_write": 0,
         "cache_read": 999680
-      },
-      {
-        "date": "2026-06-18",
-        "source": "codex",
-        "model": "mimo-v2.5-pro",
-        "requests": 4,
-        "tokens_in": 37963,
-        "tokens_out": 1245,
-        "cache_write": 0,
-        "cache_read": 54016
       }
     ],
     "2026-06-19": [],
@@ -103,18 +72,7 @@
     "2026-06-26": [],
     "2026-06-27": [],
     "2026-06-28": [],
-    "2026-06-29": [
-      {
-        "date": "2026-06-29",
-        "source": "codex",
-        "model": "gpt-5.5",
-        "requests": 469,
-        "tokens_in": 4205830,
-        "tokens_out": 240836,
-        "cache_write": 0,
-        "cache_read": 62553216
-      }
-    ],
+    "2026-06-29": [],
     "2026-06-30": []
   }
 }
