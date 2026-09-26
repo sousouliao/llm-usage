@@ -34,6 +34,16 @@ list_prices:
     cache_read: 1.00
     cache_write: 12.50
     output: 50.00
+  gpt-6-sol:
+    input: 2.00
+    cache_read: 0.20
+    cache_write: 2.50
+    output: 10.00
+  gpt-6-luna:
+    input: 0.10
+    cache_read: 0.01
+    cache_write: 0.125
+    output: 0.50
   gpt-5.6-sol:
     # 促销价，官方写至少到 2026-11-21。过期后核定价页。
     input: 4.00
@@ -91,4 +101,9 @@ price_aliases:
 # 原始事件里保留原名，归一只在聚合阶段做，将来发现映射错了可以重跑修正。
 # 路由别名（Cursor 的 auto-smart）不进此表——它不是模型，等能解出背后的真实模型时
 # 应该换成真名，而不是映射到另一个假名。
-model_aliases: {}
+#
+# Cursor 给 Gemini 带推理档后缀，Antigravity 只报底层模型名；推理档不是另一个
+# 模型，合成一行。Cursor 的金额来自 totalCents，合并不影响计价。
+model_aliases:
+  gemini-3.8-flash-medium: gemini-3.8-flash
+  gemini-3.8-flash-high: gemini-3.8-flash
