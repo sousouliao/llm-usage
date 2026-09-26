@@ -487,6 +487,27 @@
     ],
     "2026-09-25": [],
     "2026-09-26": [],
-    "2026-09-27": []
+    "2026-09-27": [
+      {
+        "date": "2026-09-27",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 12,
+        "tokens_in": 81236,
+        "tokens_out": 1829,
+        "cache_write": 0,
+        "cache_read": 204800
+      },
+      {
+        "date": "2026-09-27",
+        "source": "codex",
+        "model": "gpt-6-sol",
+        "requests": 87,
+        "tokens_in": 294941,
+        "tokens_out": 38271,
+        "cache_write": 0,
+        "cache_read": 7239424
+      }
+    ]
   }
 }

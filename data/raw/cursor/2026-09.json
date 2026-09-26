@@ -1627,6 +1627,18 @@
         "cost_cents": 49.8166
       }
     ],
-    "2026-09-27": []
+    "2026-09-27": [
+      {
+        "date": "2026-09-27",
+        "source": "cursor",
+        "model": "claude-opus-5-5-medium",
+        "requests": 8,
+        "tokens_in": 204,
+        "tokens_out": 55074,
+        "cache_write": 268340,
+        "cache_read": 14342258,
+        "cost_cents": 531.2448
+      }
+    ]
   }
 }
