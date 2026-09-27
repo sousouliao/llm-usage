@@ -1632,12 +1632,34 @@
         "date": "2026-09-27",
         "source": "cursor",
         "model": "claude-opus-5-5-medium",
-        "requests": 8,
-        "tokens_in": 204,
-        "tokens_out": 55074,
-        "cache_write": 268340,
-        "cache_read": 14342258,
-        "cost_cents": 531.2448
+        "requests": 16,
+        "tokens_in": 374,
+        "tokens_out": 129578,
+        "cache_write": 590532,
+        "cache_read": 29012936,
+        "cost_cents": 1134.8303
+      },
+      {
+        "date": "2026-09-27",
+        "source": "cursor",
+        "model": "grok-bot-automation",
+        "requests": 5,
+        "tokens_in": 19619,
+        "tokens_out": 2372,
+        "cache_write": 0,
+        "cache_read": 109952,
+        "cost_cents": 10.8446
+      },
+      {
+        "date": "2026-09-27",
+        "source": "cursor",
+        "model": "grok-bot-default",
+        "requests": 1,
+        "tokens_in": 16285,
+        "tokens_out": 855,
+        "cache_write": 0,
+        "cache_read": 19328,
+        "cost_cents": 9.9858
       }
     ]
   }
