@@ -16,6 +16,7 @@
 - 第 12 节：页眉刷新时刻。**`generated_at` 是对「产物不读时钟」的定点例外。**
 - 第 13 节：接入 DeepSeek，控制台导出，人民币账单折美元。
 - 第 14 节：接入 Antigravity，本机会话库的 protobuf 元数据，按 Gemini 牌价补成本。
+- 第 15 节：接入 ZCode，本机会话库的 `model_usage` 台账，按 GLM 牌价补成本。
 
 被推翻的部分不删，因为「为什么放弃它」本身是有用的记录。但别照着它们实现：
 
@@ -684,4 +685,50 @@ Google 账号没有对应服务端。这些接口还都要伪装客户端 UA，�
    `step_payload` 里的对话正文。
 5. **本机源的老问题。** 按机器分片，两台都要采。会话在客户端里删掉，下次重采时
    那几天的历史也跟着变少，这一点和 Codex 相同，账号级源没有。
+
+---
+
+## 15. ZCode：本机会话库的用量台账
+
+第五个 ADE。排除过程和 Antigravity 一样：GLM 编程套餐没有公开的用量历史接口，
+官方 `glm-plan-usage` 插件走的 `open.bigmodel.cn/api/monitor/usage` 只返回当前
+配额窗口的余量快照（且只支持个人套餐），不是逐次消耗。本机日志是唯一逐次来源。
+
+候选有两个，选了台账：
+
+| 候选 | 实测（2026-10，ZCode 0.16.5） | 判定 |
+| --- | --- | --- |
+| `~/.zcode/cli/rollout/model-io-*.jsonl` | 每次调用一行，`response.usage` 四类 token 齐全；但 `modelIoFullRetentionEnabled: false`，是轮转日志——库里 10 个会话只剩 3 个文件 | 不用 |
+| `~/.zcode/cli/db/db.sqlite` 的 `model_usage` 表 | 每次调用一行，全部行都在，`raw_usage_json` 原样保存接口返回 | 主源 |
+
+两源交叉验证过：3 个会话的逐次数字一致（其中一个差 0.02%，是流式取消的边缘
+请求——jsonl 记了 usage，台账的取消行记零）。
+
+口径实测（704 条完成行）：
+
+1. **`input_tokens` 含缓存读**（OpenAI 式，与 Codex 相同）：全部满足
+   `provider_total_tokens = input + output` 且 `cache_read ≤ input`，落盘前减掉。
+2. **缓存写报了为零。** GLM 缓存是服务端隐式的，`cacheWriteTokens` 恒为 0，按
+   「报了为零」落 0。Antigravity 的缺省是「不报」——两种都合法，区别在源头。
+3. **归日取完成时刻。** `COALESCE(completed_at, started_at)`，跨午夜的请求归到
+   token 生成完的那天，与 Codex 的 `token_count` 事件时间戳同口径。
+4. **只计 `status=completed` 且有用量的行。** 失败 / 取消 / 进行中的行 token 全为
+   零，本来就会被「无用量不计请求」滤掉；显式判 status 是防将来流式更新把进行
+   中的行写成部分用量。
+
+防漂移（Antigravity 同款防线）：`model_usage` 列缺失，或 `cache_read > input`
+（减法不再成立的信号），整源拒写。库是 WAL，连 `-wal` 一起复制到临时目录再读。
+
+金额按 Z.AI 公开牌价在 fold 时补：`glm-5.3` 是 1.40 / 0.26 / 4.40（与 GLM-5.2
+同价；定价页只有 Cached Input 一档、无写入加价，`cache_write` 按输入价填，同
+Gemini 的处理）。`zcode` 进 `subscription_sources`，模型名 `GLM-5.3` 经
+`model_aliases` 归一成小写。首日实测：净输入 3.8M、缓存读 114.9M、输出 0.5M，
+折 $37——缓存读占 96%，再证四类分存的必要性。
+
+两条已知边界，都写在采集器模块文档里：
+
+- 删会话会级联删 `model_usage` 行（`on delete cascade`），历史随删除变少——本机
+  源的老问题（第 14 节第 5 条），每日采集落 git 即是缓解。
+- 量的是 ZCode 这个工具，不是整个 GLM 套餐：同一 API key 挂到 Claude Code、
+  Cline 等其他工具的消耗不在这张表里；套餐级消耗没有逐次接口，无解。
 

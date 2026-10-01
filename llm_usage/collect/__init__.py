@@ -20,9 +20,10 @@ token」，0 是「报了，但确实是零」。展示层据此决定显示数�
 Cursor 和 DeepSeek 的用量来自账号级接口，两台机器采到的是同一份数据，按机器分片
 会导致重复计数。所以账号级源的原始数据只按源和月份分片。
 
-Codex、Antigravity 这类源相反：会话日志只存在于产生它的那台机器。它们在文件系统上按
+Codex、Antigravity、ZCode 这类源相反：会话日志只存在于产生它的那台机器。它们在文件系统上按
 ``data/raw/<source>/<machine>/<月>.json`` 分片，避免两台机器互相覆盖；但
-``Event.source`` 仍然是 ADE 名（``cursor`` / ``codex`` / ``antigravity`` / ``deepseek``），
+``Event.source`` 仍然是 ADE 名（``cursor`` / ``codex`` / ``antigravity`` / ``deepseek`` /
+``zcode``），
 machine 不进公开契约。展示与聚合都看不见机器。
 """
 from __future__ import annotations
@@ -246,11 +247,12 @@ def persist(ctx: CollectContext, result: CollectResult) -> int:
     return len(result.events)
 
 
-from . import antigravity, chatgpt, cursor, deepseek  # noqa: E402
+from . import antigravity, chatgpt, cursor, deepseek, zcode  # noqa: E402
 
 COLLECTORS = {
     "cursor": cursor,
     "chatgpt": chatgpt,
     "antigravity": antigravity,
     "deepseek": deepseek,
+    "zcode": zcode,
 }

@@ -15,13 +15,22 @@ usd_cny: 7.2
 subscription_sources:
   - codex
   - antigravity
+  - zcode
 
 # 公开 API 牌价，美元 / 百万 token，短上下文。用来给没有官方 totalCents 的行
 # 补 model cost。这是 API-equivalent，不是账单，也不是 ChatGPT credits。
 # 来源：https://developers.openai.com/api/docs/pricing
 #       https://ai.google.dev/gemini-api/docs/pricing（Gemini，Paid Tier 标准档）
+#       https://docs.z.ai/guides/overview/pricing（GLM）
 # 长上下文（单次输入 >272K）的加价无法从日聚合恢复，所以不用。
 list_prices:
+  glm-5.3:
+    # 2026-10 发布，与 GLM-5.2 同价。GLM 缓存是服务端隐式的：定价页只列 Cached
+    # Input 一档、无写入加价，cache_write 按输入价填（同 Gemini 的处理）。
+    input: 1.40
+    cache_read: 0.26
+    cache_write: 1.40
+    output: 4.40
   gemini-3.8-flash:
     # 促销价，官方写到 2026-12-31，2027-01-01 起四项都翻倍。
     # Gemini 隐式缓存没有写入加价，cache_write 按输入价填；Antigravity 也不报缓存写。
@@ -110,6 +119,9 @@ price_aliases:
 #
 # Cursor 给 Gemini 带推理档后缀，Antigravity 只报底层模型名；推理档不是另一个
 # 模型，合成一行。Cursor 的金额来自 totalCents，合并不影响计价。
+#
+# ZCode 台账里的模型名大写开头（GLM-5.3），归一成与其他源一致的小写。
 model_aliases:
   gemini-3.8-flash-medium: gemini-3.8-flash
   gemini-3.8-flash-high: gemini-3.8-flash
+  GLM-5.3: glm-5.3

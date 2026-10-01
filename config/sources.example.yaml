@@ -39,6 +39,13 @@ sources:
     # antigravity_dirs:
     #   - ~/.gemini/antigravity/conversations
 
+  # ZCode：读本机 ZCode 会话库（~/.zcode/cli/db/db.sqlite 的 model_usage 表）里
+  # 逐次模型调用的 token。默认读当前用户主目录下的 .zcode，通常无需配置。
+  # 存储格式自检不通过时整源跳过、不写 raw。
+  - name: zcode
+    type: zcode
+    # zcode_db: ~/.zcode/cli/db/db.sqlite
+
   # DeepSeek：走控制台月度导出，拿日 × 模型的 token 与人民币账单。
   # 认证是 platform.deepseek.com 的 userToken，不是 sk- API Key。
   # 登录用量页后，在 Console 执行 JSON.parse(localStorage.getItem('userToken')).value，

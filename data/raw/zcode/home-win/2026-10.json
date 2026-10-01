@@ -1,0 +1,18 @@
+{
+  "source": "zcode",
+  "month": "2026-10",
+  "days": {
+    "2026-10-01": [
+      {
+        "date": "2026-10-01",
+        "source": "zcode",
+        "model": "GLM-5.3",
+        "requests": 764,
+        "tokens_in": 3859969,
+        "tokens_out": 520427,
+        "cache_write": 0,
+        "cache_read": 117520384
+      }
+    ]
+  }
+}

@@ -18,7 +18,7 @@ from zoneinfo import ZoneInfo
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
-from llm_usage import fold, pricing, render  # noqa: E402
+from llm_usage import config, fold, pricing, render  # noqa: E402
 from llm_usage import view as weekview  # noqa: E402
 from llm_usage.cli import run_collect  # noqa: E402
 from llm_usage.collect import (  # noqa: E402
@@ -34,6 +34,7 @@ from llm_usage.collect import antigravity as antigravity_collector  # noqa: E402
 from llm_usage.collect import chatgpt as chatgpt_collector  # noqa: E402
 from llm_usage.collect import cursor as cursor_collector  # noqa: E402
 from llm_usage.collect import deepseek as deepseek_collector  # noqa: E402
+from llm_usage.collect import zcode as zcode_collector  # noqa: E402
 from llm_usage.contract import TOKEN_KINDS, validate_stats  # noqa: E402
 
 TZ = ZoneInfo("Asia/Shanghai")
@@ -294,6 +295,16 @@ class TestListPrices(unittest.TestCase):
         stats = fold.build_stats(daily)
         self.assertAlmostEqual(stats["daily"][0]["cost_cents"], 75 + 375 + 75)
         self.assertNotIn("cache_write", stats["daily"][0])
+
+    def test_build_stats_prices_zcode_at_glm_list_price(self):
+        """ZCode 是订阅源；GLM-5.3 归一成小写后按 1.40 / 0.26 / 4.40 折算。"""
+        daily = fold.fold_events([
+            row("2026-10-01", "GLM-5.3", source="zcode",
+                tokens_in=1_000_000, tokens_out=1_000_000, cache_read=10_000_000),
+        ], config.model_aliases())
+        self.assertEqual(daily[0]["model"], "glm-5.3")
+        stats = fold.build_stats(daily)
+        self.assertAlmostEqual(stats["daily"][0]["cost_cents"], 140 + 440 + 260)
 
 
 class TestFormatters(unittest.TestCase):
@@ -794,6 +805,146 @@ class TestAntigravityCollector(unittest.TestCase):
             con.close()
         self.assertEqual(len(steps), 1)
         self.assertEqual(len(gens), 1)
+
+
+class TestZcodeCollector(unittest.TestCase):
+    TS_MS = int(datetime(2026, 10, 1, 12, 0, tzinfo=TZ).timestamp() * 1000)
+
+    # 数字取自本机 model_usage 的真实一行（2026-10-01，GLM-5.3）。
+    def _row(self, **kwargs):
+        row = {
+            "model_id": "GLM-5.3", "status": "completed", "at_ms": self.TS_MS,
+            "input_tokens": 39855, "output_tokens": 950,
+            "cache_creation_input_tokens": 0, "cache_read_input_tokens": 36928,
+        }
+        row.update(kwargs)
+        return row
+
+    def _day_of(self, ms):
+        return datetime.fromtimestamp(ms / 1000, TZ).strftime("%Y-%m-%d")
+
+    def test_input_excludes_already_cached_read(self):
+        """input 含缓存读（total = in + out 实测成立），落盘前先减掉。"""
+        [e] = zcode_collector.to_events([self._row()], self._day_of)
+        self.assertEqual((e.source, e.model, e.requests), ("zcode", "GLM-5.3", 1))
+        self.assertEqual(e.tokens_in, 39855 - 36928)
+        self.assertEqual((e.tokens_out, e.cache_read), (950, 36928))
+        self.assertIsNone(e.cost_cents)
+        self.assertEqual(e.tokens_total, (39855 - 36928) + 950 + 36928)
+
+    def test_reported_zero_cache_write_is_kept(self):
+        """GLM 报了 cacheWriteTokens=0（服务端隐式缓存），落 0 而不是省略。"""
+        [e] = zcode_collector.to_events([self._row()], self._day_of)
+        self.assertEqual(e.cache_write, 0)
+        self.assertIn("cache_write", e.to_dict())
+
+    def test_unfinished_and_empty_rows_do_not_count(self):
+        """失败 / 取消 / 进行中与零用量行不计请求，否则请求数虚增。"""
+        rows = [
+            self._row(status="error"),
+            self._row(status="cancelled"),
+            self._row(status="running"),
+            self._row(input_tokens=0, output_tokens=0,
+                      cache_creation_input_tokens=0, cache_read_input_tokens=0),
+        ]
+        self.assertEqual(zcode_collector.to_events(rows, self._day_of), [])
+
+    def test_aggregates_by_day_and_model(self):
+        day_later = self.TS_MS + 24 * 3600 * 1000
+        events = zcode_collector.to_events([
+            self._row(),
+            self._row(model_id="GLM-4.7-Flash"),
+            self._row(at_ms=day_later),
+            self._row(),
+        ], self._day_of)
+        self.assertEqual(
+            [(e.date, e.model, e.requests) for e in events],
+            [("2026-10-01", "GLM-4.7-Flash", 1),
+             ("2026-10-01", "GLM-5.3", 2),
+             ("2026-10-02", "GLM-5.3", 1)])
+
+    def test_cache_read_above_input_is_format_drift(self):
+        """cache_read > input 说明 input 口径变了，减法不再成立。"""
+        with self.assertRaises(zcode_collector.FormatDrift):
+            zcode_collector.to_events(
+                [self._row(cache_read_input_tokens=40000)], self._day_of)
+
+    def test_format_drift_writes_nothing(self):
+        ctx = CollectContext(tz=TZ, root=Path("."), since="2026-01-01")
+        with mock.patch("sys.stdout", new_callable=io.StringIO):
+            result = zcode_collector.collect(
+                ctx, {}, rows=[self._row(cache_read_input_tokens=40000)])
+        self.assertEqual((result.events, result.days), ([], []))
+
+    def test_collect_filters_since_and_claims_days(self):
+        ctx = CollectContext(tz=TZ, root=Path("."), since="2026-10-01",
+                             as_of="2026-10-03")
+        with mock.patch("sys.stdout", new_callable=io.StringIO):
+            result = zcode_collector.collect(ctx, {}, rows=[
+                self._row(at_ms=self.TS_MS - 24 * 3600 * 1000),  # 9-30，早于 since
+                self._row(),
+            ])
+        self.assertTrue(result.machine_shard)
+        self.assertEqual([e.date for e in result.events], ["2026-10-01"])
+        self.assertEqual(result.days, ["2026-10-01", "2026-10-02", "2026-10-03"])
+
+    def test_default_db_path_is_cross_platform(self):
+        self.assertEqual(zcode_collector._db_path({}),
+                         Path.home() / ".zcode" / "cli" / "db" / "db.sqlite")
+
+    def test_db_path_expands_windows_environment_syntax(self):
+        with mock.patch.dict(os.environ, {"ZCODE_TEST_DB": str(Path("test-home"))}):
+            self.assertEqual(
+                zcode_collector._db_path(
+                    {"zcode_db": "%ZCODE_TEST_DB%/.zcode/cli/db/db.sqlite"}),
+                Path("test-home") / ".zcode" / "cli" / "db" / "db.sqlite")
+
+    @staticmethod
+    def _create_ledger(con):
+        con.execute(
+            "create table model_usage ("
+            " id text primary key, model_id text, status text,"
+            " started_at integer, completed_at integer,"
+            " input_tokens integer, output_tokens integer,"
+            " cache_creation_input_tokens integer,"
+            " cache_read_input_tokens integer)")
+
+    def test_read_db_uses_completion_time_and_reads_wal(self):
+        """at_ms 取 completed_at：跨午夜的请求归到 token 生成完的那天。"""
+        started = int(datetime(2026, 9, 30, 23, 58, tzinfo=TZ).timestamp() * 1000)
+        completed = int(datetime(2026, 10, 1, 0, 5, tzinfo=TZ).timestamp() * 1000)
+        with tempfile.TemporaryDirectory() as tmp:
+            db = Path(tmp) / "db.sqlite"
+            con = sqlite3.connect(db)
+            con.execute("pragma journal_mode=wal")
+            con.execute("pragma wal_autocheckpoint=0")
+            self._create_ledger(con)
+            con.commit()
+            con.execute(
+                "insert into model_usage values (?,?,?,?,?,?,?,?,?)",
+                ("u1", "GLM-5.3", "completed", started, completed,
+                 500, 10, 0, 400))
+            con.commit()
+            self.assertTrue(db.with_name("db.sqlite-wal").stat().st_size > 0)
+            rows = zcode_collector._read_db(db)
+            con.close()
+        [e] = zcode_collector.to_events(rows, self._day_of)
+        self.assertEqual(e.date, "2026-10-01")
+        self.assertEqual(e.tokens_in, 500 - 400)
+
+    def test_missing_column_is_drift_and_collect_refuses(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            db = Path(tmp) / "db.sqlite"
+            con = sqlite3.connect(db)
+            con.execute("create table model_usage (id text primary key)")
+            con.commit()
+            con.close()
+            with self.assertRaises(zcode_collector.FormatDrift):
+                zcode_collector._read_db(db)
+            ctx = CollectContext(tz=TZ, root=Path("."), since="2026-01-01")
+            with mock.patch("sys.stdout", new_callable=io.StringIO):
+                result = zcode_collector.collect(ctx, {"zcode_db": str(db)})
+            self.assertEqual((result.events, result.days), ([], []))
 
 
 class TestDeepseekCollector(unittest.TestCase):

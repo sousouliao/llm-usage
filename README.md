@@ -2,8 +2,8 @@
 
 > Automatic weekly token usage and model cost from my AI coding tools. Data is
 > collected from Cursor's official API, local Codex session logs, local
-> Antigravity conversation databases, and the DeepSeek platform export, then
-> GitHub Actions rebuilds the card below.
+> Antigravity conversation databases, the local ZCode session ledger, and the
+> DeepSeek platform export, then GitHub Actions rebuilds the card below.
 
 <!-- WIDGET_START -->
 <div>
@@ -21,11 +21,12 @@ The amount on the card is in **USD**. Cursor supplies a per-request figure
 (`tokenUsage.totalCents`). Codex does not, so those rows are priced at OpenAI's
 published API rates — an API-equivalent figure, not a ChatGPT bill. Antigravity
 is priced the same way at Google's published Gemini API rates, not a Google AI
-subscription bill. DeepSeek
+subscription bill. ZCode is priced the same way at Z.AI's published GLM API
+rates, not a GLM coding-plan bill. DeepSeek
 supplies a platform invoice in CNY; that amount is converted to USD cents at
 collect time (`usd_cny` in `config/aggregate.yaml`).
 
-For Cursor, Codex, and Antigravity it is **not a bill**: it excludes plan fees, discounts,
+For Cursor, Codex, Antigravity, and ZCode it is **not a bill**: it excludes plan fees, discounts,
 and platform markup, and it does not care who pays. Included-in-plan usage still
 counts, because this project measures consumption, not invoices. Cursor's billed
 amount and markup fields never enter this repository.
@@ -33,7 +34,7 @@ amount and markup fields never enter this repository.
 ## How it works
 
 ```
-Cursor official API / Codex local logs / Antigravity local DBs / DeepSeek platform export
+Cursor official API / Codex local logs / Antigravity local DBs / ZCode local ledger / DeepSeek platform export
                 → data/raw/<source>/…        (raw events, collected locally)
                 → data/stats.json            (CI fold output, with four WeekViews)
                 → assets/*.svg + widget      (both renderers only consume weeks[].view)
@@ -41,7 +42,8 @@ Cursor official API / Codex local logs / Antigravity local DBs / DeepSeek platfo
 
 Collection needs a local Cursor login, the local Codex session directory
 (`~/.codex`), the local Antigravity conversation directory
-(`~/.gemini/antigravity/conversations`), and a DeepSeek console `userToken`. Fold and render are pure
+(`~/.gemini/antigravity/conversations`), the local ZCode session database
+(`~/.zcode/cli/db/db.sqlite`), and a DeepSeek console `userToken`. Fold and render are pure
 reductions over files in the repo, so CI can regenerate artifacts without any of
 those credentials.
 
@@ -57,8 +59,9 @@ raw files always produce the same artifacts.
 ## Two machines
 
 Cursor and DeepSeek usage come from account-level APIs, so both machines collect
-the same payload. Codex and Antigravity sessions exist only on the machine that
-produced them, so both the work Mac and the home Windows box need to collect; files are sharded as
+the same payload. Codex, Antigravity, and ZCode sessions exist only on the
+machine that produced them, so both the work Mac and the home Windows box need
+to collect; files are sharded as
 `data/raw/<source>/<machine>/` and do not overwrite each other.
 
 ## What is collected, and what is not
@@ -68,6 +71,7 @@ produced them, so both the work Mac and the home Windows box need to collect; fi
 | `cursor` | input / output / cache write / cache read | yes | Official dashboard API, back to account creation |
 | `codex` | input / output / cache write / cache read | API list price | Codex local session logs. Only the official ChatGPT subscription (`model_provider=openai`) is collected; relay providers are dropped. Cost is filled at fold time from published OpenAI rates |
 | `antigravity` | input / output / cache read (no write) | API list price | Local per-conversation SQLite (protobuf metadata). No official usage-history API exists; quota endpoints only report remaining fractions. Collection refuses to write if the storage format drifts |
+| `zcode` | input / output / cache read / cache write (reported 0) | API list price | Local session ledger (`model_usage` table in `~/.zcode/cli/db/db.sqlite`). GLM coding-plan quota endpoints only report remaining fractions. `input_tokens` already includes cache read, subtracted at collect time. Measures the ZCode tool, not the whole GLM plan. Collection refuses to write if the storage format drifts |
 | `deepseek` | input / output / cache read (no write) | platform billed CNY → USD | Console monthly export. Account-level. Peak/off-peak is already in the invoice; `cache_write` is omitted, not zero |
 
 When a source cannot report a metric, the field is **omitted**, not filled with 0.
@@ -109,7 +113,8 @@ Codex logs are detected at the platform's user home automatically
 `%USERPROFILE%/.codex` as well as `~/.codex`. Antigravity works the same way:
 `~/.gemini/antigravity/conversations` (plus the CLI's
 `~/.gemini/antigravity-cli/conversations`) by default, overridable with
-`antigravity_dirs`.
+`antigravity_dirs`. ZCode defaults to `~/.zcode/cli/db/db.sqlite`, overridable
+with `zcode_db`.
 
 Collection reads credentials from the local Cursor login by default. If Cursor is
 signed in, nothing else is needed. On a new machine, set
