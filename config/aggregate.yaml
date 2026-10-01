@@ -29,6 +29,12 @@ list_prices:
     cache_read: 0.075
     cache_write: 0.75
     output: 3.75
+  gpt-6.1-sol:
+    # 2026-09-29 发布。与 gpt-6-sol 同价，只有缓存读减半。
+    input: 2.00
+    cache_read: 0.10
+    cache_write: 2.50
+    output: 10.00
   gpt-6-astra:
     input: 10.00
     cache_read: 1.00
