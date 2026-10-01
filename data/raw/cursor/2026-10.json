@@ -1,0 +1,41 @@
+{
+  "source": "cursor",
+  "month": "2026-10",
+  "days": {
+    "2026-10-01": [
+      {
+        "date": "2026-10-01",
+        "source": "cursor",
+        "model": "grok-bot-automation",
+        "requests": 7,
+        "tokens_in": 25987,
+        "tokens_out": 3595,
+        "cache_write": 0,
+        "cache_read": 166144,
+        "cost_cents": 15.6616
+      },
+      {
+        "date": "2026-10-01",
+        "source": "cursor",
+        "model": "grok-bot-cua",
+        "requests": 61,
+        "tokens_in": 183,
+        "tokens_out": 7365,
+        "cache_write": 133484,
+        "cache_read": 1093707,
+        "cost_cents": 6.412
+      },
+      {
+        "date": "2026-10-01",
+        "source": "cursor",
+        "model": "grok-bot-default",
+        "requests": 85,
+        "tokens_in": 585792,
+        "tokens_out": 33101,
+        "cache_write": 0,
+        "cache_read": 3059584,
+        "cost_cents": 588.9059
+      }
+    ]
+  }
+}

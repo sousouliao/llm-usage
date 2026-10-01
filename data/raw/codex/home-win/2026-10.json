@@ -1,0 +1,18 @@
+{
+  "source": "codex",
+  "month": "2026-10",
+  "days": {
+    "2026-10-01": [
+      {
+        "date": "2026-10-01",
+        "source": "codex",
+        "model": "gpt-6.1-sol",
+        "requests": 415,
+        "tokens_in": 1317071,
+        "tokens_out": 248446,
+        "cache_write": 0,
+        "cache_read": 46679296
+      }
+    ]
+  }
+}

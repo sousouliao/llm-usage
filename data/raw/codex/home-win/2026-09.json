@@ -1,0 +1,50 @@
+{
+  "source": "codex",
+  "month": "2026-09",
+  "days": {
+    "2026-09-29": [
+      {
+        "date": "2026-09-29",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 116,
+        "tokens_in": 469054,
+        "tokens_out": 10724,
+        "cache_write": 0,
+        "cache_read": 8994816
+      },
+      {
+        "date": "2026-09-29",
+        "source": "codex",
+        "model": "gpt-6-sol",
+        "requests": 248,
+        "tokens_in": 727763,
+        "tokens_out": 105586,
+        "cache_write": 0,
+        "cache_read": 31745536
+      }
+    ],
+    "2026-09-30": [
+      {
+        "date": "2026-09-30",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 62,
+        "tokens_in": 352643,
+        "tokens_out": 6612,
+        "cache_write": 0,
+        "cache_read": 4494848
+      },
+      {
+        "date": "2026-09-30",
+        "source": "codex",
+        "model": "gpt-6-sol",
+        "requests": 182,
+        "tokens_in": 907191,
+        "tokens_out": 65711,
+        "cache_write": 0,
+        "cache_read": 19377280
+      }
+    ]
+  }
+}

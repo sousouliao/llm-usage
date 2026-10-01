@@ -1,0 +1,28 @@
+{
+  "source": "antigravity",
+  "month": "2026-09",
+  "days": {
+    "2026-09-29": [
+      {
+        "date": "2026-09-29",
+        "source": "antigravity",
+        "model": "gemini-3.8-flash",
+        "requests": 597,
+        "tokens_in": 9960666,
+        "tokens_out": 297103,
+        "cache_read": 56208129
+      }
+    ],
+    "2026-09-30": [
+      {
+        "date": "2026-09-30",
+        "source": "antigravity",
+        "model": "gemini-3.8-flash",
+        "requests": 800,
+        "tokens_in": 9742859,
+        "tokens_out": 445075,
+        "cache_read": 101199049
+      }
+    ]
+  }
+}

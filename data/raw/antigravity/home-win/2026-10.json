@@ -1,0 +1,17 @@
+{
+  "source": "antigravity",
+  "month": "2026-10",
+  "days": {
+    "2026-10-01": [
+      {
+        "date": "2026-10-01",
+        "source": "antigravity",
+        "model": "gemini-3.8-flash",
+        "requests": 6,
+        "tokens_in": 46765,
+        "tokens_out": 1502,
+        "cache_read": 60989
+      }
+    ]
+  }
+}
