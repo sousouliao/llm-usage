@@ -64,12 +64,19 @@ $commitMessage = "chore(data): usage raw @ $(Get-Date -Format 'yyyy-MM-dd')"
 $transcriptStarted = $false
 
 # Best-effort git: discard stderr and the exit status. Windows PowerShell 5.1
-# raises a terminating NativeCommandError for any redirected native stderr
-# (2>$null) while $ErrorActionPreference is 'Stop', so "git ... 2>$null" kills
-# the run the moment git writes to stderr. 2>&1 merges stderr into the output
-# stream, which EAP never inspects.
+# wraps any redirected native stderr (2>$null and 2>&1 alike) in ErrorRecords,
+# and $ErrorActionPreference 'Stop' promotes the first one to a terminating
+# error — "fatal: no rebase in progress" then kills the run. Relaxing EAP for
+# the call is the standard workaround. Unredirected native stderr, which every
+# other git call here uses, never trips EAP.
 function Invoke-GitBestEffort {
-    & git @args 2>&1 | Out-Null
+    $eap = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    try {
+        & git @args 2>&1 | Out-Null
+    } finally {
+        $ErrorActionPreference = $eap
+    }
     $global:LASTEXITCODE = 0
 }
 
