@@ -2,8 +2,8 @@
   "schema_version": 4,
   "timezone": "Asia/Shanghai",
   "latest_date": "2026-10-01",
-  "generated_at": "2026-10-01T15:23:50+08:00",
-  "updated_display": "Updated Oct 1, 15:23",
+  "generated_at": "2026-10-01T15:33:12+08:00",
+  "updated_display": "Updated Oct 1, 15:33",
   "weeks": [
     {
       "week": "2026-W40",
@@ -17,9 +17,9 @@
         "basis": "tokens",
         "requests": 2610,
         "tokens_total": 312536542,
-        "cost_cents": 6802.5699,
+        "cost_cents": 7781.2231,
         "tokens_display": "312.5M",
-        "cost_display": "$68.03",
+        "cost_display": "$77.81",
         "requests_display": "2,610",
         "breakdown": [
           {
@@ -76,9 +76,9 @@
             "label": "gpt-6.1-sol",
             "requests": 415,
             "tokens_total": 48244813,
-            "cost_cents": null,
+            "cost_cents": 978.6532,
             "tokens_display": "48.2M",
-            "cost_display": "Subscription",
+            "cost_display": "$9.79",
             "requests_display": "415",
             "pct": 15.436535098030232
           },
@@ -143,7 +143,7 @@
             "weekday": "Thu",
             "requests": 574,
             "tokens_total": 53463011,
-            "cost_cents": 615.5074999999999,
+            "cost_cents": 1594.1607,
             "tokens_display": "53.5M"
           },
           {
@@ -2574,7 +2574,8 @@
       "tokens_in": 1317071,
       "tokens_out": 248446,
       "cache_write": 0,
-      "cache_read": 46679296
+      "cache_read": 46679296,
+      "cost_cents": 978.6532
     },
     {
       "date": "2026-10-01",
@@ -2620,7 +2621,7 @@
     "tokens_out": 76819153,
     "cache_write": 191749138,
     "cache_read": 13661926394,
-    "cost_cents": 978627.217,
+    "cost_cents": 979605.8702,
     "tokens_total": 14777998627,
     "months": [
       {
@@ -2720,7 +2721,7 @@
         "tokens_out": 294009,
         "cache_write": 133484,
         "cache_read": 51059720,
-        "cost_cents": 615.5075,
+        "cost_cents": 1594.1607,
         "tokens_total": 53463011
       }
     ],
@@ -3062,7 +3063,7 @@
         "tokens_out": 248446,
         "cache_write": 0,
         "cache_read": 46679296,
-        "cost_cents": null,
+        "cost_cents": 978.6532,
         "tokens_total": 48244813
       },
       {
