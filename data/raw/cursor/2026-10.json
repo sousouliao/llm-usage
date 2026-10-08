@@ -219,12 +219,23 @@
         "date": "2026-10-08",
         "source": "cursor",
         "model": "claude-sonnet-5-5-high",
+        "requests": 11,
+        "tokens_in": 92,
+        "tokens_out": 45418,
+        "cache_write": 1689868,
+        "cache_read": 5934421,
+        "cost_cents": 527.2476
+      },
+      {
+        "date": "2026-10-08",
+        "source": "cursor",
+        "model": "cursor-grok-4.6-high",
         "requests": 1,
-        "tokens_in": 12,
-        "tokens_out": 7020,
-        "cache_write": 238511,
-        "cache_read": 933509,
-        "cost_cents": 75.9852
+        "tokens_in": 13418,
+        "tokens_out": 288,
+        "cache_write": 0,
+        "cache_read": 5632,
+        "cost_cents": 3.138
       },
       {
         "date": "2026-10-08",
@@ -241,12 +252,12 @@
         "date": "2026-10-08",
         "source": "cursor",
         "model": "grok-4.7-high",
-        "requests": 4,
-        "tokens_in": 369949,
-        "tokens_out": 12893,
+        "requests": 7,
+        "tokens_in": 701075,
+        "tokens_out": 31373,
         "cache_write": 0,
-        "cache_read": 2646656,
-        "cost_cents": 214.0584
+        "cache_read": 5163776,
+        "cost_cents": 417.2276
       },
       {
         "date": "2026-10-08",
@@ -274,23 +285,23 @@
         "date": "2026-10-08",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 102,
-        "tokens_in": 240,
-        "tokens_out": 39903,
-        "cache_write": 843666,
-        "cache_read": 2767669,
-        "cost_cents": 331.1065
+        "requests": 117,
+        "tokens_in": 276,
+        "tokens_out": 45748,
+        "cache_write": 965575,
+        "cache_read": 3207781,
+        "cost_cents": 381.0081
       },
       {
         "date": "2026-10-08",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 177,
-        "tokens_in": 45097,
-        "tokens_out": 120174,
-        "cache_write": 1490682,
-        "cache_read": 13307768,
-        "cost_cents": 1558.3352
+        "requests": 196,
+        "tokens_in": 45279,
+        "tokens_out": 134219,
+        "cache_write": 1720834,
+        "cache_read": 16248109,
+        "cost_cents": 1759.8461
       }
     ]
   }
