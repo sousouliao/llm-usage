@@ -285,12 +285,12 @@
         "date": "2026-10-08",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 133,
-        "tokens_in": 312,
-        "tokens_out": 49301,
-        "cache_write": 1074347,
-        "cache_read": 3635070,
-        "cost_cents": 426.2659
+        "requests": 141,
+        "tokens_in": 334,
+        "tokens_out": 50882,
+        "cache_write": 1179775,
+        "cache_read": 3804758,
+        "cost_cents": 456.7889
       },
       {
         "date": "2026-10-08",
