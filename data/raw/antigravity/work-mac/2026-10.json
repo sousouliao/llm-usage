@@ -14,10 +14,10 @@
         "date": "2026-10-08",
         "source": "antigravity",
         "model": "gemini-3.8-flash-n",
-        "requests": 50,
-        "tokens_in": 1021008,
-        "tokens_out": 31674,
-        "cache_read": 3799000
+        "requests": 75,
+        "tokens_in": 1435334,
+        "tokens_out": 57776,
+        "cache_read": 7456589
       }
     ]
   }
