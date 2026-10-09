@@ -353,12 +353,12 @@
         "date": "2026-10-09",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 5,
-        "tokens_in": 104423,
-        "tokens_out": 2937,
-        "cache_write": 129326,
-        "cache_read": 177152,
-        "cost_cents": 57.3696
+        "requests": 20,
+        "tokens_in": 177296,
+        "tokens_out": 17082,
+        "cache_write": 139295,
+        "cache_read": 1216254,
+        "cost_cents": 134.3801
       }
     ]
   }
