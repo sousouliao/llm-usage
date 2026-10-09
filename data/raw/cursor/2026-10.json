@@ -331,12 +331,12 @@
         "date": "2026-10-09",
         "source": "cursor",
         "model": "grok-4.7-high",
-        "requests": 5,
-        "tokens_in": 250575,
-        "tokens_out": 20053,
+        "requests": 6,
+        "tokens_in": 353735,
+        "tokens_out": 30980,
         "cache_write": 0,
-        "cache_read": 1113088,
-        "cost_cents": 117.8012
+        "cache_read": 1677696,
+        "cost_cents": 173.2198
       },
       {
         "date": "2026-10-09",
