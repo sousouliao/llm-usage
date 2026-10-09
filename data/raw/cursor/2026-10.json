@@ -342,12 +342,12 @@
         "date": "2026-10-09",
         "source": "cursor",
         "model": "grok-4.7-high",
-        "requests": 19,
-        "tokens_in": 996777,
-        "tokens_out": 89823,
+        "requests": 20,
+        "tokens_in": 1120139,
+        "tokens_out": 90994,
         "cache_write": 0,
-        "cache_read": 13599360,
-        "cost_cents": 933.2172
+        "cache_read": 13952768,
+        "cost_cents": 976.2626
       },
       {
         "date": "2026-10-09",

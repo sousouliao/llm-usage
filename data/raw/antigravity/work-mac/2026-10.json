@@ -20,6 +20,16 @@
         "cache_read": 7456589
       }
     ],
-    "2026-10-09": []
+    "2026-10-09": [
+      {
+        "date": "2026-10-09",
+        "source": "antigravity",
+        "model": "gemini-3.8-flash-n",
+        "requests": 31,
+        "tokens_in": 265183,
+        "tokens_out": 14148,
+        "cache_read": 1927727
+      }
+    ]
   }
 }
