@@ -353,7 +353,7 @@
         "date": "2026-10-09",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 18,
+        "requests": 20,
         "tokens_in": 34693,
         "tokens_out": 2605,
         "cache_write": 0,
@@ -364,12 +364,12 @@
         "date": "2026-10-09",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 102,
-        "tokens_in": 180090,
-        "tokens_out": 51502,
-        "cache_write": 538726,
-        "cache_read": 9358359,
-        "cost_cents": 642.5824
+        "requests": 114,
+        "tokens_in": 313535,
+        "tokens_out": 62284,
+        "cache_write": 779395,
+        "cache_read": 9767428,
+        "cost_cents": 744.3278
       }
     ]
   }
