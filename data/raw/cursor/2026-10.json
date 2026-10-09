@@ -208,12 +208,12 @@
         "date": "2026-10-08",
         "source": "cursor",
         "model": "claude-opus-5-5-medium",
-        "requests": 22,
-        "tokens_in": 762,
-        "tokens_out": 336701,
-        "cache_write": 2594479,
-        "cache_read": 54533421,
-        "cost_cents": 3061.6147
+        "requests": 34,
+        "tokens_in": 1104,
+        "tokens_out": 485295,
+        "cache_write": 3013339,
+        "cache_read": 82069145,
+        "cost_cents": 4119.084
       },
       {
         "date": "2026-10-08",
@@ -285,23 +285,47 @@
         "date": "2026-10-08",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 149,
-        "tokens_in": 356,
-        "tokens_out": 53196,
-        "cache_write": 1285045,
-        "cache_read": 3974590,
-        "cost_cents": 487.7273
+        "requests": 161,
+        "tokens_in": 388,
+        "tokens_out": 56390,
+        "cache_write": 1427484,
+        "cache_read": 4246876,
+        "cost_cents": 531.7522
       },
       {
         "date": "2026-10-08",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 269,
-        "tokens_in": 45860,
-        "tokens_out": 164096,
-        "cache_write": 2345448,
-        "cache_read": 22536988,
-        "cost_cents": 2217.2552
+        "requests": 325,
+        "tokens_in": 181684,
+        "tokens_out": 193031,
+        "cache_write": 2960545,
+        "cache_read": 31022681,
+        "cost_cents": 2809.0851
+      }
+    ],
+    "2026-10-09": [
+      {
+        "date": "2026-10-09",
+        "source": "cursor",
+        "model": "grok-bot-automation",
+        "requests": 9,
+        "tokens_in": 34693,
+        "tokens_out": 2605,
+        "cache_write": 0,
+        "cache_read": 68864,
+        "cost_cents": 11.9448
+      },
+      {
+        "date": "2026-10-09",
+        "source": "cursor",
+        "model": "grok-bot-default",
+        "requests": 1,
+        "tokens_in": 4,
+        "tokens_out": 1720,
+        "cache_write": 129326,
+        "cache_read": 0,
+        "cost_cents": 26.898
       }
     ]
   }
