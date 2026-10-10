@@ -377,12 +377,12 @@
         "date": "2026-10-10",
         "source": "cursor",
         "model": "claude-opus-5-5-medium",
-        "requests": 29,
-        "tokens_in": 1086,
-        "tokens_out": 481600,
-        "cache_write": 2646995,
-        "cache_read": 80573000,
-        "cost_cents": 3898.5919
+        "requests": 36,
+        "tokens_in": 1258,
+        "tokens_out": 542174,
+        "cache_write": 2825036,
+        "cache_read": 96321868,
+        "cost_cents": 4423.8066
       },
       {
         "date": "2026-10-10",
@@ -421,7 +421,7 @@
         "date": "2026-10-10",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 15,
+        "requests": 17,
         "tokens_in": 16,
         "tokens_out": 10220,
         "cache_write": 84173,
