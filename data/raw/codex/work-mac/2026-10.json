@@ -32,6 +32,17 @@
         "cache_read": 32762752
       }
     ],
-    "2026-10-10": []
+    "2026-10-10": [
+      {
+        "date": "2026-10-10",
+        "source": "codex",
+        "model": "gpt-6.1-sol",
+        "requests": 7,
+        "tokens_in": 44394,
+        "tokens_out": 921,
+        "cache_write": 0,
+        "cache_read": 238592
+      }
+    ]
   }
 }

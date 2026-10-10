@@ -377,12 +377,12 @@
         "date": "2026-10-10",
         "source": "cursor",
         "model": "claude-opus-5-5-medium",
-        "requests": 5,
-        "tokens_in": 524,
-        "tokens_out": 292657,
-        "cache_write": 1204405,
-        "cache_read": 41211972,
-        "cost_cents": 2011.9655
+        "requests": 12,
+        "tokens_in": 722,
+        "tokens_out": 362921,
+        "cache_write": 1837660,
+        "cache_read": 57690844,
+        "cost_cents": 2798.7777
       },
       {
         "date": "2026-10-10",
