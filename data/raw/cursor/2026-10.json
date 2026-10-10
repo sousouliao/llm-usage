@@ -372,6 +372,18 @@
         "cost_cents": 744.3278
       }
     ],
-    "2026-10-10": []
+    "2026-10-10": [
+      {
+        "date": "2026-10-10",
+        "source": "cursor",
+        "model": "grok-bot-automation",
+        "requests": 4,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cache_write": 0,
+        "cache_read": 0,
+        "cost_cents": 0.0
+      }
+    ]
   }
 }
