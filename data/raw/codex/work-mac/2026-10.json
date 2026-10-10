@@ -36,12 +36,32 @@
       {
         "date": "2026-10-10",
         "source": "codex",
-        "model": "gpt-6.1-sol",
-        "requests": 7,
-        "tokens_in": 44394,
-        "tokens_out": 921,
+        "model": "codex-auto-review",
+        "requests": 8,
+        "tokens_in": 82961,
+        "tokens_out": 1579,
         "cache_write": 0,
-        "cache_read": 238592
+        "cache_read": 185344
+      },
+      {
+        "date": "2026-10-10",
+        "source": "codex",
+        "model": "gpt-6-luna",
+        "requests": 7,
+        "tokens_in": 135827,
+        "tokens_out": 1513,
+        "cache_write": 0,
+        "cache_read": 926976
+      },
+      {
+        "date": "2026-10-10",
+        "source": "codex",
+        "model": "gpt-6.1-sol",
+        "requests": 121,
+        "tokens_in": 746530,
+        "tokens_out": 68437,
+        "cache_write": 0,
+        "cache_read": 12970368
       }
     ]
   }
