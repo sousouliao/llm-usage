@@ -1,9 +1,9 @@
 {
   "schema_version": 4,
   "timezone": "Asia/Shanghai",
-  "latest_date": "2026-10-09",
-  "generated_at": "2026-10-10T01:01:32+08:00",
-  "updated_display": "Updated Oct 10, 01:01",
+  "latest_date": "2026-10-10",
+  "generated_at": "2026-10-10T08:04:52+08:00",
+  "updated_display": "Updated Oct 10, 08:04",
   "weeks": [
     {
       "week": "2026-W41",
@@ -15,12 +15,12 @@
         "end": "2026-10-11",
         "range_display": "Oct 5 – Oct 11",
         "basis": "tokens",
-        "requests": 1264,
+        "requests": 1268,
         "tokens_total": 274514841,
         "cost_cents": 15068.3282,
         "tokens_display": "274.5M",
         "cost_display": "$150.68",
-        "requests_display": "1,264",
+        "requests_display": "1,268",
         "breakdown": [
           {
             "kind": "tokens_in",
@@ -157,10 +157,10 @@
           {
             "date": "2026-10-10",
             "weekday": "Sat",
-            "requests": 0,
-            "tokens_total": null,
-            "cost_cents": null,
-            "tokens_display": "—"
+            "requests": 4,
+            "tokens_total": 0,
+            "cost_cents": 0.0,
+            "tokens_display": "0"
           },
           {
             "date": "2026-10-11",
@@ -2325,14 +2325,25 @@
       "tokens_out": 4170,
       "cache_read": 0,
       "cost_cents": 0.4947
+    },
+    {
+      "date": "2026-10-10",
+      "source": "cursor",
+      "model": "grok-bot-automation",
+      "requests": 4,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cache_write": 0,
+      "cache_read": 0,
+      "cost_cents": 0.0
     }
   ],
   "year": {
     "year": "2026",
     "start": "2026-01-02",
-    "end": "2026-10-09",
-    "days_active": 231,
-    "requests": 62397,
+    "end": "2026-10-10",
+    "days_active": 232,
+    "requests": 62401,
     "tokens_in": 861961966,
     "tokens_out": 79181488,
     "cache_write": 203927474,
@@ -2432,7 +2443,7 @@
       },
       {
         "month": "2026-10",
-        "requests": 2797,
+        "requests": 2801,
         "tokens_in": 16433822,
         "tokens_out": 2656344,
         "cache_write": 12311820,
@@ -2854,7 +2865,7 @@
       },
       {
         "model": "grok-bot-automation",
-        "requests": 660,
+        "requests": 664,
         "tokens_in": 1994836,
         "tokens_out": 243085,
         "cache_write": 1752087,
