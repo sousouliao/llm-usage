@@ -705,12 +705,12 @@
         "date": "2026-07-23",
         "source": "cursor",
         "model": "cursor-grok-4.5-high",
-        "requests": 41,
-        "tokens_in": 2375311,
-        "tokens_out": 369227,
+        "requests": 42,
+        "tokens_in": 2384073,
+        "tokens_out": 371929,
         "cache_write": 0,
-        "cache_read": 37236480,
-        "cost_cents": 2547.5063
+        "cache_read": 37841024,
+        "cost_cents": 2581.1071
       },
       {
         "date": "2026-07-23",

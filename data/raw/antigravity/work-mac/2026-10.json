@@ -43,6 +43,16 @@
       }
     ],
     "2026-10-11": [],
-    "2026-10-12": []
+    "2026-10-12": [
+      {
+        "date": "2026-10-12",
+        "source": "antigravity",
+        "model": "gemini-3.8-flash-n",
+        "requests": 25,
+        "tokens_in": 112939,
+        "tokens_out": 16787,
+        "cache_read": 723687
+      }
+    ]
   }
 }
