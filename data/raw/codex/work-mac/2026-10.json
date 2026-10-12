@@ -70,31 +70,41 @@
         "date": "2026-10-12",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 19,
-        "tokens_in": 131999,
-        "tokens_out": 3165,
+        "requests": 34,
+        "tokens_in": 201931,
+        "tokens_out": 5662,
         "cache_write": 0,
-        "cache_read": 407808
+        "cache_read": 752128
       },
       {
         "date": "2026-10-12",
         "source": "codex",
         "model": "cursor/claude-opus-5-5@300k",
-        "requests": 65,
-        "tokens_in": 707316,
-        "tokens_out": 43720,
-        "cache_write": 707164,
-        "cache_read": 6128000
+        "requests": 101,
+        "tokens_in": 1009755,
+        "tokens_out": 69977,
+        "cache_write": 1009521,
+        "cache_read": 8840820
       },
       {
         "date": "2026-10-12",
         "source": "codex",
         "model": "cursor/grok-4.7@256k",
-        "requests": 122,
-        "tokens_in": 1385720,
-        "tokens_out": 34051,
+        "requests": 141,
+        "tokens_in": 1561334,
+        "tokens_out": 36891,
         "cache_write": 0,
-        "cache_read": 8712320
+        "cache_read": 10187904
+      },
+      {
+        "date": "2026-10-12",
+        "source": "codex",
+        "model": "gpt-6.1-sol",
+        "requests": 40,
+        "tokens_in": 369060,
+        "tokens_out": 4748,
+        "cache_write": 0,
+        "cache_read": 1536256
       }
     ]
   }

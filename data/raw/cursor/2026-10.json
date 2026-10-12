@@ -480,12 +480,12 @@
         "date": "2026-10-12",
         "source": "cursor",
         "model": "claude-opus-5-5-medium",
-        "requests": 66,
-        "tokens_in": 156,
-        "tokens_out": 46770,
-        "cache_write": 931494,
-        "cache_read": 6128000,
-        "cost_cents": 681.9094
+        "requests": 102,
+        "tokens_in": 238,
+        "tokens_out": 73027,
+        "cache_write": 1233851,
+        "cache_read": 8840820,
+        "cost_cents": 939.8911
       },
       {
         "date": "2026-10-12",
@@ -502,12 +502,23 @@
         "date": "2026-10-12",
         "source": "cursor",
         "model": "grok-4.7-high",
-        "requests": 119,
-        "tokens_in": 1297303,
-        "tokens_out": 33376,
+        "requests": 133,
+        "tokens_in": 1489876,
+        "tokens_out": 35392,
         "cache_write": 0,
-        "cache_read": 8445184,
-        "cost_cents": 701.7454
+        "cache_read": 9635328,
+        "cost_cents": 800.9768
+      },
+      {
+        "date": "2026-10-12",
+        "source": "cursor",
+        "model": "grok-4.7-medium",
+        "requests": 9,
+        "tokens_in": 71458,
+        "tokens_out": 1499,
+        "cache_write": 0,
+        "cache_read": 552576,
+        "cost_cents": 42.8198
       },
       {
         "date": "2026-10-12",

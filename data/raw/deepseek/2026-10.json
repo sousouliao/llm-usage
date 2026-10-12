@@ -24,6 +24,17 @@
     ],
     "2026-10-10": [],
     "2026-10-11": [],
-    "2026-10-12": []
+    "2026-10-12": [
+      {
+        "date": "2026-10-12",
+        "source": "deepseek",
+        "model": "deepseek-flash",
+        "requests": 3,
+        "tokens_in": 1176,
+        "tokens_out": 840,
+        "cache_read": 512,
+        "cost_cents": 0.1263
+      }
+    ]
   }
 }
