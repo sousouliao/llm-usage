@@ -70,41 +70,41 @@
         "date": "2026-10-12",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 34,
-        "tokens_in": 201931,
-        "tokens_out": 5662,
+        "requests": 49,
+        "tokens_in": 286987,
+        "tokens_out": 7594,
         "cache_write": 0,
-        "cache_read": 752128
+        "cache_read": 1123072
       },
       {
         "date": "2026-10-12",
         "source": "codex",
         "model": "cursor/claude-opus-5-5@300k",
-        "requests": 101,
-        "tokens_in": 1009755,
-        "tokens_out": 69977,
-        "cache_write": 1009521,
-        "cache_read": 8840820
+        "requests": 134,
+        "tokens_in": 1206502,
+        "tokens_out": 104555,
+        "cache_write": 1206198,
+        "cache_read": 14567160
       },
       {
         "date": "2026-10-12",
         "source": "codex",
         "model": "cursor/grok-4.7@256k",
-        "requests": 141,
-        "tokens_in": 1561334,
-        "tokens_out": 36891,
+        "requests": 155,
+        "tokens_in": 1789478,
+        "tokens_out": 41180,
         "cache_write": 0,
-        "cache_read": 10187904
+        "cache_read": 11385984
       },
       {
         "date": "2026-10-12",
         "source": "codex",
         "model": "gpt-6.1-sol",
-        "requests": 40,
-        "tokens_in": 369060,
-        "tokens_out": 4748,
+        "requests": 123,
+        "tokens_in": 627247,
+        "tokens_out": 71594,
         "cache_write": 0,
-        "cache_read": 1536256
+        "cache_read": 14137216
       }
     ]
   }
