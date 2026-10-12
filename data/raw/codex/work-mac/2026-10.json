@@ -70,21 +70,31 @@
         "date": "2026-10-12",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 1,
-        "tokens_in": 6750,
-        "tokens_out": 130,
+        "requests": 13,
+        "tokens_in": 97821,
+        "tokens_out": 2185,
         "cache_write": 0,
-        "cache_read": 5888
+        "cache_read": 239360
+      },
+      {
+        "date": "2026-10-12",
+        "source": "codex",
+        "model": "cursor/claude-opus-5-5@300k",
+        "requests": 21,
+        "tokens_in": 115733,
+        "tokens_out": 9661,
+        "cache_write": 115683,
+        "cache_read": 1117428
       },
       {
         "date": "2026-10-12",
         "source": "codex",
         "model": "cursor/grok-4.7@256k",
-        "requests": 9,
-        "tokens_in": 66287,
-        "tokens_out": 3051,
+        "requests": 116,
+        "tokens_in": 1163443,
+        "tokens_out": 32658,
         "cache_write": 0,
-        "cache_read": 244864
+        "cache_read": 8312576
       }
     ]
   }
