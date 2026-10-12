@@ -65,6 +65,27 @@
       }
     ],
     "2026-10-11": [],
-    "2026-10-12": []
+    "2026-10-12": [
+      {
+        "date": "2026-10-12",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 1,
+        "tokens_in": 6750,
+        "tokens_out": 130,
+        "cache_write": 0,
+        "cache_read": 5888
+      },
+      {
+        "date": "2026-10-12",
+        "source": "codex",
+        "model": "cursor/grok-4.7@256k",
+        "requests": 9,
+        "tokens_in": 66287,
+        "tokens_out": 3051,
+        "cache_write": 0,
+        "cache_read": 244864
+      }
+    ]
   }
 }
