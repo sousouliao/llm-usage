@@ -491,23 +491,23 @@
         "date": "2026-10-12",
         "source": "cursor",
         "model": "claude-opus-5-5-medium",
-        "requests": 139,
-        "tokens_in": 528,
-        "tokens_out": 218938,
-        "cache_write": 2071236,
-        "cache_read": 29072016,
-        "cost_cents": 2055.1455
+        "requests": 140,
+        "tokens_in": 538,
+        "tokens_out": 229440,
+        "cache_write": 2211870,
+        "cache_read": 29666974,
+        "cost_cents": 2158.3697
       },
       {
         "date": "2026-10-12",
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
         "requests": 4,
-        "tokens_in": 355534,
-        "tokens_out": 56153,
+        "tokens_in": 458417,
+        "tokens_out": 69453,
         "cache_write": 0,
-        "cache_read": 6305408,
-        "cost_cents": 420.069
+        "cache_read": 7705728,
+        "cost_cents": 518.6416
       },
       {
         "date": "2026-10-12",
@@ -535,7 +535,7 @@
         "date": "2026-10-12",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 32,
+        "requests": 35,
         "tokens_in": 24,
         "tokens_out": 9661,
         "cache_write": 69257,
