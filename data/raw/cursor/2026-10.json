@@ -524,12 +524,12 @@
         "date": "2026-10-12",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 6,
-        "tokens_in": 159573,
-        "tokens_out": 3944,
+        "requests": 31,
+        "tokens_in": 655474,
+        "tokens_out": 10638,
         "cache_write": 195598,
-        "cache_read": 117673,
-        "cost_cents": 79.2843
+        "cache_read": 1698729,
+        "cost_cents": 261.5336
       }
     ]
   }
