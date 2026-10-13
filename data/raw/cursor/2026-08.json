@@ -1043,12 +1043,12 @@
         "date": "2026-08-28",
         "source": "cursor",
         "model": "cursor-grok-4.5-high-fast",
-        "requests": 11,
-        "tokens_in": 59075,
-        "tokens_out": 4813,
+        "requests": 10,
+        "tokens_in": 54827,
+        "tokens_out": 4718,
         "cache_write": 0,
-        "cache_read": 227200,
-        "cost_cents": 55.0134
+        "cache_read": 212864,
+        "cost_cents": 51.7096
       },
       {
         "date": "2026-08-28",
