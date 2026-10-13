@@ -131,12 +131,22 @@
       {
         "date": "2026-10-13",
         "source": "codex",
-        "model": "gpt-6.1-sol",
-        "requests": 315,
-        "tokens_in": 1230152,
-        "tokens_out": 157299,
+        "model": "gpt-6-sol",
+        "requests": 1,
+        "tokens_in": 17346,
+        "tokens_out": 6,
         "cache_write": 0,
-        "cache_read": 55739008
+        "cache_read": 0
+      },
+      {
+        "date": "2026-10-13",
+        "source": "codex",
+        "model": "gpt-6.1-sol",
+        "requests": 363,
+        "tokens_in": 1438308,
+        "tokens_out": 193287,
+        "cache_write": 0,
+        "cache_read": 58075264
       }
     ]
   }
