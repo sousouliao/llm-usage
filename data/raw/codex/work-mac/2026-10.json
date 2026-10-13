@@ -107,6 +107,27 @@
         "cache_read": 18155392
       }
     ],
-    "2026-10-13": []
+    "2026-10-13": [
+      {
+        "date": "2026-10-13",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 3,
+        "tokens_in": 39593,
+        "tokens_out": 534,
+        "cache_write": 0,
+        "cache_read": 30976
+      },
+      {
+        "date": "2026-10-13",
+        "source": "codex",
+        "model": "gpt-6.1-sol",
+        "requests": 69,
+        "tokens_in": 288865,
+        "tokens_out": 16066,
+        "cache_write": 0,
+        "cache_read": 4820864
+      }
+    ]
   }
 }
