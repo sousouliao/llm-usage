@@ -579,12 +579,12 @@
         "date": "2026-10-12",
         "source": "cursor",
         "model": "grok-bot-knowledge-work",
-        "requests": 36,
-        "tokens_in": 32255,
-        "tokens_out": 8907,
+        "requests": 37,
+        "tokens_in": 32719,
+        "tokens_out": 9138,
         "cache_write": 0,
-        "cache_read": 759744,
-        "cost_cents": 49.7824
+        "cache_read": 776640,
+        "cost_cents": 50.8586
       }
     ],
     "2026-10-13": [
@@ -670,6 +670,39 @@
       {
         "date": "2026-10-14",
         "source": "cursor",
+        "model": "claude-haiku-5-5-thinking-high",
+        "requests": 2,
+        "tokens_in": 8,
+        "tokens_out": 492,
+        "cache_write": 5259,
+        "cache_read": 0,
+        "cost_cents": 0.0904
+      },
+      {
+        "date": "2026-10-14",
+        "source": "cursor",
+        "model": "claude-opus-5-5-high",
+        "requests": 12,
+        "tokens_in": 48,
+        "tokens_out": 9892,
+        "cache_write": 75993,
+        "cache_read": 704479,
+        "cost_cents": 71.8893
+      },
+      {
+        "date": "2026-10-14",
+        "source": "cursor",
+        "model": "claude-sonnet-5-5-high",
+        "requests": 20,
+        "tokens_in": 111,
+        "tokens_out": 5254,
+        "cache_write": 380182,
+        "cache_read": 1211083,
+        "cost_cents": 112.4325
+      },
+      {
+        "date": "2026-10-14",
+        "source": "cursor",
         "model": "cursor-grok-4.6-high",
         "requests": 1,
         "tokens_in": 124249,
@@ -704,12 +737,12 @@
         "date": "2026-10-14",
         "source": "cursor",
         "model": "grok-4.7-high",
-        "requests": 1,
-        "tokens_in": 157119,
-        "tokens_out": 1983,
+        "requests": 11,
+        "tokens_in": 396716,
+        "tokens_out": 4650,
         "cache_write": 0,
-        "cache_read": 484736,
-        "cost_cents": 56.8504
+        "cache_read": 605696,
+        "cost_cents": 112.418
       },
       {
         "date": "2026-10-14",
@@ -726,7 +759,7 @@
         "date": "2026-10-14",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 41,
+        "requests": 50,
         "tokens_in": 28,
         "tokens_out": 9629,
         "cache_write": 96847,
