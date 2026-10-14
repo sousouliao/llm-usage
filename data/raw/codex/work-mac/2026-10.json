@@ -154,21 +154,21 @@
         "date": "2026-10-14",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 25,
-        "tokens_in": 192481,
-        "tokens_out": 3386,
+        "requests": 29,
+        "tokens_in": 218681,
+        "tokens_out": 3963,
         "cache_write": 0,
-        "cache_read": 658176
+        "cache_read": 903936
       },
       {
         "date": "2026-10-14",
         "source": "codex",
         "model": "gpt-6.1-sol",
-        "requests": 155,
-        "tokens_in": 680594,
-        "tokens_out": 56323,
+        "requests": 189,
+        "tokens_in": 720869,
+        "tokens_out": 71394,
         "cache_write": 0,
-        "cache_read": 15539584
+        "cache_read": 23262336
       }
     ]
   }
