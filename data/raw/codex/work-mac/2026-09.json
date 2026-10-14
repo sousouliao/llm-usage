@@ -428,22 +428,12 @@
       {
         "date": "2026-09-27",
         "source": "codex",
-        "model": "codex-auto-review",
-        "requests": 15,
-        "tokens_in": 98304,
-        "tokens_out": 2265,
-        "cache_write": 0,
-        "cache_read": 289024
-      },
-      {
-        "date": "2026-09-27",
-        "source": "codex",
         "model": "gpt-6-sol",
-        "requests": 105,
-        "tokens_in": 331767,
-        "tokens_out": 54113,
+        "requests": 65,
+        "tokens_in": 126586,
+        "tokens_out": 43756,
         "cache_write": 0,
-        "cache_read": 10607232
+        "cache_read": 8582400
       }
     ],
     "2026-09-28": [],

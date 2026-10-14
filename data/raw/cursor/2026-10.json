@@ -681,19 +681,52 @@
       {
         "date": "2026-10-14",
         "source": "cursor",
-        "model": "gemini-4-argon-medium",
-        "requests": 2,
-        "tokens_in": 506414,
-        "tokens_out": 17976,
+        "model": "gemini-3.8-flash-high",
+        "requests": 3,
+        "tokens_in": 233770,
+        "tokens_out": 5189,
         "cache_write": 0,
-        "cache_read": 2293760,
-        "cost_cents": 141.1039
+        "cache_read": 1604438,
+        "cost_cents": 31.5119
+      },
+      {
+        "date": "2026-10-14",
+        "source": "cursor",
+        "model": "gemini-4-argon-medium",
+        "requests": 4,
+        "tokens_in": 787498,
+        "tokens_out": 19930,
+        "cache_write": 0,
+        "cache_read": 3469312,
+        "cost_cents": 211.0302
+      },
+      {
+        "date": "2026-10-14",
+        "source": "cursor",
+        "model": "grok-4.7-high",
+        "requests": 1,
+        "tokens_in": 157119,
+        "tokens_out": 1983,
+        "cache_write": 0,
+        "cache_read": 484736,
+        "cost_cents": 56.8504
+      },
+      {
+        "date": "2026-10-14",
+        "source": "cursor",
+        "model": "grok-4.7-high-fast",
+        "requests": 2,
+        "tokens_in": 144407,
+        "tokens_out": 2181,
+        "cache_write": 0,
+        "cache_read": 2731264,
+        "cost_cents": 333.5064
       },
       {
         "date": "2026-10-14",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 31,
+        "requests": 41,
         "tokens_in": 28,
         "tokens_out": 9629,
         "cache_write": 96847,
@@ -704,12 +737,12 @@
         "date": "2026-10-14",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 19,
-        "tokens_in": 197,
-        "tokens_out": 13641,
-        "cache_write": 642997,
-        "cache_read": 535829,
-        "cost_cents": 163.6148
+        "requests": 52,
+        "tokens_in": 93745,
+        "tokens_out": 22197,
+        "cache_write": 798336,
+        "cache_read": 3429902,
+        "cost_cents": 363.2295
       }
     ]
   }
