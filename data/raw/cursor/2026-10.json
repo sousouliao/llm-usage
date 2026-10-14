@@ -682,12 +682,12 @@
         "date": "2026-10-14",
         "source": "cursor",
         "model": "gemini-3.8-flash-high",
-        "requests": 5,
-        "tokens_in": 553143,
-        "tokens_out": 41168,
+        "requests": 8,
+        "tokens_in": 965834,
+        "tokens_out": 47279,
         "cache_write": 0,
-        "cache_read": 5911821,
-        "cost_cents": 101.2624
+        "cache_read": 8655963,
+        "cost_cents": 155.0869
       },
       {
         "date": "2026-10-14",
