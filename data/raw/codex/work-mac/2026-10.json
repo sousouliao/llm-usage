@@ -149,6 +149,17 @@
         "cache_read": 58075264
       }
     ],
-    "2026-10-14": []
+    "2026-10-14": [
+      {
+        "date": "2026-10-14",
+        "source": "codex",
+        "model": "gpt-6.1-sol",
+        "requests": 30,
+        "tokens_in": 149090,
+        "tokens_out": 8090,
+        "cache_write": 0,
+        "cache_read": 1613056
+      }
+    ]
   }
 }
