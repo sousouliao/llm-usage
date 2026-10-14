@@ -671,12 +671,23 @@
         "date": "2026-10-14",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 18,
+        "requests": 19,
         "tokens_in": 0,
         "tokens_out": 0,
         "cache_write": 0,
         "cache_read": 0,
         "cost_cents": 0.0
+      },
+      {
+        "date": "2026-10-14",
+        "source": "cursor",
+        "model": "grok-bot-default",
+        "requests": 1,
+        "tokens_in": 4,
+        "tokens_out": 92,
+        "cache_write": 95414,
+        "cache_read": 0,
+        "cost_cents": 19.1388
       }
     ]
   }
