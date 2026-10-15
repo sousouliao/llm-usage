@@ -176,21 +176,21 @@
         "date": "2026-10-15",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 104,
-        "tokens_in": 518846,
-        "tokens_out": 14414,
+        "requests": 109,
+        "tokens_in": 533595,
+        "tokens_out": 15178,
         "cache_write": 0,
-        "cache_read": 6062080
+        "cache_read": 6133504
       },
       {
         "date": "2026-10-15",
         "source": "codex",
         "model": "cursor/grok-4.7@500k",
-        "requests": 19,
-        "tokens_in": 87060,
-        "tokens_out": 3976,
+        "requests": 31,
+        "tokens_in": 100533,
+        "tokens_out": 7558,
         "cache_write": 0,
-        "cache_read": 739840
+        "cache_read": 1305472
       },
       {
         "date": "2026-10-15",
