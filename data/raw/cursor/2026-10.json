@@ -861,11 +861,11 @@
         "source": "cursor",
         "model": "cursor-grok-4.6-high",
         "requests": 58,
-        "tokens_in": 648106,
-        "tokens_out": 52279,
+        "tokens_in": 677808,
+        "tokens_out": 56811,
         "cache_write": 0,
-        "cache_read": 9693696,
-        "cost_cents": 645.6734
+        "cache_read": 10065024,
+        "cost_cents": 672.8994
       },
       {
         "date": "2026-10-15",
