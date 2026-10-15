@@ -176,11 +176,11 @@
         "date": "2026-10-15",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 77,
-        "tokens_in": 360039,
-        "tokens_out": 10980,
+        "requests": 104,
+        "tokens_in": 518846,
+        "tokens_out": 14414,
         "cache_write": 0,
-        "cache_read": 5100288
+        "cache_read": 6062080
       },
       {
         "date": "2026-10-15",
@@ -196,11 +196,11 @@
         "date": "2026-10-15",
         "source": "codex",
         "model": "gpt-6.1-sol",
-        "requests": 372,
-        "tokens_in": 1075570,
-        "tokens_out": 154891,
+        "requests": 486,
+        "tokens_in": 1350407,
+        "tokens_out": 185997,
         "cache_write": 0,
-        "cache_read": 72943744
+        "cache_read": 87881472
       }
     ]
   }
