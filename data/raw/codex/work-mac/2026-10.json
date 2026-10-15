@@ -171,6 +171,37 @@
         "cache_read": 23262336
       }
     ],
-    "2026-10-15": []
+    "2026-10-15": [
+      {
+        "date": "2026-10-15",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 35,
+        "tokens_in": 135049,
+        "tokens_out": 5046,
+        "cache_write": 0,
+        "cache_read": 1447168
+      },
+      {
+        "date": "2026-10-15",
+        "source": "codex",
+        "model": "cursor/grok-4.7@500k",
+        "requests": 19,
+        "tokens_in": 87060,
+        "tokens_out": 3976,
+        "cache_write": 0,
+        "cache_read": 739840
+      },
+      {
+        "date": "2026-10-15",
+        "source": "codex",
+        "model": "gpt-6.1-sol",
+        "requests": 157,
+        "tokens_in": 668491,
+        "tokens_out": 59336,
+        "cache_write": 0,
+        "cache_read": 28793344
+      }
+    ]
   }
 }
