@@ -208,31 +208,41 @@
         "date": "2026-10-16",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 5,
-        "tokens_in": 17198,
-        "tokens_out": 896,
+        "requests": 42,
+        "tokens_in": 165863,
+        "tokens_out": 5542,
         "cache_write": 0,
-        "cache_read": 54656
+        "cache_read": 1702400
+      },
+      {
+        "date": "2026-10-16",
+        "source": "codex",
+        "model": "cursor/claude-opus-5-5@300k",
+        "requests": 25,
+        "tokens_in": 89252,
+        "tokens_out": 13425,
+        "cache_write": 89186,
+        "cache_read": 1783624
       },
       {
         "date": "2026-10-16",
         "source": "codex",
         "model": "cursor/grok-4.7@500k",
-        "requests": 7,
-        "tokens_in": 161142,
-        "tokens_out": 1887,
+        "requests": 17,
+        "tokens_in": 217380,
+        "tokens_out": 3891,
         "cache_write": 0,
-        "cache_read": 249216
+        "cache_read": 945024
       },
       {
         "date": "2026-10-16",
         "source": "codex",
         "model": "gpt-6.1-sol",
-        "requests": 11,
-        "tokens_in": 88068,
-        "tokens_out": 1250,
+        "requests": 143,
+        "tokens_in": 467813,
+        "tokens_out": 58788,
         "cache_write": 0,
-        "cache_read": 359680
+        "cache_read": 18612736
       }
     ]
   }
