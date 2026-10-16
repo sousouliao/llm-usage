@@ -203,6 +203,37 @@
         "cache_read": 113989760
       }
     ],
-    "2026-10-16": []
+    "2026-10-16": [
+      {
+        "date": "2026-10-16",
+        "source": "codex",
+        "model": "codex-auto-review",
+        "requests": 5,
+        "tokens_in": 17198,
+        "tokens_out": 896,
+        "cache_write": 0,
+        "cache_read": 54656
+      },
+      {
+        "date": "2026-10-16",
+        "source": "codex",
+        "model": "cursor/grok-4.7@500k",
+        "requests": 7,
+        "tokens_in": 161142,
+        "tokens_out": 1887,
+        "cache_write": 0,
+        "cache_read": 249216
+      },
+      {
+        "date": "2026-10-16",
+        "source": "codex",
+        "model": "gpt-6.1-sol",
+        "requests": 11,
+        "tokens_in": 88068,
+        "tokens_out": 1250,
+        "cache_write": 0,
+        "cache_read": 359680
+      }
+    ]
   }
 }
