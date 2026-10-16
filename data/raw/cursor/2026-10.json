@@ -994,12 +994,12 @@
         "date": "2026-10-16",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 60,
-        "tokens_in": 574363,
-        "tokens_out": 37878,
+        "requests": 68,
+        "tokens_in": 597737,
+        "tokens_out": 39696,
         "cache_write": 0,
-        "cache_read": 1924992,
-        "cost_cents": 233.849
+        "cache_read": 2255616,
+        "cost_cents": 256.1458
       }
     ]
   }
