@@ -1085,17 +1085,17 @@
         "source": "cursor",
         "model": "grok-4.7-high",
         "requests": 8,
-        "tokens_in": 430660,
-        "tokens_out": 4174,
+        "tokens_in": 534555,
+        "tokens_out": 7853,
         "cache_write": 0,
-        "cache_read": 1676288,
-        "cost_cents": 172.4508
+        "cache_read": 2287744,
+        "cost_cents": 226.01
       },
       {
         "date": "2026-10-17",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 51,
+        "requests": 59,
         "tokens_in": 136611,
         "tokens_out": 17653,
         "cache_write": 0,
