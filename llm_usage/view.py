@@ -124,15 +124,15 @@ def format_range(start: str, end: str) -> str:
 
 
 def format_updated(generated_at: str | None) -> str:
-    """产物刷新时刻 → ``Updated Aug 18, 17:20``。空值给空串，渲染器直接省略。
+    """数据覆盖末日 → ``Updated Oct 19``。空值给空串，渲染器直接省略。
 
-    钟点按时间戳自带的偏移显示，不在这里再转时区——fold 写入时已经是配置时区。
+    入参是产物里那份快照的时刻，它恒为数据末日的配置时区零点（见
+    ``fold._data_stamp``），所以只取日期部分。产物不读时钟，这里也就不需要时针。
     """
     if not generated_at:
         return ""
     dt = datetime.fromisoformat(generated_at)
-    return (f"Updated {MONTH_ABBR[dt.month - 1]} {dt.day}, "
-            f"{dt.hour:02d}:{dt.minute:02d}")
+    return f"Updated {MONTH_ABBR[dt.month - 1]} {dt.day}"
 
 
 # ---------------------------------------------------------------------- 归约

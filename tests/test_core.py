@@ -191,21 +191,27 @@ class TestWeekWindow(unittest.TestCase):
         stats = fold.build_stats([])
         self.assertIsNone(stats["latest_date"])
         self.assertEqual(stats["weeks"], [])
-        self.assertTrue(stats["generated_at"])
-        self.assertTrue(stats["updated_display"].startswith("Updated "))
+        # 没有数据就没有「覆盖到哪天」可报，渲染器会直接省略页眉右端。
+        self.assertEqual(stats["generated_at"], "")
+        self.assertEqual(stats["updated_display"], "")
 
-    def test_generated_at_is_the_only_clock_field(self):
-        """同一份 raw 换个时刻重跑，周次与数字不变，只有页眉时间戳变。"""
+    def test_stamp_reports_coverage_not_build_time(self):
+        """页眉报「数据覆盖到哪天」，而不是跑这次构建的钟点。"""
         daily = fold.fold_events([row("2026-05-06", "m")])
-        t1 = datetime(2026, 8, 18, 17, 20, tzinfo=TZ)
-        t2 = datetime(2026, 8, 18, 18, 5, tzinfo=TZ)
-        first = fold.build_stats(daily, now=t1)
-        second = fold.build_stats(daily, now=t2)
-        self.assertEqual(first["weeks"], second["weeks"])
-        self.assertEqual(first["daily"], second["daily"])
-        self.assertEqual(first["generated_at"], "2026-08-18T17:20:00+08:00")
-        self.assertEqual(first["updated_display"], "Updated Aug 18, 17:20")
-        self.assertEqual(second["updated_display"], "Updated Aug 18, 18:05")
+        stats = fold.build_stats(daily)
+        self.assertEqual(stats["latest_date"], "2026-05-06")
+        self.assertEqual(stats["generated_at"], "2026-05-06T00:00:00+08:00")
+        self.assertEqual(stats["updated_display"], "Updated May 6")
+
+    def test_rebuilding_same_raw_is_byte_identical(self):
+        """产物完全由 raw 决定，不读时钟，所以重建不会漂出只有时间戳不同的产物。"""
+        daily = fold.fold_events([
+            row("2026-05-06", "m", cost_cents=12.5, **tokens(i=10, o=5)),
+            row("2026-05-07", "m", cost_cents=0.5, **tokens(i=1)),
+        ])
+        first = json.dumps(fold.build_stats(daily), sort_keys=True)
+        second = json.dumps(fold.build_stats(list(daily)), sort_keys=True)
+        self.assertEqual(first, second)
 
 
 # OpenAI 公开 API 牌价（美元 / 百万 token，短上下文）。测试里用字面量当独立预期值，
@@ -345,8 +351,8 @@ class TestFormatters(unittest.TestCase):
 
     def test_format_updated(self):
         self.assertEqual(
-            weekview.format_updated("2026-08-18T17:20:00+08:00"),
-            "Updated Aug 18, 17:20")
+            weekview.format_updated("2026-08-18T00:00:00+08:00"),
+            "Updated Aug 18")
         self.assertEqual(weekview.format_updated(""), "")
         self.assertEqual(weekview.format_updated(None), "")
 
@@ -1524,8 +1530,8 @@ class TestSvgRenderer(unittest.TestCase):
         self.assertIn("No data", svg)
 
     def test_header_prints_updated_display(self):
-        """刷新时刻进页眉右端，不另起一节，也不撑高卡片。"""
-        stamp = "Updated Aug 18, 17:20"
+        """覆盖日期进页眉右端，不另起一节，也不撑高卡片。"""
+        stamp = "Updated Aug 18"
         plain = render.render_svg(self._view())
         stamped = render.render_svg(self._view(), updated_display=stamp)
         self.assertIn(stamp, stamped)

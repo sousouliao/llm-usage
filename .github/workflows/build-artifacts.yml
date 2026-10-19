@@ -5,6 +5,9 @@
 #
 # 聚合与渲染只读仓库内的文件——不访问网络、不需要 Cursor 登录态、不需要任何 secret。
 # 采集是唯一需要凭据的环节，它只在本机跑（见 update-local.sh）。
+#
+# 产物不读运行时钟，所以重建幂等：同一份 raw 跑多少次都是同一批字节，这里也就只在
+# 真有 diff 时才会落一个产物提交。
 name: build artifacts
 
 on:
@@ -43,38 +46,36 @@ jobs:
         run: python tests/test_core.py
 
       - name: 生成并提交产物
+        # 产物是 raw 的纯函数（不读时钟），所以「重新生成后有没有 diff」就是
+        # 「要不要提交」的全部判据：没变就什么都不做，变了才落一个提交。
+        #
+        # 同一个 sha 可能派生出两次运行（两台机器几乎同时推送，或 CI 回写产物
+        # 又触发一次）。并发组只保证两次运行不同时推，不保证本运行开始后远端没
+        # 有前进，所以后一个运行仍可能被非快进拒绝。产物可无条件重建，被拒时
+        # 就丢弃自己这份、在最新远端上重跑一次，不会留任何冲突文件。
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # 产物无变化时返回 1。
-          publish() {
-            git add data/stats.json assets
-            if git diff --cached --quiet; then
-              return 1
-            fi
-            git commit -m "chore(ci): rebuild usage artifacts"
-          }
-
-          # 同一个 sha 可能派生出两次运行（两台机器几乎同时推送，或 CI 回写产物本身
-          # 又触发一次）。并发组只保证两次运行不同时推，不保证本运行开始后远端没有
-          # 前进，所以第二次运行仍可能被非快进拒绝。
-          #
-          # 产物由 raw 完全决定，被拒时不需要 rebase：丢掉自己这份、在最新远端上重新
-          # 生成，得到的仍是当前完整状态，中途也不会留下冲突文件。
           for attempt in 1 2 3; do
             if [ "$attempt" -gt 1 ]; then
               echo "==> 推送被拒，基于最新远端重新生成产物（第 $attempt 次尝试）"
               git fetch --depth=1 origin main
-              git reset --hard FETCH_HEAD
+              git reset -q --hard FETCH_HEAD
             fi
+
             python -m llm_usage --skip-collect
-            if ! publish; then
+
+            # 产物与已提交的一致：raw 没带来任何影响展示的变化，没有东西要推。
+            if git diff --quiet -- data/stats.json assets; then
               echo "产物无变化，跳过提交。"
               exit 0
             fi
-            if git push; then
+
+            git add data/stats.json assets
+            git commit -q -m "chore(ci): rebuild usage artifacts"
+            if git push -q; then
               echo "产物已推送。"
               exit 0
             fi

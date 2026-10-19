@@ -107,9 +107,9 @@ export interface UsageStats {
   subscription_sources?: string[];
   daily: UsageRow[];
   year: YearSummary | null;
-  /** 产物写出时刻。只回答卡片新不新，不参与周次窗口。 */
+  /** 数据覆盖到哪一天：数据末日在配置时区的零点（ISO 8601），无数据时为空串。 */
   generated_at?: string;
-  /** generated_at 的展示文案，如 Updated Aug 18, 17:20。渲染器不自己格式化。 */
+  /** generated_at 的展示文案，如 Updated Oct 19。渲染器不自己格式化。 */
   updated_display?: string;
 }
 

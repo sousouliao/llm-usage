@@ -11,8 +11,12 @@
 这三块都一样。若改成读系统时钟，同一份原始数据在周一和周三会产出不同产物，
 幂等性就没了，而且连着几天没用量时卡片会显示一片空白。
 
-唯一的例外是顶层的 ``generated_at`` / ``updated_display``：页眉右端要回答「这张卡片
-还新不新」，必须用写出这一刻的时钟。同一份 raw 在不同时刻重跑，只有这两项会变。
+**没有任何一项读运行时钟。** 页眉右端要回答「这份产物还新不新」，这里用「数据覆盖
+到哪天」来回答（``generated_at`` / ``updated_display``）：它只会随新数据前进，不会
+因为重建而漂移。早先这两项写的是「产物写出时刻」，那让同一份 raw 每次重建都产出
+一个只有时间戳不同的提交，CI 因此永远有 diff、也更容易撞上并发推送。
+
+所以：同一份 raw 重建，产物逐字节相同，CI 也就没有东西可提交。
 
 == 展示窗口与年度数据 ==
 
@@ -139,30 +143,31 @@ def build_year(daily: list[dict], latest: str) -> dict:
     }
 
 
-def _now_stamp(now: datetime | None = None) -> tuple[str, str]:
-    """写出这一刻的时钟，转成 ISO 时间戳和页眉文案。
+def _data_stamp(latest: str | None) -> tuple[str, str]:
+    """页眉右端自报「数据覆盖到哪」：数据末日零点（配置时区）与它的展示文案。
 
-    ``now`` 只给测试注入。生产路径读配置时区的当前时刻。
+    这里刻意**不读运行时钟**。产物由 raw 完全决定，才谈得上幂等：同一份 raw 无论在
+    本机、在 CI 还是补跑三天后重建，写出的字节都一样，CI 也就不会每次都产出一个
+    只有时间戳不同的提交。新鲜度由「覆盖到哪天」表达，它只会随新数据前进，不会
+    因为重建而漂移。
     """
+    if latest is None:
+        return "", ""
     tz = ZoneInfo(config.load_aggregate_config()["timezone"])
-    instant = datetime.now(tz) if now is None else now
-    if instant.tzinfo is None:
-        instant = instant.replace(tzinfo=tz)
-    else:
-        instant = instant.astimezone(tz)
-    generated_at = instant.isoformat(timespec="seconds")
-    return generated_at, view.format_updated(generated_at)
+    stamp = datetime.fromisoformat(latest).replace(tzinfo=tz).isoformat()
+    return stamp, view.format_updated(stamp)
 
 
-def build_stats(daily_all: list[dict], *, now: datetime | None = None) -> dict:
+def build_stats(daily_all: list[dict]) -> dict:
     """把全量日记录切成 stats.json：展示窗口的明细 + 带视图的周次 + 年度汇总。
 
-    ``now`` 只影响 ``generated_at`` / ``updated_display``，不参与周次窗口。
+    纯函数：同一份 ``daily_all`` 在任意时刻、任意机器上跑，结果逐字节相同。
     """
     subs = config.subscription_sources()
-    generated_at, updated_display = _now_stamp(now)
     dates = sorted({r["date"] for r in daily_all})
-    if not dates:
+    latest = dates[-1] if dates else None
+    generated_at, updated_display = _data_stamp(latest)
+    if latest is None:
         return {"schema_version": SCHEMA_VERSION,
                 "timezone": config.load_aggregate_config()["timezone"],
                 "latest_date": None,
@@ -172,7 +177,6 @@ def build_stats(daily_all: list[dict], *, now: datetime | None = None) -> dict:
                 "subscription_sources": subs,
                 "daily": [], "year": None}
 
-    latest = dates[-1]
     priced = pricing.fill_list_prices(
         daily_all, config.list_prices(), config.price_aliases())
     weeks = recent_weeks(latest)
