@@ -1242,12 +1242,12 @@
         "date": "2026-10-19",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 96,
-        "tokens_in": 972937,
-        "tokens_out": 41067,
+        "requests": 127,
+        "tokens_in": 1288742,
+        "tokens_out": 52719,
         "cache_write": 0,
-        "cache_read": 5691520,
-        "cost_cents": 503.8036
+        "cache_read": 7923328,
+        "cost_cents": 685.5462
       }
     ]
   }
