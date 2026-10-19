@@ -1231,7 +1231,7 @@
         "date": "2026-10-19",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 90,
+        "requests": 91,
         "tokens_in": 224190,
         "tokens_out": 12532,
         "cache_write": 0,
@@ -1242,12 +1242,12 @@
         "date": "2026-10-19",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 127,
-        "tokens_in": 1288742,
-        "tokens_out": 52719,
+        "requests": 128,
+        "tokens_in": 1314858,
+        "tokens_out": 52768,
         "cache_write": 0,
-        "cache_read": 7923328,
-        "cost_cents": 685.5462
+        "cache_read": 7934976,
+        "cost_cents": 691.3812
       }
     ]
   }
