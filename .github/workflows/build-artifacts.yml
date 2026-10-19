@@ -42,17 +42,42 @@ jobs:
       - name: 跑单测
         run: python tests/test_core.py
 
-      - name: 重新生成 stats.json 与 SVG
-        run: python -m llm_usage --skip-collect
-
-      - name: 提交产物
+      - name: 生成并提交产物
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/stats.json assets
-          if git diff --cached --quiet; then
-            echo "产物无变化，跳过提交。"
-            exit 0
-          fi
-          git commit -m "chore(ci): rebuild usage artifacts"
-          git push
+
+          # 产物无变化时返回 1。
+          publish() {
+            git add data/stats.json assets
+            if git diff --cached --quiet; then
+              return 1
+            fi
+            git commit -m "chore(ci): rebuild usage artifacts"
+          }
+
+          # 同一个 sha 可能派生出两次运行（两台机器几乎同时推送，或 CI 回写产物本身
+          # 又触发一次）。并发组只保证两次运行不同时推，不保证本运行开始后远端没有
+          # 前进，所以第二次运行仍可能被非快进拒绝。
+          #
+          # 产物由 raw 完全决定，被拒时不需要 rebase：丢掉自己这份、在最新远端上重新
+          # 生成，得到的仍是当前完整状态，中途也不会留下冲突文件。
+          for attempt in 1 2 3; do
+            if [ "$attempt" -gt 1 ]; then
+              echo "==> 推送被拒，基于最新远端重新生成产物（第 $attempt 次尝试）"
+              git fetch --depth=1 origin main
+              git reset --hard FETCH_HEAD
+            fi
+            python -m llm_usage --skip-collect
+            if ! publish; then
+              echo "产物无变化，跳过提交。"
+              exit 0
+            fi
+            if git push; then
+              echo "产物已推送。"
+              exit 0
+            fi
+          done
+          echo "错误：连续重试仍无法推送产物。" >&2
+          exit 1
