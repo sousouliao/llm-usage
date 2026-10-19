@@ -1198,12 +1198,12 @@
         "date": "2026-10-19",
         "source": "cursor",
         "model": "gemini-4-argon-medium",
-        "requests": 82,
-        "tokens_in": 3049658,
-        "tokens_out": 52657,
+        "requests": 105,
+        "tokens_in": 4314789,
+        "tokens_out": 72490,
         "cache_write": 0,
-        "cache_read": 12765732,
-        "cost_cents": 790.2459
+        "cache_read": 18709866,
+        "cost_cents": 1122.5465
       },
       {
         "date": "2026-10-19",
@@ -1231,7 +1231,7 @@
         "date": "2026-10-19",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 78,
+        "requests": 90,
         "tokens_in": 224190,
         "tokens_out": 12532,
         "cache_write": 0,
