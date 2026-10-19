@@ -1277,12 +1277,23 @@
         "date": "2026-10-20",
         "source": "cursor",
         "model": "grok-4.7-high",
-        "requests": 1,
-        "tokens_in": 102384,
-        "tokens_out": 197,
+        "requests": 2,
+        "tokens_in": 205352,
+        "tokens_out": 394,
         "cache_write": 0,
-        "cache_read": 113664,
-        "cost_cents": 26.2782
+        "cache_read": 227840,
+        "cost_cents": 52.6988
+      },
+      {
+        "date": "2026-10-20",
+        "source": "cursor",
+        "model": "grok-bot-default",
+        "requests": 59,
+        "tokens_in": 274893,
+        "tokens_out": 39721,
+        "cache_write": 0,
+        "cache_read": 2929152,
+        "cost_cents": 225.2688
       }
     ]
   }
