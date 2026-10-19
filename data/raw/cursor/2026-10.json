@@ -1272,6 +1272,18 @@
         "cost_cents": 1219.8208
       }
     ],
-    "2026-10-20": []
+    "2026-10-20": [
+      {
+        "date": "2026-10-20",
+        "source": "cursor",
+        "model": "grok-4.7-high",
+        "requests": 1,
+        "tokens_in": 102384,
+        "tokens_out": 197,
+        "cache_write": 0,
+        "cache_read": 113664,
+        "cost_cents": 26.2782
+      }
+    ]
   }
 }
