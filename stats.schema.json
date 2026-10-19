@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
-  "$id": "https://raw.githubusercontent.com/Mournerliao/llm-usage/main/stats.schema.json",
+  "$id": "https://raw.githubusercontent.com/sousouliao/llm-usage/main/stats.schema.json",
   "title": "LLM Usage Stats",
   "description": "LLM 用量的数据契约（单一事实源）。llm_usage.fold 产出，render.py 与 UsageWidget 共同消费 weeks[].view。字段名以本文件为准。",
   "type": "object",
@@ -8,7 +8,7 @@
   "properties": {
     "schema_version": {
       "const": 4,
-      "description": "契约版本。消费方应校验它，避免在字段语义变更后静默渲染错误数据。v1 用 input_tokens/output_tokens；v2 改为 unit + amount + machine；v3 去掉 unit 与 machine，改用具名 token 字段并加入 cost_cents 与周维度；v4 把 WeekView 物化进 weeks[].view，渲染器不再各自计算。generated_at / updated_display 是页脚刷新时刻，不参与周次计算，不升版本。"
+      "description": "契约版本。消费方应校验它，避免在字段语义变更后静默渲染错误数据。v1 用 input_tokens/output_tokens；v2 改为 unit + amount + machine；v3 去掉 unit 与 machine，改用具名 token 字段并加入 cost_cents 与周维度；v4 把 WeekView 物化进 weeks[].view，渲染器不再各自计算。generated_at / updated_display 是页眉的覆盖日期，不参与周次计算，不升版本。"
     },
     "timezone": {
       "type": "string",
@@ -20,11 +20,11 @@
     },
     "generated_at": {
       "type": "string",
-      "description": "产物写出时刻，ISO 8601，配置时区（如 2026-08-18T17:20:00+08:00）。这是唯一一个由运行时钟决定的字段：用来回答「这张卡片还新不新」，不参与周次窗口。同一份 raw 在不同时刻重跑，只有这一项和 updated_display 会变。"
+      "description": "产物覆盖到哪一天，ISO 8601，配置时区，取数据末日的零点（如 2026-10-19T00:00:00+08:00）。无数据时为空字符串。这里刻意不写运行时钟：产物由 raw 完全决定，同一份 raw 重建出的字节必须一致，CI 才不会每次都产出一个只有时间戳不同的提交。"
     },
     "updated_display": {
       "type": "string",
-      "description": "generated_at 的展示文案，如 Updated Aug 18, 17:20。两端渲染器只读这一项，不自己格式化。"
+      "description": "generated_at 的展示文案，如 Updated Oct 19。两端渲染器只读这一项，不自己格式化。"
     },
     "weeks": {
       "type": "array",

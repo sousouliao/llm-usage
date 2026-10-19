@@ -29,7 +29,7 @@ http://localhost:5173/?w=380&theme=light&week=2026-W33
 - **运行时拉取（推荐用于博客）**：传 `dataUrl`，组件自行 fetch。
 
 ```tsx
-<UsageWidget dataUrl="https://cdn.jsdelivr.net/gh/Mournerliao/llm-usage@main/data/stats.json" />
+<UsageWidget dataUrl="https://cdn.jsdelivr.net/gh/sousouliao/llm-usage@main/data/stats.json" />
 ```
 
 仓库数据一更新，博客组件自动变新，无需重新构建。
@@ -76,8 +76,8 @@ interface UsageStats {
   schema_version: number;      // 必须是 4
   timezone: string;
   latest_date: string | null;
-  generated_at: string;        // 产物写出时刻
-  updated_display: string;     // 如 Updated Aug 18, 17:20
+  generated_at: string;        // 数据覆盖到哪天（末日零点，ISO 8601）
+  updated_display: string;     // 如 Updated Oct 19
   weeks: { week: string; start: string; end: string; view: WeekView }[];
   sources: string[];
   daily: UsageRow[];           // 仍保留，widget 展示只读 weeks[].view
