@@ -1276,6 +1276,17 @@
       {
         "date": "2026-10-20",
         "source": "cursor",
+        "model": "cursor-grok-4.6-high",
+        "requests": 1,
+        "tokens_in": 115360,
+        "tokens_out": 3425,
+        "cache_write": 0,
+        "cache_read": 791680,
+        "cost_cents": 64.711
+      },
+      {
+        "date": "2026-10-20",
+        "source": "cursor",
         "model": "grok-4.7-high",
         "requests": 6,
         "tokens_in": 622424,
@@ -1283,6 +1294,17 @@
         "cache_write": 0,
         "cache_read": 690304,
         "cost_cents": 159.7092
+      },
+      {
+        "date": "2026-10-20",
+        "source": "cursor",
+        "model": "grok-4.7-high-fast",
+        "requests": 2,
+        "tokens_in": 126182,
+        "tokens_out": 12695,
+        "cache_write": 0,
+        "cache_read": 2379904,
+        "cost_cents": 303.6972
       },
       {
         "date": "2026-10-20",
