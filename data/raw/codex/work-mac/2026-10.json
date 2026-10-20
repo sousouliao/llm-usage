@@ -274,11 +274,11 @@
         "date": "2026-10-20",
         "source": "codex",
         "model": "gpt-6.1-sol",
-        "requests": 21,
-        "tokens_in": 71049,
-        "tokens_out": 3479,
+        "requests": 32,
+        "tokens_in": 195409,
+        "tokens_out": 8930,
         "cache_write": 0,
-        "cache_read": 979456
+        "cache_read": 1721856
       }
     ]
   }
