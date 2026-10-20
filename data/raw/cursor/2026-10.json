@@ -1277,12 +1277,12 @@
         "date": "2026-10-20",
         "source": "cursor",
         "model": "claude-sonnet-5-5-high",
-        "requests": 139,
-        "tokens_in": 8813,
-        "tokens_out": 202552,
-        "cache_write": 895425,
-        "cache_read": 19564520,
-        "cost_cents": 623.816
+        "requests": 222,
+        "tokens_in": 17917,
+        "tokens_out": 268983,
+        "cache_write": 1181693,
+        "cache_read": 31544765,
+        "cost_cents": 883.4373
       },
       {
         "date": "2026-10-20",
@@ -1294,6 +1294,17 @@
         "cache_write": 0,
         "cache_read": 791680,
         "cost_cents": 64.711
+      },
+      {
+        "date": "2026-10-20",
+        "source": "cursor",
+        "model": "gemini-4-argon-high",
+        "requests": 10,
+        "tokens_in": 269868,
+        "tokens_out": 5033,
+        "cache_write": 0,
+        "cache_read": 1065122,
+        "cost_cents": 69.6578
       },
       {
         "date": "2026-10-20",
@@ -1321,7 +1332,7 @@
         "date": "2026-10-20",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 78,
+        "requests": 84,
         "tokens_in": 298933,
         "tokens_out": 18191,
         "cache_write": 0,
