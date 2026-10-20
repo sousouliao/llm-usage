@@ -274,21 +274,31 @@
         "date": "2026-10-20",
         "source": "codex",
         "model": "codex-auto-review",
-        "requests": 103,
-        "tokens_in": 217614,
-        "tokens_out": 11341,
+        "requests": 154,
+        "tokens_in": 420732,
+        "tokens_out": 17108,
         "cache_write": 0,
-        "cache_read": 8844416
+        "cache_read": 15200128
       },
       {
         "date": "2026-10-20",
         "source": "codex",
         "model": "gpt-6.1-sol",
-        "requests": 192,
-        "tokens_in": 628377,
-        "tokens_out": 90082,
+        "requests": 252,
+        "tokens_in": 823015,
+        "tokens_out": 118540,
         "cache_write": 0,
-        "cache_read": 32954496
+        "cache_read": 48095104
+      },
+      {
+        "date": "2026-10-20",
+        "source": "codex",
+        "model": "workbuddy/deepseek-v4.1-flash",
+        "requests": 40,
+        "tokens_in": 160163,
+        "tokens_out": 12022,
+        "cache_write": 0,
+        "cache_read": 5669120
       }
     ]
   }
