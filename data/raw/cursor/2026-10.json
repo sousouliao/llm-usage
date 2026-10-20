@@ -1276,6 +1276,17 @@
       {
         "date": "2026-10-20",
         "source": "cursor",
+        "model": "claude-sonnet-5-5-high",
+        "requests": 42,
+        "tokens_in": 2680,
+        "tokens_out": 62126,
+        "cache_write": 136174,
+        "cache_read": 3693596,
+        "cost_cents": 133.6415
+      },
+      {
+        "date": "2026-10-20",
+        "source": "cursor",
         "model": "cursor-grok-4.6-high",
         "requests": 1,
         "tokens_in": 115360,
