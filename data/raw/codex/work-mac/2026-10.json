@@ -90,42 +90,12 @@
       {
         "date": "2026-10-13",
         "source": "codex",
-        "model": "codex-auto-review",
-        "requests": 102,
-        "tokens_in": 684702,
-        "tokens_out": 13693,
-        "cache_write": 0,
-        "cache_read": 8600064
-      },
-      {
-        "date": "2026-10-13",
-        "source": "codex",
-        "model": "cursor/grok-4.7@256k",
-        "requests": 147,
-        "tokens_in": 1222034,
-        "tokens_out": 48749,
-        "cache_write": 0,
-        "cache_read": 16740864
-      },
-      {
-        "date": "2026-10-13",
-        "source": "codex",
-        "model": "gpt-6-sol",
-        "requests": 1,
-        "tokens_in": 17346,
-        "tokens_out": 6,
-        "cache_write": 0,
-        "cache_read": 0
-      },
-      {
-        "date": "2026-10-13",
-        "source": "codex",
         "model": "gpt-6.1-sol",
-        "requests": 363,
-        "tokens_in": 1438308,
-        "tokens_out": 193287,
+        "requests": 9,
+        "tokens_in": 38862,
+        "tokens_out": 873,
         "cache_write": 0,
-        "cache_read": 58075264
+        "cache_read": 273792
       }
     ],
     "2026-10-14": [
@@ -301,6 +271,17 @@
         "cache_read": 5669120
       }
     ],
-    "2026-10-21": []
+    "2026-10-21": [
+      {
+        "date": "2026-10-21",
+        "source": "codex",
+        "model": "gpt-6.1-sol",
+        "requests": 19,
+        "tokens_in": 77898,
+        "tokens_out": 6044,
+        "cache_write": 0,
+        "cache_read": 1014912
+      }
+    ]
   }
 }
