@@ -15,12 +15,12 @@
         "end": "2026-10-25",
         "range_display": "Oct 19 – Oct 25",
         "basis": "tokens",
-        "requests": 1605,
+        "requests": 1623,
         "tokens_total": 209408011,
         "cost_cents": 9153.8986,
         "tokens_display": "209.4M",
         "cost_display": "$91.54",
-        "requests_display": "1,605",
+        "requests_display": "1,623",
         "breakdown": [
           {
             "kind": "tokens_in",
@@ -133,7 +133,7 @@
           {
             "date": "2026-10-21",
             "weekday": "Wed",
-            "requests": 21,
+            "requests": 39,
             "tokens_total": 1684308,
             "cost_cents": 174.95600000000002,
             "tokens_display": "1.7M"
@@ -2577,6 +2577,17 @@
     {
       "date": "2026-10-21",
       "source": "cursor",
+      "model": "grok-bot-automation",
+      "requests": 18,
+      "tokens_in": 0,
+      "tokens_out": 0,
+      "cache_write": 0,
+      "cache_read": 0,
+      "cost_cents": 0.0
+    },
+    {
+      "date": "2026-10-21",
+      "source": "cursor",
       "model": "grok-bot-default",
       "requests": 17,
       "tokens_in": 151394,
@@ -2591,7 +2602,7 @@
     "start": "2026-01-02",
     "end": "2026-10-21",
     "days_active": 243,
-    "requests": 73195,
+    "requests": 73213,
     "tokens_in": 927157391,
     "tokens_out": 86336936,
     "cache_write": 234366795,
@@ -2691,7 +2702,7 @@
       },
       {
         "month": "2026-10",
-        "requests": 13650,
+        "requests": 13668,
         "tokens_in": 81932732,
         "tokens_out": 9824414,
         "cache_write": 42751141,
@@ -3093,7 +3104,7 @@
       },
       {
         "model": "grok-bot-automation",
-        "requests": 1674,
+        "requests": 1692,
         "tokens_in": 4198187,
         "tokens_out": 685166,
         "cache_write": 2713395,
