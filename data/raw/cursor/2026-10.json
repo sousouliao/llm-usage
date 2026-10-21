@@ -1378,12 +1378,12 @@
         "date": "2026-10-21",
         "source": "cursor",
         "model": "gemini-4-argon-medium",
-        "requests": 86,
-        "tokens_in": 1072694,
-        "tokens_out": 32685,
+        "requests": 89,
+        "tokens_in": 1624126,
+        "tokens_out": 33229,
         "cache_write": 0,
         "cache_read": 7905040,
-        "cost_cents": 325.4017
+        "cost_cents": 436.2321
       },
       {
         "date": "2026-10-21",
