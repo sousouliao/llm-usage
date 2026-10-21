@@ -1389,23 +1389,23 @@
         "date": "2026-10-21",
         "source": "cursor",
         "model": "grok-bot-automation",
-        "requests": 18,
-        "tokens_in": 0,
-        "tokens_out": 0,
+        "requests": 26,
+        "tokens_in": 96409,
+        "tokens_out": 3049,
         "cache_write": 0,
-        "cache_read": 0,
-        "cost_cents": 0.0
+        "cache_read": 427392,
+        "cost_cents": 42.4808
       },
       {
         "date": "2026-10-21",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 17,
-        "tokens_in": 151394,
-        "tokens_out": 4416,
+        "requests": 18,
+        "tokens_in": 193073,
+        "tokens_out": 4459,
         "cache_write": 0,
-        "cache_read": 613120,
-        "cost_cents": 63.5844
+        "cache_read": 625408,
+        "cost_cents": 72.5604
       }
     ]
   }
