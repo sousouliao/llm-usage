@@ -871,12 +871,12 @@
         "date": "2026-10-15",
         "source": "cursor",
         "model": "grok-4.7-high",
-        "requests": 392,
-        "tokens_in": 1084810,
-        "tokens_out": 96804,
+        "requests": 391,
+        "tokens_in": 1084156,
+        "tokens_out": 96402,
         "cache_write": 0,
-        "cache_read": 40934912,
-        "cost_cents": 2321.79
+        "cache_read": 40782080,
+        "cost_cents": 2313.7764
       },
       {
         "date": "2026-10-15",
@@ -926,12 +926,12 @@
         "date": "2026-10-15",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 775,
-        "tokens_in": 3953847,
-        "tokens_out": 329501,
+        "requests": 776,
+        "tokens_in": 3955045,
+        "tokens_out": 329680,
         "cache_write": 0,
-        "cache_read": 42579456,
-        "cost_cents": 3138.4428
+        "cache_read": 42612224,
+        "cost_cents": 3140.4282
       }
     ],
     "2026-10-16": [
@@ -1457,12 +1457,12 @@
         "date": "2026-10-22",
         "source": "cursor",
         "model": "claude-opus-5-5-medium",
-        "requests": 139,
-        "tokens_in": 14140,
-        "tokens_out": 99981,
-        "cache_write": 1159825,
-        "cache_read": 18326672,
-        "cost_cents": 1152.0639
+        "requests": 242,
+        "tokens_in": 17857,
+        "tokens_out": 220940,
+        "cache_write": 1463624,
+        "cache_read": 30845497,
+        "cost_cents": 1797.7447
       },
       {
         "date": "2026-10-22",
@@ -1479,12 +1479,12 @@
         "date": "2026-10-22",
         "source": "cursor",
         "model": "gemini-4-argon-medium",
-        "requests": 351,
-        "tokens_in": 5840758,
-        "tokens_out": 172585,
+        "requests": 431,
+        "tokens_in": 7349844,
+        "tokens_out": 234221,
         "cache_write": 0,
-        "cache_read": 64325098,
-        "cost_cents": 1982.9776
+        "cache_read": 79505975,
+        "cost_cents": 2488.3301
       },
       {
         "date": "2026-10-22",
