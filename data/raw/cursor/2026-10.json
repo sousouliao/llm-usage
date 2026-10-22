@@ -1456,13 +1456,24 @@
       {
         "date": "2026-10-22",
         "source": "cursor",
+        "model": "claude-sonnet-5-5-high",
+        "requests": 44,
+        "tokens_in": 819,
+        "tokens_out": 80940,
+        "cache_write": 197170,
+        "cache_read": 2936188,
+        "cost_cents": 159.7582
+      },
+      {
+        "date": "2026-10-22",
+        "source": "cursor",
         "model": "gemini-4-argon-medium",
-        "requests": 253,
-        "tokens_in": 3759835,
-        "tokens_out": 128833,
+        "requests": 259,
+        "tokens_in": 4218771,
+        "tokens_out": 130708,
         "cache_write": 0,
-        "cache_read": 51189045,
-        "cost_cents": 1392.0381
+        "cache_read": 52081696,
+        "cost_cents": 1494.6268
       },
       {
         "date": "2026-10-22",
@@ -1474,6 +1485,17 @@
         "cache_write": 0,
         "cache_read": 621312,
         "cost_cents": 164.9358
+      },
+      {
+        "date": "2026-10-22",
+        "source": "cursor",
+        "model": "grok-4.7-high-fast",
+        "requests": 12,
+        "tokens_in": 710997,
+        "tokens_out": 183981,
+        "cache_write": 0,
+        "cache_read": 20821888,
+        "cost_cents": 2587.3648
       },
       {
         "date": "2026-10-22",
