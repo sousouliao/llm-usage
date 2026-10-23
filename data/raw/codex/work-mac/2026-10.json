@@ -130,38 +130,18 @@
         "tokens_out": 3582,
         "cache_write": 0,
         "cache_read": 565632
-      },
-      {
-        "date": "2026-10-15",
-        "source": "codex",
-        "model": "gpt-6.1-sol",
-        "requests": 131,
-        "tokens_in": 243532,
-        "tokens_out": 49340,
-        "cache_write": 0,
-        "cache_read": 22961152
       }
     ],
     "2026-10-16": [
       {
         "date": "2026-10-16",
         "source": "codex",
-        "model": "codex-auto-review",
-        "requests": 64,
-        "tokens_in": 319138,
-        "tokens_out": 8812,
-        "cache_write": 0,
-        "cache_read": 2188928
-      },
-      {
-        "date": "2026-10-16",
-        "source": "codex",
         "model": "cursor/claude-opus-5-5@300k",
-        "requests": 25,
-        "tokens_in": 89252,
-        "tokens_out": 13425,
-        "cache_write": 89186,
-        "cache_read": 1783624
+        "requests": 13,
+        "tokens_in": 12531,
+        "tokens_out": 7801,
+        "cache_write": 12499,
+        "cache_read": 999859
       },
       {
         "date": "2026-10-16",
@@ -177,11 +157,11 @@
         "date": "2026-10-16",
         "source": "codex",
         "model": "gpt-6.1-sol",
-        "requests": 219,
-        "tokens_in": 926152,
-        "tokens_out": 75977,
+        "requests": 42,
+        "tokens_in": 154088,
+        "tokens_out": 8910,
         "cache_write": 0,
-        "cache_read": 25209216
+        "cache_read": 4369536
       }
     ],
     "2026-10-17": [
