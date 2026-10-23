@@ -226,12 +226,12 @@
         "date": "2026-08-07",
         "source": "cursor",
         "model": "composer-2.5",
-        "requests": 61,
-        "tokens_in": 1171720,
-        "tokens_out": 181636,
+        "requests": 60,
+        "tokens_in": 1169779,
+        "tokens_out": 180312,
         "cache_write": 0,
-        "cache_read": 28813253,
-        "cost_cents": 682.247
+        "cache_read": 28561679,
+        "cost_cents": 676.7875
       },
       {
         "date": "2026-08-07",
