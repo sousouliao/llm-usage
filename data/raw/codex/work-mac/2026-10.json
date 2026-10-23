@@ -124,32 +124,22 @@
       {
         "date": "2026-10-15",
         "source": "codex",
-        "model": "codex-auto-review",
-        "requests": 182,
-        "tokens_in": 734675,
-        "tokens_out": 23539,
-        "cache_write": 0,
-        "cache_read": 11953664
-      },
-      {
-        "date": "2026-10-15",
-        "source": "codex",
         "model": "cursor/grok-4.7@500k",
-        "requests": 31,
-        "tokens_in": 100533,
-        "tokens_out": 7558,
+        "requests": 12,
+        "tokens_in": 13473,
+        "tokens_out": 3582,
         "cache_write": 0,
-        "cache_read": 1305472
+        "cache_read": 565632
       },
       {
         "date": "2026-10-15",
         "source": "codex",
         "model": "gpt-6.1-sol",
-        "requests": 656,
-        "tokens_in": 1772744,
-        "tokens_out": 256969,
+        "requests": 131,
+        "tokens_in": 243532,
+        "tokens_out": 49340,
         "cache_write": 0,
-        "cache_read": 113989760
+        "cache_read": 22961152
       }
     ],
     "2026-10-16": [
