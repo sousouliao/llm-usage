@@ -1794,13 +1794,24 @@
       {
         "date": "2026-10-26",
         "source": "cursor",
-        "model": "gemini-4-argon-medium",
-        "requests": 87,
-        "tokens_in": 889849,
-        "tokens_out": 27359,
+        "model": "gemini-4-argon-high",
+        "requests": 82,
+        "tokens_in": 2194373,
+        "tokens_out": 28986,
         "cache_write": 0,
-        "cache_read": 11828180,
-        "cost_cents": 323.6106
+        "cache_read": 17419594,
+        "cost_cents": 642.0565
+      },
+      {
+        "date": "2026-10-26",
+        "source": "cursor",
+        "model": "gemini-4-argon-medium",
+        "requests": 127,
+        "tokens_in": 1518745,
+        "tokens_out": 49275,
+        "cache_write": 0,
+        "cache_read": 14534268,
+        "cost_cents": 498.3667
       },
       {
         "date": "2026-10-26",
@@ -1850,12 +1861,12 @@
         "date": "2026-10-26",
         "source": "cursor",
         "model": "grok-bot-default",
-        "requests": 74,
-        "tokens_in": 681223,
-        "tokens_out": 49149,
+        "requests": 79,
+        "tokens_in": 745015,
+        "tokens_out": 53862,
         "cache_write": 0,
-        "cache_read": 4173184,
-        "cost_cents": 374.3932
+        "cache_read": 4262912,
+        "cost_cents": 394.4658
       }
     ]
   }
