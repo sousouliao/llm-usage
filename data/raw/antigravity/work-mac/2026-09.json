@@ -7,10 +7,10 @@
         "date": "2026-09-21",
         "source": "antigravity",
         "model": "gemini-3.8-flash",
-        "requests": 418,
-        "tokens_in": 5031373,
-        "tokens_out": 196303,
-        "cache_read": 42067622
+        "requests": 390,
+        "tokens_in": 4803048,
+        "tokens_out": 186196,
+        "cache_read": 41412782
       }
     ],
     "2026-09-22": [
