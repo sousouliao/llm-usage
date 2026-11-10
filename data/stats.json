@@ -15,44 +15,44 @@
         "end": "2026-11-15",
         "range_display": "Nov 9 – Nov 15",
         "basis": "tokens",
-        "requests": 112,
-        "tokens_total": 7478426,
+        "requests": 126,
+        "tokens_total": 9265601,
         "cost_cents": null,
-        "tokens_display": "7.5M",
+        "tokens_display": "9.3M",
         "cost_display": "Subscription",
-        "requests_display": "112",
+        "requests_display": "126",
         "breakdown": [
           {
             "kind": "tokens_in",
             "label": "Input",
-            "amount": 433312,
-            "display": "433.3K",
-            "pct": 5.794160428945877
+            "amount": 599530,
+            "display": "599.5K",
+            "pct": 6.470492308054275
           },
           {
             "kind": "tokens_out",
             "label": "Output",
-            "amount": 63922,
-            "display": "63.9K",
-            "pct": 0.8547520561144819
+            "amount": 69959,
+            "display": "70.0K",
+            "pct": 0.7550400670177789
           },
           {
             "kind": "cache_read",
             "label": "Cache read",
-            "amount": 6981192,
-            "display": "7.0M",
-            "pct": 93.35108751493965
+            "amount": 8596112,
+            "display": "8.6M",
+            "pct": 92.77446762492795
           }
         ],
         "models": [
           {
             "label": "gemini-3.8-flash-n",
-            "requests": 112,
-            "tokens_total": 7478426,
+            "requests": 126,
+            "tokens_total": 9265601,
             "cost_cents": null,
-            "tokens_display": "7.5M",
+            "tokens_display": "9.3M",
             "cost_display": "Subscription",
-            "requests_display": "112",
+            "requests_display": "126",
             "pct": 100.0
           }
         ],
@@ -68,10 +68,10 @@
           {
             "date": "2026-11-10",
             "weekday": "Tue",
-            "requests": 112,
-            "tokens_total": 7478426,
+            "requests": 126,
+            "tokens_total": 9265601,
             "cost_cents": null,
-            "tokens_display": "7.5M"
+            "tokens_display": "9.3M"
           },
           {
             "date": "2026-11-11",
@@ -1369,10 +1369,10 @@
       "date": "2026-11-10",
       "source": "antigravity",
       "model": "gemini-3.8-flash-n",
-      "requests": 112,
-      "tokens_in": 433312,
-      "tokens_out": 63922,
-      "cache_read": 6981192
+      "requests": 126,
+      "tokens_in": 599530,
+      "tokens_out": 69959,
+      "cache_read": 8596112
     }
   ],
   "year": {
@@ -1380,13 +1380,13 @@
     "start": "2026-01-02",
     "end": "2026-11-10",
     "days_active": 252,
-    "requests": 75212,
-    "tokens_in": 985754133,
-    "tokens_out": 89777715,
+    "requests": 75226,
+    "tokens_in": 985920351,
+    "tokens_out": 89783752,
     "cache_write": 239834211,
-    "cache_read": 15725216059,
+    "cache_read": 15726830979,
     "cost_cents": 1103427.1812,
-    "tokens_total": 17040582118,
+    "tokens_total": 17042369293,
     "months": [
       {
         "month": "2026-01",
@@ -1490,13 +1490,13 @@
       },
       {
         "month": "2026-11",
-        "requests": 122,
-        "tokens_in": 458223,
-        "tokens_out": 68167,
+        "requests": 136,
+        "tokens_in": 624441,
+        "tokens_out": 74204,
         "cache_write": null,
-        "cache_read": 7149896,
+        "cache_read": 8764816,
         "cost_cents": 2.7043,
-        "tokens_total": 7676286
+        "tokens_total": 9463461
       }
     ],
     "models": [
@@ -1912,13 +1912,13 @@
       },
       {
         "model": "gemini-3.8-flash-n",
-        "requests": 346,
-        "tokens_in": 3332773,
-        "tokens_out": 214510,
+        "requests": 360,
+        "tokens_in": 3498991,
+        "tokens_out": 220547,
         "cache_write": null,
-        "cache_read": 30437425,
+        "cache_read": 32052345,
         "cost_cents": null,
-        "tokens_total": 33984708
+        "tokens_total": 35771883
       },
       {
         "model": "gpt-5.6-sol-high",
