@@ -15,44 +15,44 @@
         "end": "2026-11-22",
         "range_display": "Nov 16 – Nov 22",
         "basis": "tokens",
-        "requests": 758,
-        "tokens_total": 157343535,
+        "requests": 829,
+        "tokens_total": 165272197,
         "cost_cents": null,
-        "tokens_display": "157.3M",
+        "tokens_display": "165.3M",
         "cost_display": "Subscription",
-        "requests_display": "758",
+        "requests_display": "829",
         "breakdown": [
           {
             "kind": "tokens_in",
             "label": "Input",
-            "amount": 6066968,
-            "display": "6.1M",
-            "pct": 3.855873709714225
+            "amount": 6926884,
+            "display": "6.9M",
+            "pct": 4.191197385728466
           },
           {
             "kind": "tokens_out",
             "label": "Output",
-            "amount": 752734,
-            "display": "752.7K",
-            "pct": 0.47840160703139156
+            "amount": 817891,
+            "display": "817.9K",
+            "pct": 0.4948751301466634
           },
           {
             "kind": "cache_read",
             "label": "Cache read",
-            "amount": 150523833,
-            "display": "150.5M",
-            "pct": 95.66572468325438
+            "amount": 157527422,
+            "display": "157.5M",
+            "pct": 95.31392748412487
           }
         ],
         "models": [
           {
             "label": "gemini-4-hydrogen",
-            "requests": 758,
-            "tokens_total": 157343535,
+            "requests": 829,
+            "tokens_total": 165272197,
             "cost_cents": null,
-            "tokens_display": "157.3M",
+            "tokens_display": "165.3M",
             "cost_display": "Subscription",
-            "requests_display": "758",
+            "requests_display": "829",
             "pct": 100.0
           }
         ],
@@ -68,10 +68,10 @@
           {
             "date": "2026-11-17",
             "weekday": "Tue",
-            "requests": 758,
-            "tokens_total": 157343535,
+            "requests": 829,
+            "tokens_total": 165272197,
             "cost_cents": null,
-            "tokens_display": "157.3M"
+            "tokens_display": "165.3M"
           },
           {
             "date": "2026-11-18",
@@ -641,10 +641,10 @@
       "date": "2026-11-17",
       "source": "antigravity",
       "model": "gemini-4-hydrogen",
-      "requests": 758,
-      "tokens_in": 6066968,
-      "tokens_out": 752734,
-      "cache_read": 150523833
+      "requests": 829,
+      "tokens_in": 6926884,
+      "tokens_out": 817891,
+      "cache_read": 157527422
     }
   ],
   "year": {
@@ -652,13 +652,13 @@
     "start": "2026-01-02",
     "end": "2026-11-17",
     "days_active": 253,
-    "requests": 75888,
-    "tokens_in": 990124272,
-    "tokens_out": 90471073,
+    "requests": 75959,
+    "tokens_in": 990984188,
+    "tokens_out": 90536230,
     "cache_write": 239834211,
-    "cache_read": 15868796509,
+    "cache_read": 15875800098,
     "cost_cents": 1103401.3554,
-    "tokens_total": 17189226065,
+    "tokens_total": 17197154727,
     "months": [
       {
         "month": "2026-01",
@@ -762,13 +762,13 @@
       },
       {
         "month": "2026-11",
-        "requests": 934,
-        "tokens_in": 6864557,
-        "tokens_out": 845438,
+        "requests": 1005,
+        "tokens_in": 7724473,
+        "tokens_out": 910595,
         "cache_write": null,
-        "cache_read": 160867947,
+        "cache_read": 167871536,
         "cost_cents": 2.7043,
-        "tokens_total": 168577942
+        "tokens_total": 176506604
       }
     ],
     "models": [
@@ -1044,13 +1044,13 @@
       },
       {
         "model": "gemini-4-hydrogen",
-        "requests": 758,
-        "tokens_in": 6066968,
-        "tokens_out": 752734,
+        "requests": 829,
+        "tokens_in": 6926884,
+        "tokens_out": 817891,
         "cache_write": null,
-        "cache_read": 150523833,
+        "cache_read": 157527422,
         "cost_cents": null,
-        "tokens_total": 157343535
+        "tokens_total": 165272197
       },
       {
         "model": "deepseek-v4-flash",
