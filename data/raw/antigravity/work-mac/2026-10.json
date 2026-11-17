@@ -9,28 +9,8 @@
     "2026-10-05": [],
     "2026-10-06": [],
     "2026-10-07": [],
-    "2026-10-08": [
-      {
-        "date": "2026-10-08",
-        "source": "antigravity",
-        "model": "gemini-3.8-flash-n",
-        "requests": 75,
-        "tokens_in": 1435334,
-        "tokens_out": 57776,
-        "cache_read": 7456589
-      }
-    ],
-    "2026-10-09": [
-      {
-        "date": "2026-10-09",
-        "source": "antigravity",
-        "model": "gemini-3.8-flash-n",
-        "requests": 33,
-        "tokens_in": 372536,
-        "tokens_out": 16030,
-        "cache_read": 2026172
-      }
-    ],
+    "2026-10-08": [],
+    "2026-10-09": [],
     "2026-10-10": [
       {
         "date": "2026-10-10",
