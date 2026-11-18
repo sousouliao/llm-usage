@@ -15,33 +15,33 @@
         "end": "2026-11-22",
         "range_display": "Nov 16 – Nov 22",
         "basis": "tokens",
-        "requests": 975,
-        "tokens_total": 184532449,
+        "requests": 1007,
+        "tokens_total": 187945663,
         "cost_cents": null,
-        "tokens_display": "184.5M",
+        "tokens_display": "187.9M",
         "cost_display": "Subscription",
-        "requests_display": "975",
+        "requests_display": "1,007",
         "breakdown": [
           {
             "kind": "tokens_in",
             "label": "Input",
-            "amount": 7850579,
-            "display": "7.9M",
-            "pct": 4.254308140678282
+            "amount": 8110078,
+            "display": "8.1M",
+            "pct": 4.315118460594645
           },
           {
             "kind": "tokens_out",
             "label": "Output",
-            "amount": 912253,
-            "display": "912.3K",
-            "pct": 0.4943591248821501
+            "amount": 957177,
+            "display": "957.2K",
+            "pct": 0.5092838987191739
           },
           {
             "kind": "cache_read",
             "label": "Cache read",
-            "amount": 175769617,
-            "display": "175.8M",
-            "pct": 95.25133273443956
+            "amount": 178878408,
+            "display": "178.9M",
+            "pct": 95.17559764068618
           }
         ],
         "models": [
@@ -53,7 +53,17 @@
             "tokens_display": "184.5M",
             "cost_display": "Subscription",
             "requests_display": "975",
-            "pct": 100.0
+            "pct": 98.1839357474293
+          },
+          {
+            "label": "gemini-4-argon-g",
+            "requests": 32,
+            "tokens_total": 3413214,
+            "cost_cents": null,
+            "tokens_display": "3.4M",
+            "cost_display": "Subscription",
+            "requests_display": "32",
+            "pct": 1.8160642525707018
           }
         ],
         "days": [
@@ -76,10 +86,10 @@
           {
             "date": "2026-11-18",
             "weekday": "Wed",
-            "requests": 146,
-            "tokens_total": 19260252,
+            "requests": 178,
+            "tokens_total": 22673466,
             "cost_cents": null,
-            "tokens_display": "19.3M"
+            "tokens_display": "22.7M"
           },
           {
             "date": "2026-11-19",
@@ -649,6 +659,15 @@
     {
       "date": "2026-11-18",
       "source": "antigravity",
+      "model": "gemini-4-argon-g",
+      "requests": 32,
+      "tokens_in": 259499,
+      "tokens_out": 44924,
+      "cache_read": 3108791
+    },
+    {
+      "date": "2026-11-18",
+      "source": "antigravity",
       "model": "gemini-4-hydrogen",
       "requests": 146,
       "tokens_in": 923695,
@@ -661,13 +680,13 @@
     "start": "2026-01-02",
     "end": "2026-11-18",
     "days_active": 254,
-    "requests": 76105,
-    "tokens_in": 991907883,
-    "tokens_out": 90630592,
+    "requests": 76137,
+    "tokens_in": 992167382,
+    "tokens_out": 90675516,
     "cache_write": 239834211,
-    "cache_read": 15894042293,
+    "cache_read": 15897151084,
     "cost_cents": 1103401.3554,
-    "tokens_total": 17216414979,
+    "tokens_total": 17219828193,
     "months": [
       {
         "month": "2026-01",
@@ -771,13 +790,13 @@
       },
       {
         "month": "2026-11",
-        "requests": 1151,
-        "tokens_in": 8648168,
-        "tokens_out": 1004957,
+        "requests": 1183,
+        "tokens_in": 8907667,
+        "tokens_out": 1049881,
         "cache_write": null,
-        "cache_read": 186113731,
+        "cache_read": 189222522,
         "cost_cents": 2.7043,
-        "tokens_total": 195766856
+        "tokens_total": 199180070
       }
     ],
     "models": [
@@ -1430,6 +1449,16 @@
         "cache_read": 2574306,
         "cost_cents": 719.2436,
         "tokens_total": 4226646
+      },
+      {
+        "model": "gemini-4-argon-g",
+        "requests": 32,
+        "tokens_in": 259499,
+        "tokens_out": 44924,
+        "cache_write": null,
+        "cache_read": 3108791,
+        "cost_cents": null,
+        "tokens_total": 3413214
       },
       {
         "model": "gpt-5.6-luna",
