@@ -44,10 +44,10 @@
         "date": "2026-11-18",
         "source": "antigravity",
         "model": "gemini-4-argon-g",
-        "requests": 143,
-        "tokens_in": 1190556,
-        "tokens_out": 210951,
-        "cache_read": 16767042
+        "requests": 147,
+        "tokens_in": 1204065,
+        "tokens_out": 212053,
+        "cache_read": 17466527
       },
       {
         "date": "2026-11-18",
