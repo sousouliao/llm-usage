@@ -44,19 +44,19 @@
         "date": "2026-11-18",
         "source": "antigravity",
         "model": "gemini-4-argon-g",
-        "requests": 32,
-        "tokens_in": 259499,
-        "tokens_out": 44924,
-        "cache_read": 3108791
+        "requests": 100,
+        "tokens_in": 793428,
+        "tokens_out": 156278,
+        "cache_read": 11440130
       },
       {
         "date": "2026-11-18",
         "source": "antigravity",
         "model": "gemini-4-hydrogen",
-        "requests": 146,
-        "tokens_in": 923695,
-        "tokens_out": 94362,
-        "cache_read": 18242195
+        "requests": 198,
+        "tokens_in": 1361711,
+        "tokens_out": 154969,
+        "cache_read": 22751513
       }
     ]
   }
