@@ -15,45 +15,45 @@
         "end": "2026-11-22",
         "range_display": "Nov 16 – Nov 22",
         "basis": "tokens",
-        "requests": 1347,
-        "tokens_total": 227561443,
+        "requests": 1386,
+        "tokens_total": 237518425,
         "cost_cents": null,
-        "tokens_display": "227.6M",
+        "tokens_display": "237.5M",
         "cost_display": "Subscription",
-        "requests_display": "1,347",
+        "requests_display": "1,386",
         "breakdown": [
           {
             "kind": "tokens_in",
             "label": "Input",
-            "amount": 10330482,
-            "display": "10.3M",
-            "pct": 4.539645145421231
+            "amount": 11560305,
+            "display": "11.6M",
+            "pct": 4.867119256116657
           },
           {
             "kind": "tokens_out",
             "label": "Output",
-            "amount": 1306335,
+            "amount": 1342471,
             "display": "1.3M",
-            "pct": 0.5740581456938643
+            "pct": 0.5652070991966203
           },
           {
             "kind": "cache_read",
             "label": "Cache read",
-            "amount": 215924626,
-            "display": "215.9M",
-            "pct": 94.88629670888491
+            "amount": 224615649,
+            "display": "224.6M",
+            "pct": 94.56767364468672
           }
         ],
         "models": [
           {
             "label": "gemini-4-hydrogen",
-            "requests": 1173,
-            "tokens_total": 206788517,
+            "requests": 1193,
+            "tokens_total": 214449768,
             "cost_cents": null,
-            "tokens_display": "206.8M",
+            "tokens_display": "214.4M",
             "cost_display": "Subscription",
-            "requests_display": "1,173",
-            "pct": 90.87150893132629
+            "requests_display": "1,193",
+            "pct": 90.28763473823136
           },
           {
             "label": "gemini-4-argon-g",
@@ -63,17 +63,17 @@
             "tokens_display": "18.9M",
             "cost_display": "Subscription",
             "requests_display": "147",
-            "pct": 8.297822667612456
+            "pct": 7.9499706180688925
           },
           {
             "label": "gemini-4-neon",
-            "requests": 27,
-            "tokens_total": 1890281,
+            "requests": 46,
+            "tokens_total": 4186012,
             "cost_cents": null,
-            "tokens_display": "1.9M",
+            "tokens_display": "4.2M",
             "cost_display": "Subscription",
-            "requests_display": "27",
-            "pct": 0.8306684010612466
+            "requests_display": "46",
+            "pct": 1.7623946436997469
           }
         ],
         "days": [
@@ -104,10 +104,10 @@
           {
             "date": "2026-11-19",
             "weekday": "Thu",
-            "requests": 173,
-            "tokens_total": 19138408,
+            "requests": 212,
+            "tokens_total": 29095390,
             "cost_cents": null,
-            "tokens_display": "19.1M"
+            "tokens_display": "29.1M"
           },
           {
             "date": "2026-11-20",
@@ -688,19 +688,19 @@
       "date": "2026-11-19",
       "source": "antigravity",
       "model": "gemini-4-hydrogen",
-      "requests": 146,
-      "tokens_in": 671638,
-      "tokens_out": 87187,
-      "cache_read": 16489302
+      "requests": 166,
+      "tokens_in": 1494954,
+      "tokens_out": 111517,
+      "cache_read": 23302907
     },
     {
       "date": "2026-11-19",
       "source": "antigravity",
       "model": "gemini-4-neon",
-      "requests": 27,
-      "tokens_in": 166184,
-      "tokens_out": 34235,
-      "cache_read": 1689862
+      "requests": 46,
+      "tokens_in": 572691,
+      "tokens_out": 46041,
+      "cache_read": 3567280
     }
   ],
   "year": {
@@ -708,13 +708,13 @@
     "start": "2026-01-02",
     "end": "2026-11-19",
     "days_active": 255,
-    "requests": 76477,
-    "tokens_in": 994387786,
-    "tokens_out": 91024674,
+    "requests": 76516,
+    "tokens_in": 995617609,
+    "tokens_out": 91060810,
     "cache_write": 239834211,
-    "cache_read": 15934197302,
+    "cache_read": 15942888325,
     "cost_cents": 1103401.3554,
-    "tokens_total": 17259443973,
+    "tokens_total": 17269400955,
     "months": [
       {
         "month": "2026-01",
@@ -818,13 +818,13 @@
       },
       {
         "month": "2026-11",
-        "requests": 1523,
-        "tokens_in": 11128071,
-        "tokens_out": 1399039,
+        "requests": 1562,
+        "tokens_in": 12357894,
+        "tokens_out": 1435175,
         "cache_write": null,
-        "cache_read": 226268740,
+        "cache_read": 234959763,
         "cost_cents": 2.7043,
-        "tokens_total": 238795850
+        "tokens_total": 248752832
       }
     ],
     "models": [
@@ -1080,13 +1080,13 @@
       },
       {
         "model": "gemini-4-hydrogen",
-        "requests": 1173,
-        "tokens_in": 8960233,
-        "tokens_out": 1060047,
+        "requests": 1193,
+        "tokens_in": 9783549,
+        "tokens_out": 1084377,
         "cache_write": null,
-        "cache_read": 196768237,
+        "cache_read": 203581842,
         "cost_cents": null,
-        "tokens_total": 206788517
+        "tokens_total": 214449768
       },
       {
         "model": "claude-opus-4-7-thinking-high",
@@ -1489,6 +1489,16 @@
         "tokens_total": 4226646
       },
       {
+        "model": "gemini-4-neon",
+        "requests": 46,
+        "tokens_in": 572691,
+        "tokens_out": 46041,
+        "cache_write": null,
+        "cache_read": 3567280,
+        "cost_cents": null,
+        "tokens_total": 4186012
+      },
+      {
         "model": "gpt-5.6-luna",
         "requests": 48,
         "tokens_in": 288020,
@@ -1547,16 +1557,6 @@
         "cache_read": 1553120,
         "cost_cents": 77.6602,
         "tokens_total": 1923220
-      },
-      {
-        "model": "gemini-4-neon",
-        "requests": 27,
-        "tokens_in": 166184,
-        "tokens_out": 34235,
-        "cache_write": null,
-        "cache_read": 1689862,
-        "cost_cents": null,
-        "tokens_total": 1890281
       },
       {
         "model": "claude-4.5-sonnet",
