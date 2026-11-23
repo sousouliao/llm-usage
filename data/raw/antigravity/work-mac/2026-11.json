@@ -101,6 +101,15 @@
         "tokens_in": 2337327,
         "tokens_out": 290527,
         "cache_read": 46819087
+      },
+      {
+        "date": "2026-11-23",
+        "source": "antigravity",
+        "model": "gemini-4-neon",
+        "requests": 68,
+        "tokens_in": 250041,
+        "tokens_out": 49537,
+        "cache_read": 5823089
       }
     ]
   }
