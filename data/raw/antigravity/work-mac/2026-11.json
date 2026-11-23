@@ -92,6 +92,16 @@
     ],
     "2026-11-21": [],
     "2026-11-22": [],
-    "2026-11-23": []
+    "2026-11-23": [
+      {
+        "date": "2026-11-23",
+        "source": "antigravity",
+        "model": "gemini-4-hydrogen",
+        "requests": 21,
+        "tokens_in": 81786,
+        "tokens_out": 6407,
+        "cache_read": 802010
+      }
+    ]
   }
 }
