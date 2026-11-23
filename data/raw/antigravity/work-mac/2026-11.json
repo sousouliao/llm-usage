@@ -97,10 +97,10 @@
         "date": "2026-11-23",
         "source": "antigravity",
         "model": "gemini-4-hydrogen",
-        "requests": 21,
-        "tokens_in": 81786,
-        "tokens_out": 6407,
-        "cache_read": 802010
+        "requests": 53,
+        "tokens_in": 212680,
+        "tokens_out": 23024,
+        "cache_read": 2829380
       }
     ]
   }
