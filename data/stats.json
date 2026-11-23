@@ -15,44 +15,44 @@
         "end": "2026-11-29",
         "range_display": "Nov 23 – Nov 29",
         "basis": "tokens",
-        "requests": 57,
-        "tokens_total": 3345933,
+        "requests": 65,
+        "tokens_total": 4059308,
         "cost_cents": null,
-        "tokens_display": "3.3M",
+        "tokens_display": "4.1M",
         "cost_display": "Subscription",
-        "requests_display": "57",
+        "requests_display": "65",
         "breakdown": [
           {
             "kind": "tokens_in",
             "label": "Input",
-            "amount": 288615,
-            "display": "288.6K",
-            "pct": 8.625845167850043
+            "amount": 317137,
+            "display": "317.1K",
+            "pct": 7.812587761263742
           },
           {
             "kind": "tokens_out",
             "label": "Output",
-            "amount": 24750,
-            "display": "24.8K",
-            "pct": 0.739703992877323
+            "amount": 27164,
+            "display": "27.2K",
+            "pct": 0.6691780963651933
           },
           {
             "kind": "cache_read",
             "label": "Cache read",
-            "amount": 3032568,
-            "display": "3.0M",
-            "pct": 90.63445083927263
+            "amount": 3715007,
+            "display": "3.7M",
+            "pct": 91.51823414237107
           }
         ],
         "models": [
           {
             "label": "gemini-4-hydrogen",
-            "requests": 57,
-            "tokens_total": 3345933,
+            "requests": 65,
+            "tokens_total": 4059308,
             "cost_cents": null,
-            "tokens_display": "3.3M",
+            "tokens_display": "4.1M",
             "cost_display": "Subscription",
-            "requests_display": "57",
+            "requests_display": "65",
             "pct": 100.0
           }
         ],
@@ -60,10 +60,10 @@
           {
             "date": "2026-11-23",
             "weekday": "Mon",
-            "requests": 57,
-            "tokens_total": 3345933,
+            "requests": 65,
+            "tokens_total": 4059308,
             "cost_cents": null,
-            "tokens_display": "3.3M"
+            "tokens_display": "4.1M"
           },
           {
             "date": "2026-11-24",
@@ -561,10 +561,10 @@
       "date": "2026-11-23",
       "source": "antigravity",
       "model": "gemini-4-hydrogen",
-      "requests": 57,
-      "tokens_in": 288615,
-      "tokens_out": 24750,
-      "cache_read": 3032568
+      "requests": 65,
+      "tokens_in": 317137,
+      "tokens_out": 27164,
+      "cache_read": 3715007
     }
   ],
   "year": {
@@ -572,13 +572,13 @@
     "start": "2026-01-02",
     "end": "2026-11-23",
     "days_active": 257,
-    "requests": 77308,
-    "tokens_in": 1001893219,
-    "tokens_out": 91807920,
+    "requests": 77316,
+    "tokens_in": 1001921741,
+    "tokens_out": 91810334,
     "cache_write": 239834211,
-    "cache_read": 16056509554,
+    "cache_read": 16057191993,
     "cost_cents": 1103401.3554,
-    "tokens_total": 17390044904,
+    "tokens_total": 17390758279,
     "months": [
       {
         "month": "2026-01",
@@ -682,13 +682,13 @@
       },
       {
         "month": "2026-11",
-        "requests": 2354,
-        "tokens_in": 18633504,
-        "tokens_out": 2182285,
+        "requests": 2362,
+        "tokens_in": 18662026,
+        "tokens_out": 2184699,
         "cache_write": null,
-        "cache_read": 348580992,
+        "cache_read": 349263431,
         "cost_cents": 2.7043,
-        "tokens_total": 369396781
+        "tokens_total": 370110156
       }
     ],
     "models": [
@@ -864,13 +864,13 @@
       },
       {
         "model": "gemini-4-hydrogen",
-        "requests": 1985,
-        "tokens_in": 16059159,
-        "tokens_out": 1831487,
+        "requests": 1993,
+        "tokens_in": 16087681,
+        "tokens_out": 1833901,
         "cache_write": null,
-        "cache_read": 317203071,
+        "cache_read": 317885510,
         "cost_cents": null,
-        "tokens_total": 335093717
+        "tokens_total": 335807092
       },
       {
         "model": "claude-opus-4-7-thinking-medium",
