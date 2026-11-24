@@ -125,11 +125,20 @@
       {
         "date": "2026-11-24",
         "source": "antigravity",
+        "model": "gemini-4-hydrogen-tiered-high",
+        "requests": 13,
+        "tokens_in": 52694,
+        "tokens_out": 8221,
+        "cache_read": 297675
+      },
+      {
+        "date": "2026-11-24",
+        "source": "antigravity",
         "model": "gemini-4-neon",
-        "requests": 301,
-        "tokens_in": 2395348,
-        "tokens_out": 290210,
-        "cache_read": 31840306
+        "requests": 397,
+        "tokens_in": 2795487,
+        "tokens_out": 353201,
+        "cache_read": 39074151
       }
     ]
   }
