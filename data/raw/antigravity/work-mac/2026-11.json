@@ -117,19 +117,19 @@
         "date": "2026-11-24",
         "source": "antigravity",
         "model": "gemini-4-hydrogen",
-        "requests": 32,
-        "tokens_in": 582836,
-        "tokens_out": 38128,
-        "cache_read": 3670649
+        "requests": 37,
+        "tokens_in": 847511,
+        "tokens_out": 45614,
+        "cache_read": 4682954
       },
       {
         "date": "2026-11-24",
         "source": "antigravity",
         "model": "gemini-4-neon",
-        "requests": 106,
-        "tokens_in": 1138138,
-        "tokens_out": 99270,
-        "cache_read": 10105246
+        "requests": 150,
+        "tokens_in": 1593489,
+        "tokens_out": 145939,
+        "cache_read": 16943740
       }
     ]
   }
