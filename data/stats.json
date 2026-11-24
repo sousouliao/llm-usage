@@ -15,55 +15,55 @@
         "end": "2026-11-29",
         "range_display": "Nov 23 – Nov 29",
         "basis": "tokens",
-        "requests": 586,
-        "tokens_total": 79828855,
+        "requests": 654,
+        "tokens_total": 88078599,
         "cost_cents": null,
-        "tokens_display": "79.8M",
+        "tokens_display": "88.1M",
         "cost_display": "Subscription",
-        "requests_display": "586",
+        "requests_display": "654",
         "breakdown": [
           {
             "kind": "tokens_in",
             "label": "Input",
-            "amount": 5028368,
-            "display": "5.0M",
-            "pct": 6.2989353912191275
+            "amount": 5689132,
+            "display": "5.7M",
+            "pct": 6.459153602113949
           },
           {
             "kind": "tokens_out",
             "label": "Output",
-            "amount": 531617,
-            "display": "531.6K",
-            "pct": 0.6659459164233283
+            "amount": 598688,
+            "display": "598.7K",
+            "pct": 0.6797201667569667
           },
           {
             "kind": "cache_read",
             "label": "Cache read",
-            "amount": 74268870,
-            "display": "74.3M",
-            "pct": 93.03511869235754
+            "amount": 81790779,
+            "display": "81.8M",
+            "pct": 92.86112623112909
           }
         ],
         "models": [
           {
             "label": "gemini-4-hydrogen",
-            "requests": 368,
-            "tokens_total": 55023020,
+            "requests": 396,
+            "tokens_total": 58166620,
             "cost_cents": null,
-            "tokens_display": "55.0M",
+            "tokens_display": "58.2M",
             "cost_display": "Subscription",
-            "requests_display": "368",
-            "pct": 68.92622974487107
+            "requests_display": "396",
+            "pct": 66.0394473349877
           },
           {
             "label": "gemini-4-neon",
-            "requests": 218,
-            "tokens_total": 24805835,
+            "requests": 258,
+            "tokens_total": 29911979,
             "cost_cents": null,
-            "tokens_display": "24.8M",
+            "tokens_display": "29.9M",
             "cost_display": "Subscription",
-            "requests_display": "218",
-            "pct": 31.073770255128924
+            "requests_display": "258",
+            "pct": 33.96055266501231
           }
         ],
         "days": [
@@ -78,10 +78,10 @@
           {
             "date": "2026-11-24",
             "weekday": "Tue",
-            "requests": 187,
-            "tokens_total": 24259247,
+            "requests": 255,
+            "tokens_total": 32508991,
             "cost_cents": null,
-            "tokens_display": "24.3M"
+            "tokens_display": "32.5M"
           },
           {
             "date": "2026-11-25",
@@ -589,19 +589,19 @@
       "date": "2026-11-24",
       "source": "antigravity",
       "model": "gemini-4-hydrogen",
-      "requests": 37,
-      "tokens_in": 847511,
-      "tokens_out": 45614,
-      "cache_read": 4682954
+      "requests": 65,
+      "tokens_in": 1277305,
+      "tokens_out": 67938,
+      "cache_read": 7374436
     },
     {
       "date": "2026-11-24",
       "source": "antigravity",
       "model": "gemini-4-neon",
-      "requests": 150,
-      "tokens_in": 1593489,
-      "tokens_out": 145939,
-      "cache_read": 16943740
+      "requests": 190,
+      "tokens_in": 1824459,
+      "tokens_out": 190686,
+      "cache_read": 21774167
     }
   ],
   "year": {
@@ -609,13 +609,13 @@
     "start": "2026-01-02",
     "end": "2026-11-24",
     "days_active": 258,
-    "requests": 77837,
-    "tokens_in": 1006632972,
-    "tokens_out": 92314787,
+    "requests": 77905,
+    "tokens_in": 1007293736,
+    "tokens_out": 92381858,
     "cache_write": 239834211,
-    "cache_read": 16127745856,
+    "cache_read": 16135267765,
     "cost_cents": 1103401.3554,
-    "tokens_total": 17466527826,
+    "tokens_total": 17474777570,
     "months": [
       {
         "month": "2026-01",
@@ -719,13 +719,13 @@
       },
       {
         "month": "2026-11",
-        "requests": 2883,
-        "tokens_in": 23373257,
-        "tokens_out": 2689152,
+        "requests": 2951,
+        "tokens_in": 24034021,
+        "tokens_out": 2756223,
         "cache_write": null,
-        "cache_read": 419817294,
+        "cache_read": 427339203,
         "cost_cents": 2.7043,
-        "tokens_total": 445879703
+        "tokens_total": 454129447
       }
     ],
     "models": [
@@ -871,13 +871,13 @@
       },
       {
         "model": "gemini-4-hydrogen",
-        "requests": 2296,
-        "tokens_in": 18955382,
-        "tokens_out": 2142878,
+        "requests": 2324,
+        "tokens_in": 19385176,
+        "tokens_out": 2165202,
         "cache_write": null,
-        "cache_read": 365672544,
+        "cache_read": 368364026,
         "cost_cents": null,
-        "tokens_total": 386770804
+        "tokens_total": 389914404
       },
       {
         "model": "composer-2.5-fast",
@@ -1150,6 +1150,16 @@
         "tokens_total": 44695745
       },
       {
+        "model": "gemini-4-neon",
+        "requests": 304,
+        "tokens_in": 2647191,
+        "tokens_out": 286264,
+        "cache_write": null,
+        "cache_read": 31164536,
+        "cost_cents": null,
+        "tokens_total": 34097991
+      },
+      {
         "model": "gpt-5.6-sol-high",
         "requests": 22,
         "tokens_in": 60028,
@@ -1178,16 +1188,6 @@
         "cache_read": 29070631,
         "cost_cents": 1904.6763,
         "tokens_total": 31134650
-      },
-      {
-        "model": "gemini-4-neon",
-        "requests": 264,
-        "tokens_in": 2416221,
-        "tokens_out": 241517,
-        "cache_write": null,
-        "cache_read": 26334109,
-        "cost_cents": null,
-        "tokens_total": 28991847
       },
       {
         "model": "kimi-k3-max",
