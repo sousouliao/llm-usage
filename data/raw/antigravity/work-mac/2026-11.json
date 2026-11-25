@@ -141,6 +141,16 @@
         "cache_read": 50295385
       }
     ],
-    "2026-11-25": []
+    "2026-11-25": [
+      {
+        "date": "2026-11-25",
+        "source": "antigravity",
+        "model": "gemini-4-neon",
+        "requests": 2,
+        "tokens_in": 243206,
+        "tokens_out": 2277,
+        "cache_read": 239892
+      }
+    ]
   }
 }
