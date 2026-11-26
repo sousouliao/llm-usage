@@ -175,10 +175,10 @@
         "date": "2026-11-26",
         "source": "antigravity",
         "model": "gemini-4-neon",
-        "requests": 145,
-        "tokens_in": 792080,
-        "tokens_out": 106292,
-        "cache_read": 12611322
+        "requests": 174,
+        "tokens_in": 877057,
+        "tokens_out": 126315,
+        "cache_read": 17993385
       }
     ]
   }
